@@ -28,8 +28,8 @@ function handleImport() {
 exports.imports = handleImport;
 
 
+const postcss = require('gulp-postcss');
 function modernize() {
-	const postcss = require('gulp-postcss');
 
 	if (env === 'dev') {
 		return src('./processing/main.import.css')
