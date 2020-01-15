@@ -27,37 +27,20 @@ function handleImport() {
 
 exports.imports = handleImport;
 
-const postcss = require('gulp-postcss');
 
 function modernize() {
-	//* preset-env/ Babel for CSS
-	const preset = {
-		env: require('postcss-preset-env'),
-		config: {
-			stage: 3,
-			browsers: '',
-			preserve: true
-		}
-	};
-
-	const each = require('postcss-each');
-	const custommedia = require('postcss-custom-media');
-	const combine = require('postcss-combine-media-query');
-	const responsivetype = require('postcss-responsive-type');
-	const gradients = require('postcss-easing-gradients');
-	const plugins = [each, custommedia, combine, gradients, responsivetype, preset.env(preset.config)]
-	const postprocess = postcss(plugins)
+	const postcss = require('gulp-postcss');
 
 	if (env === 'dev') {
 		return src('./processing/main.import.css')
-			.pipe(postprocess)
+			.pipe(postcss())
 			.pipe(rename('main.future.css'))
 			.pipe(dest('./processing'))
 			.pipe(rename('dais.css'))
 			.pipe(dest('.'));
 	}
 	return src('dais.css')
-		.pipe(postprocess)
+		.pipe(postcss())
 		.pipe(dest('.'))
 
 }

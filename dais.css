@@ -370,50 +370,62 @@ progress {
 /** SPACING UTILITIES **/
 .pt-sm,
 .py-sm {
+	padding-top: 35px;
 	padding-top: var(--sm);
 }
 .pb-sm,
 .py-sm {
+	padding-bottom: 35px;
 	padding-bottom: var(--sm);
 }
 .mt-sm,
 .my-sm {
+	margin-top: 35px;
 	margin-top: var(--sm);
 }
 .mb-sm,
 .my-sm {
+	margin-bottom: 35px;
 	margin-bottom: var(--sm);
 }
 .pt-md,
 .py-md {
+	padding-top: 85px;
 	padding-top: var(--md);
 }
 .pb-md,
 .py-md {
+	padding-bottom: 85px;
 	padding-bottom: var(--md);
 }
 .mt-md,
 .my-md {
+	margin-top: 85px;
 	margin-top: var(--md);
 }
 .mb-md,
 .my-md {
+	margin-bottom: 85px;
 	margin-bottom: var(--md);
 }
 .pt-lg,
 .py-lg {
+	padding-top: 120px;
 	padding-top: var(--lg);
 }
 .pb-lg,
 .py-lg {
+	padding-bottom: 120px;
 	padding-bottom: var(--lg);
 }
 .mt-lg,
 .my-lg {
+	margin-top: 120px;
 	margin-top: var(--lg);
 }
 .mb-lg,
 .my-lg {
+	margin-bottom: 120px;
 	margin-bottom: var(--lg);
 }
 /** LAYOUT **/
@@ -632,10 +644,14 @@ main {
 /** Typography: font, letter-spacing, line-height, text-*, list-style-type. */
 
 html {
+	font-size: 16px;
 	font-size: var(--font_size);
 }
 
 body {
+	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans',
+		'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana,
+		'Verdana Ref', sans-serif;
 	font-family: var(--font_base);
 	font-size: 1rem;
 	font-weight: 300;
@@ -670,6 +686,9 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans',
+		'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana,
+		'Verdana Ref', sans-serif;
 	font-family: var(--font_base);
 	font-weight: 500;
 }
@@ -1113,6 +1132,7 @@ select {
 textarea:focus,
 select:focus {
 	border-color: #5680cc;
+	box-shadow: 0 0 0 3px rgba(0, 0, 256, 0.3);
 	box-shadow: var(--focus);
 	outline: 0;
 }
@@ -1152,50 +1172,62 @@ select:focus {
 @media (min-width: 576px) {
 	.pt-sm-mob,
 	.py-sm-mob {
+		padding-top: 35px;
 		padding-top: var(--sm);
 	}
 	.pb-sm-mob,
 	.py-sm-mob {
+		padding-bottom: 35px;
 		padding-bottom: var(--sm);
 	}
 	.mt-sm-mob,
 	.my-sm-mob {
+		margin-top: 35px;
 		margin-top: var(--sm);
 	}
 	.mb-sm-mob,
 	.my-sm-mob {
+		margin-bottom: 35px;
 		margin-bottom: var(--sm);
 	}
 	.pt-md-mob,
 	.py-md-mob {
+		padding-top: 85px;
 		padding-top: var(--md);
 	}
 	.pb-md-mob,
 	.py-md-mob {
+		padding-bottom: 85px;
 		padding-bottom: var(--md);
 	}
 	.mt-md-mob,
 	.my-md-mob {
+		margin-top: 85px;
 		margin-top: var(--md);
 	}
 	.mb-md-mob,
 	.my-md-mob {
+		margin-bottom: 85px;
 		margin-bottom: var(--md);
 	}
 	.pt-lg-mob,
 	.py-lg-mob {
+		padding-top: 120px;
 		padding-top: var(--lg);
 	}
 	.pb-lg-mob,
 	.py-lg-mob {
+		padding-bottom: 120px;
 		padding-bottom: var(--lg);
 	}
 	.mt-lg-mob,
 	.my-lg-mob {
+		margin-top: 120px;
 		margin-top: var(--lg);
 	}
 	.mb-lg-mob,
 	.my-lg-mob {
+		margin-bottom: 120px;
 		margin-bottom: var(--lg);
 	}
 }
@@ -1203,50 +1235,62 @@ select:focus {
 @media (min-width: 768px) {
 	.pt-sm-tab,
 	.py-sm-tab {
+		padding-top: 35px;
 		padding-top: var(--sm);
 	}
 	.pb-sm-tab,
 	.py-sm-tab {
+		padding-bottom: 35px;
 		padding-bottom: var(--sm);
 	}
 	.mt-sm-tab,
 	.my-sm-tab {
+		margin-top: 35px;
 		margin-top: var(--sm);
 	}
 	.mb-sm-tab,
 	.my-sm-tab {
+		margin-bottom: 35px;
 		margin-bottom: var(--sm);
 	}
 	.pt-md-tab,
 	.py-md-tab {
+		padding-top: 85px;
 		padding-top: var(--md);
 	}
 	.pb-md-tab,
 	.py-md-tab {
+		padding-bottom: 85px;
 		padding-bottom: var(--md);
 	}
 	.mt-md-tab,
 	.my-md-tab {
+		margin-top: 85px;
 		margin-top: var(--md);
 	}
 	.mb-md-tab,
 	.my-md-tab {
+		margin-bottom: 85px;
 		margin-bottom: var(--md);
 	}
 	.pt-lg-tab,
 	.py-lg-tab {
+		padding-top: 120px;
 		padding-top: var(--lg);
 	}
 	.pb-lg-tab,
 	.py-lg-tab {
+		padding-bottom: 120px;
 		padding-bottom: var(--lg);
 	}
 	.mt-lg-tab,
 	.my-lg-tab {
+		margin-top: 120px;
 		margin-top: var(--lg);
 	}
 	.mb-lg-tab,
 	.my-lg-tab {
+		margin-bottom: 120px;
 		margin-bottom: var(--lg);
 	}
 }
@@ -1254,50 +1298,62 @@ select:focus {
 @media (min-width: 992px) {
 	.pt-sm-lap,
 	.py-sm-lap {
+		padding-top: 35px;
 		padding-top: var(--sm);
 	}
 	.pb-sm-lap,
 	.py-sm-lap {
+		padding-bottom: 35px;
 		padding-bottom: var(--sm);
 	}
 	.mt-sm-lap,
 	.my-sm-lap {
+		margin-top: 35px;
 		margin-top: var(--sm);
 	}
 	.mb-sm-lap,
 	.my-sm-lap {
+		margin-bottom: 35px;
 		margin-bottom: var(--sm);
 	}
 	.pt-md-lap,
 	.py-md-lap {
+		padding-top: 85px;
 		padding-top: var(--md);
 	}
 	.pb-md-lap,
 	.py-md-lap {
+		padding-bottom: 85px;
 		padding-bottom: var(--md);
 	}
 	.mt-md-lap,
 	.my-md-lap {
+		margin-top: 85px;
 		margin-top: var(--md);
 	}
 	.mb-md-lap,
 	.my-md-lap {
+		margin-bottom: 85px;
 		margin-bottom: var(--md);
 	}
 	.pt-lg-lap,
 	.py-lg-lap {
+		padding-top: 120px;
 		padding-top: var(--lg);
 	}
 	.pb-lg-lap,
 	.py-lg-lap {
+		padding-bottom: 120px;
 		padding-bottom: var(--lg);
 	}
 	.mt-lg-lap,
 	.my-lg-lap {
+		margin-top: 120px;
 		margin-top: var(--lg);
 	}
 	.mb-lg-lap,
 	.my-lg-lap {
+		margin-bottom: 120px;
 		margin-bottom: var(--lg);
 	}
 }
@@ -1305,50 +1361,62 @@ select:focus {
 @media (min-width: 1200px) {
 	.pt-sm-desk,
 	.py-sm-desk {
+		padding-top: 35px;
 		padding-top: var(--sm);
 	}
 	.pb-sm-desk,
 	.py-sm-desk {
+		padding-bottom: 35px;
 		padding-bottom: var(--sm);
 	}
 	.mt-sm-desk,
 	.my-sm-desk {
+		margin-top: 35px;
 		margin-top: var(--sm);
 	}
 	.mb-sm-desk,
 	.my-sm-desk {
+		margin-bottom: 35px;
 		margin-bottom: var(--sm);
 	}
 	.pt-md-desk,
 	.py-md-desk {
+		padding-top: 85px;
 		padding-top: var(--md);
 	}
 	.pb-md-desk,
 	.py-md-desk {
+		padding-bottom: 85px;
 		padding-bottom: var(--md);
 	}
 	.mt-md-desk,
 	.my-md-desk {
+		margin-top: 85px;
 		margin-top: var(--md);
 	}
 	.mb-md-desk,
 	.my-md-desk {
+		margin-bottom: 85px;
 		margin-bottom: var(--md);
 	}
 	.pt-lg-desk,
 	.py-lg-desk {
+		padding-top: 120px;
 		padding-top: var(--lg);
 	}
 	.pb-lg-desk,
 	.py-lg-desk {
+		padding-bottom: 120px;
 		padding-bottom: var(--lg);
 	}
 	.mt-lg-desk,
 	.my-lg-desk {
+		margin-top: 120px;
 		margin-top: var(--lg);
 	}
 	.mb-lg-desk,
 	.my-lg-desk {
+		margin-bottom: 120px;
 		margin-bottom: var(--lg);
 	}
 }
