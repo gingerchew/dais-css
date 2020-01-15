@@ -1,0 +1,21 @@
+/** LAYOUT **/
+body {
+	/* Ensure that the page body fills the display even if the content does not. [4] */
+	min-height: 100vh;
+	/* The following two rules allow the header and footer elements to be positioned
+	   correctly assuming they're all direct descendants of the <body> element. */
+	display: flex;
+	flex-direction: column;
+}
+
+header,
+footer {
+	/* Prevent these two eleemnts from shrinking when content is added to the <body>
+	   element. */
+	flex-shrink: 0;
+}
+
+main {
+	/* Allow the <main> element to grow as necessary. */
+	flex-grow: 1;
+}

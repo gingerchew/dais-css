@@ -1,0 +1,113 @@
+/** UTILITY CLASSES **/
+.table-container {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+/** SPACING UTILITIES **/
+@each $size in sm,md,lg {
+.pt-$(size),
+.py-$(size) {
+	padding-top: var(--$(size));
+}
+.pb-$(size),
+.py-$(size) {
+	padding-bottom: var(--$(size));
+}
+.mt-$(size),
+.my-$(size) {
+	margin-top: var(--$(size));
+}
+.mb-$(size),
+.my-$(size) {
+	margin-bottom: var(--$(size));
+}
+@media (--mob) {
+	.pt-$(size)-mob,
+	.py-$(size)-mob {
+		padding-top: var(--$(size));
+	}
+	.pb-$(size)-mob,
+	.py-$(size)-mob {
+		padding-bottom: var(--$(size));
+	}
+	.mt-$(size)-mob,
+	.my-$(size)-mob {
+		margin-top: var(--$(size));
+	}
+	.mb-$(size)-mob,
+	.my-$(size)-mob {
+		margin-bottom: var(--$(size));
+	}
+}
+@media (--tab) {
+	.pt-$(size)-tab,
+	.py-$(size)-tab {
+		padding-top: var(--$(size));
+	}
+	.pb-$(size)-tab,
+	.py-$(size)-tab {
+		padding-bottom: var(--$(size));
+	}
+	.mt-$(size)-tab,
+	.my-$(size)-tab {
+		margin-top: var(--$(size));
+	}
+	.mb-$(size)-tab,
+	.my-$(size)-tab {
+		margin-bottom: var(--$(size));
+	}
+}
+@media (--lap) {
+	.pt-$(size)-lap,
+	.py-$(size)-lap {
+		padding-top: var(--$(size));
+	}
+	.pb-$(size)-lap,
+	.py-$(size)-lap {
+		padding-bottom: var(--$(size));
+	}
+	.mt-$(size)-lap,
+	.my-$(size)-lap {
+		margin-top: var(--$(size));
+	}
+	.mb-$(size)-lap,
+	.my-$(size)-lap {
+		margin-bottom: var(--$(size));
+	}
+}
+@media (--desk) {
+	.pt-$(size)-desk,
+	.py-$(size)-desk {
+		padding-top: var(--$(size));
+	}
+	.pb-$(size)-desk,
+	.py-$(size)-desk {
+		padding-bottom: var(--$(size));
+	}
+	.mt-$(size)-desk,
+	.my-$(size)-desk {
+		margin-top: var(--$(size));
+	}
+	.mb-$(size)-desk,
+	.my-$(size)-desk {
+		margin-bottom: var(--$(size));
+	}
+}
+}
