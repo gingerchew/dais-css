@@ -6,27 +6,163 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>📖 dais.css 📖</title>
     <link rel="preload" href="./dais.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript>
+        <link rel="stylesheet" href="./dais.min.css"/>
+    </noscript>
     <style>
         :root {
-            --primary: ;
+            --blue: rgb(38, 132, 255);
+            --blue_trans: rgba(38, 132, 255, 0.75);
             --black: #121314;
+            --gray_dark: rgb(80, 95, 121);
+            --gray: rgb(137, 147, 164);
+            --gray_light: rgb(250, 251, 252);
+            --white: rgb(255,255,255);
+            --yellow: rgb(255, 196, 0);
+            --red: rgb(222, 53, 11);
+            --primary: var(--blue);
+            --primary_trans: var(--blue_trans);
+            --warning: var(--yellow);
+            --danger: var(--red);
+            --text: var(--black);
+            --text_light: var(--gray_dark);
+            --bg: var(--gray_light);
+            --e: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            border: 5px solid var(--primary_trans);
+            border-radius: 3px;
+        }
+        nav li {
+            margin-bottom: 0;
+        }
+        main {
+            padding: 2rem;
+        }
+        a {
+            letter-spacing: -1px;
+            transition: color 0.3s var(--e);
+        }
+        a:hover,
+        a:focus {
+            color: var(--primary_trans);
+        }
+        hr {
+            max-width: 20rem;
+            border-color: var(--gray_dark);
+        }
+        .menu {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-title > a {
+            border-bottom: 2px solid currentColor;
+        }
+        .menu-title::before,
+        .menu-title::after {
+            content: '🌟';
+            display: inline-block;
+            transform: rotate(360deg);
+            transform-origin: center;
+            transition: transform 0.3s var(--e);
+        }
+        .menu-title:hover::before,
+        .menu-title:hover::after {
+            transform: rotate(0deg);
+        }
+        .menu-subtitle {
+            position: relative;
+            font-size: 65%;
+        }
+
+        /* SECTION */
+        .section {
+            padding-top: 2rem;
+        }
+        .section-title,
+        .section-tagline {
+            margin-top: 0;
+        }
+        .section-title {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+        .section-tagline {
+            position: relative;
+            display: block;
+            width: auto;
+            font-size: 1.1rem;
+            font-style: italic;
+            line-height: 1.05;
+        }
+        .section-tagline::after {
+            content: '';
+            position: absolute;
+            bottom: -.5em;
+            left: 0;
+            border-bottom: 2px solid var(--primary_trans);
+            max-width: 20em;
+            width:100%;
         }
     </style>
+    <script>/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
 </head>
 <body>
     <nav id="navigation">
         <ul class="menu" id="menu">
-            <li>
-                <a href="https://github.com/frankie-tech/dais-css">
-                    📖 dais.css 📖
-                </a>
+            <li class="menu-title">
+                <a target="_blank" rel="noreferrer noopener" href="https://github.com/frankie-tech/dais-css">dais.css</a>
+            </li>
+            <li class="menu-subtitle">
+                <small><i>noun: </i><b>a raised platform for a seat of honor</b></small>
             </li>
         </ul>
     </nav>
     <main id="main">
         <section class="section" id="readMe">
-
+            <h1 class="section-title">A simple framework to build your own styles on</h1>
+            <h2 class="section-tagline">minimalistic, but... opinionated</h2>
         </section>
     </main>
+    <aside class="sidebar" id="sidebar">
+        <ol>
+            <li><a href="#readMe">readme</a></li>
+
+        </ol>
+    </aside>
+    <script type="module">
+        const INTERACT_EVENTS = ['mousedown', 'touchstart'];
+        function loadscript({src, resolve, reject}) {
+            return new Promise(function(resolve, reject) {
+                const el = document.createElement('script');
+                el.src = src;
+                el.onload = () => resolve();
+                el.onerror = () => reject();
+                document.body.appendChild(el);
+            })
+        }
+        (scripts => scripts.forEach(loadscript))([
+            {
+                src: 'node_modules/gumshoejs/dist/gumshoe.min.js',
+                resolve: () => new Gumshoe('#sidebar a'),
+            }
+        ]);
+        const sidebarLinks = document.querySelectorAll('#sidebar a');
+        /*
+        sidebarLinks.forEach(
+            link => INTERACT_EVENTS.forEach(
+                e => link.addEventListener(e, 
+                    () => history.replaceState("", document.title, window.location.pathname + window.location.search)
+                )
+            )
+        )
+        */
+    </script>
 </body>
 </html>
