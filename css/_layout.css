@@ -19,3 +19,18 @@ main {
 	/* Allow the <main> element to grow as necessary. */
 	flex-grow: 1;
 }
+/*
+	Expected Structure:
+	.hgroup
+		h*
+		h*
+		h*
+	/.hgroup
+*/
+.hgroup {
+	/* Used primarily in section headers (reminiscent of the yet to be implemented hgroup) */
+	margin-bottom: 0.5rem;
+}
+.hgroup > :last-child {
+	margin-bottom: 0;
+}
