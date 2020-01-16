@@ -1,0 +1,17 @@
+/* Components / Component-like styles */
+ul.list-clean,
+ol.list-clean {
+	padding-left: 0.5rem;
+	list-style: none inside;
+	border-left: var(--border);
+	counter-reset: ordered-list;
+}
+ol.list-clean > li {
+	position: relative;
+}
+ol.list-clean > li::before {
+	position: relative;
+	counter-increment: ordered-list;
+	content: counter(ordered-list) ': ';
+	color: var(--primary);
+}

@@ -19,3 +19,8 @@ main {
 	/* Allow the <main> element to grow as necessary. */
 	flex-grow: 1;
 }
+
+hgroup,
+.hgroup {
+	margin-bottom: 1rem;
+}

@@ -8,3 +8,6 @@
 @import './_base.css';
 
 @import './_credits.css';
+
+/** Stylistic choices **/
+@import './_design.css';

@@ -50,6 +50,7 @@ h6,
 	font-family: var(--font_base);
 	font-weight: 500;
 	margin-top: 0.5rem;
+	letter-spacing: -0.075em;
 }
 
 h1,
@@ -152,11 +153,14 @@ dl,
 figure,
 form,
 ol,
-p,
 pre,
 table,
 ul {
 	margin-bottom: 2.5rem;
+}
+
+p {
+	margin-bottom: 1.25rem;
 }
 
 blockquote {
@@ -211,7 +215,8 @@ ul ul {
 dd,
 dt,
 li {
-	margin-bottom: 1rem;
+	margin-bottom: 0;
+	line-height: 1.5;
 }
 
 table {
@@ -499,7 +504,4 @@ select:focus {
 }
 
 @media (min-width: 40rem) {
-	body {
-		font-size: 2em;
-	}
 }

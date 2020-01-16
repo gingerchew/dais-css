@@ -45,6 +45,7 @@
 :root {
 	/* Example: Focus box shadow value */
 	--focus: 0 0 0 3px var(--primary_trans);
+	--border: 2px solid var(--primary);
 }
 
 /** EASING **/
