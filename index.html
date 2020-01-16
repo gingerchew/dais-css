@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>📖 dais.css 📖</title>
-    <link rel="preload" href="./dais.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <link rel="preload" href="./dais.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
     <noscript>
-        <link rel="stylesheet" href="./dais.min.css"/>
+        <link rel="stylesheet" href="./dais.css"/>
     </noscript>
     <style>
         :root {
@@ -104,7 +104,7 @@
         .section-tagline::after {
             content: '';
             position: absolute;
-            bottom: -.5em;
+            bottom: -5px;
             left: 0;
             border-bottom: 2px solid var(--primary_trans);
             max-width: 20em;
@@ -125,16 +125,20 @@
         </ul>
     </nav>
     <main id="main">
-        <section class="section" id="readMe">
-            <hgroup>
-                <h1 class="section-title">A simple framework to build your own styles on</h1>
-                <h2 class="section-tagline">minimalistic, but... opinionated</h2>
-                <p>
-                    Inspired heavily by <a href="https://github.com/robsheldon" rel="noreferrer noopener nofollower" target="_blank">sscaffold.css</a>, I wanted to make my own stylesheet.
-                </p>
-                <p>
-                    Since sscaffold is inspired by so many other minimalist frameworks,
-                    <ul>
+        <article class="section" id="readMe">
+            <header class="row" id="readMeHeader">
+                <hgroup class="column two-thirds">
+                    <h1 class="section-title">A simple framework to build your own styles on</h1>
+                    <h2 class="section-tagline">minimalistic, but... opinionated</h2>
+                </hgroup>
+            </header>
+            <section class="row" id="readMeContent">
+                <div class="column two-thirds">
+                    <p>
+                        Inspired heavily by <a href="https://github.com/robsheldon" rel="noreferrer noopener nofollower" target="_blank">sscaffold.css</a>, I wanted to make my own stylesheet.<br/>
+                        Since sscaffold is inspired by so many other minimalist frameworks:
+                    </p>
+                    <ul class="list-clean">
                         <li><a href="https://github.com/necolas/normalize.css/" rel="noopener nofollower noreferrer" target="_blank">normalize.css</a></li>
                         <li><a href="https://github.com/milligram/milligram/" rel="noopener nofollower noreferrer" target="_blank">milligram.css</a></li>
                         <li><a href="https://css-tricks.com/box-sizing/" rel="noopener nofollower noreferrer" target="_blank">CSS-Tricks Box Sizing</a></li>
@@ -142,27 +146,29 @@
                         <li><a href="https://github.com/jgthms/minireset.css/" rel="noopener nofollower noreferrer" target="_blank">minireset.css</a></li>
                         <li><a href="https://github.com/dhg/Skeleton" rel="noopener nofollower noreferrer" target="_blank">Skeleton.css</a></li>
                     </ul>
-                    I have had to pick and choose what I want and what I could do without. I don't think I'll be documenting that, as it was not extremely well documented originally where things came from.
-                </p>
-                <p>
-                    My goals for making my own were:
-                    <ol>
+                    <p>
+                        I have had to pick and choose what I want and what I could do without. I don't think I'll be documenting that, as it was not extremely well documented originally where things came from.<br/>
+                        My goals for making my own were:
+                    </p>
+                    <ol class="list-clean">
                         <li>Make the system more modular 🚨BUZZWORD🚨</li>
                         <li>Build a column system that gave me more control</li>
                         <li>Add in my own personal preferences</li>
                         <li>Take advantage of CSS Custom Properties</li>
                     </ol>
-                    With these things in mind, I went to work.
-                </p>
-            </hgroup>
-        </section>
+                    <p>
+                        With these things in mind, I went to work.
+                    </p>
+                </div>
+            </section>
+        </article>
         <section class="section" id="typography">
             <hgroup>
                 <h1 class="section-subtitle">Typography</h1>
             </hgroup>
             <hgroup>
                 <p>
-                    Inspired heavily by a[href="https://github.com/robsheldon"]
+                    Direction taken from <a href="https://getbootstrap.com/" rel="noopener noreferrer nofollower" target="_blank">Bootstrap 4</a> and their typography system.
                 </p>
                 <h1>Heading 1</h1>
                 <h2>Heading 2</h2>
