@@ -9,6 +9,22 @@
 
 /** COLORS **/
 :root {
+	--blue: rgb(38, 132, 255);
+	--blue_trans: rgba(38, 132, 255, 0.75);
+	--black: #121314;
+	--gray_dark: rgb(80, 95, 121);
+	--gray: rgb(137, 147, 164);
+	--gray_light: rgb(250, 251, 252);
+	--white: rgb(255, 255, 255);
+	--yellow: rgb(255, 196, 0);
+	--red: rgb(222, 53, 11);
+	--primary: var(--blue);
+	--primary_trans: var(--blue_trans);
+	--warning: var(--yellow);
+	--danger: var(--red);
+	--text: var(--black);
+	--text_light: var(--gray_dark);
+	--bg: var(--gray_light);
 }
 
 /** FONTS **/
@@ -24,6 +40,11 @@
 :root {
 	/* Example: Focus box shadow value */
 	--focus: 0 0 0 3px var(--primary_trans);
+}
+
+/** EASING **/
+:root {
+	--e: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 /** RESET **/
@@ -58,6 +79,10 @@ h1,
 h2,
 h3,
 h4,
+.h1,
+.h2,
+.h3,
+.h4,
 p,
 ul[class],
 ol[class],
@@ -92,7 +117,8 @@ template {
 	display: none;
 }
 
-h1 {
+h1,
+.h1 {
 	/* Fix the font size and margin on 'h1' elements in 'section' and 
 	   'article' contexts in Chrome, Firefox, and Safari. [1] */
 	font-size: 2em;
@@ -680,51 +706,65 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
 	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
 		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
 	font-family: var(--font_base);
 	font-weight: 500;
 }
 
-h1 {
+h1,
+.h1 {
 	font-size: calc(20px + -16.6 * ((100vw - 768px) / 432));
 	line-height: 1.2;
 }
 
 @media screen and (min-width: 1200px) {
-	h1 {
+	h1,
+.h1 {
 		font-size: 3.4rem;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	h1 {
+	h1,
+.h1 {
 		font-size: 20px;
 	}
 }
 
-h2 {
+h2,
+.h2 {
 	font-size: 3.4rem;
 	line-height: 1.25;
 }
 
-h3 {
+h3,
+.h3 {
 	font-size: 2.9rem;
 	line-height: 1.3;
 }
 
-h4 {
+h4,
+.h4 {
 	font-size: 2.6rem;
 	line-height: 1.35;
 }
 
-h5 {
+h5,
+.h5 {
 	font-size: 2.4rem;
 	line-height: 1.5;
 }
 
-h6 {
+h6,
+.h6 {
 	font-size: 2.2rem;
 	line-height: 1.4;
 }
@@ -941,17 +981,20 @@ fieldset {
  */
 
 body {
-	color: #767676;
+	color: #121314;
+	color: var(--text);
 }
 
 a {
-	color: #5680cc;
+	color: rgb(38, 132, 255);
+	color: var(--blue);
 	text-decoration: none;
 }
 
 a:focus,
 a:hover {
-	color: #767676;
+	color: rgb(80, 95, 121);
+	color: var(--text_light);
 }
 
 blockquote {
@@ -1126,7 +1169,7 @@ select {
 textarea:focus,
 select:focus {
 	border-color: #5680cc;
-	box-shadow: 0 0 0 3px var(--primary_trans);
+	box-shadow: 0 0 0 3px rgba(38, 132, 255, 0.75);
 	box-shadow: var(--focus);
 	outline: 0;
 }
@@ -1140,6 +1183,7 @@ select:focus {
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyOSAxNCIgd2lkdGg9IjI5Ij48cGF0aCBmaWxsPSIjOWI0ZGNhIiBkPSJNOS4zNzcyNyAzLjYyNWw1LjA4MTU0IDYuOTM1MjNMMTkuNTQwMzYgMy42MjUiLz48L3N2Zz4K');
 }
 
+
 /**
  *   CREDITS
  *   [1] normalize.css, https://github.com/necolas/normalize.css/
@@ -1150,6 +1194,7 @@ select:focus {
  *   [6] skeleton.css, https://github.com/dhg/Skeleton
  *   [7] sscaffold.css, https://github.com/robsheldon/sscaffold-css
  */
+
 
 @media (prefers-reduced-motion: reduce) {
 	* {
@@ -1162,6 +1207,7 @@ select:focus {
 		scroll-behavior: auto !important;
 	}
 }
+
 
 @media (min-width: 576px) {
 	.pt-sm-mob,
@@ -1226,6 +1272,7 @@ select:focus {
 	}
 }
 
+
 @media (min-width: 768px) {
 	.pt-sm-tab,
 	.py-sm-tab {
@@ -1288,6 +1335,7 @@ select:focus {
 		margin-bottom: var(--lg);
 	}
 }
+
 
 @media (min-width: 992px) {
 	.pt-sm-lap,
@@ -1352,6 +1400,7 @@ select:focus {
 	}
 }
 
+
 @media (min-width: 1200px) {
 	.pt-sm-desk,
 	.py-sm-desk {
@@ -1414,6 +1463,7 @@ select:focus {
 		margin-bottom: var(--lg);
 	}
 }
+
 
 @media (min-width: 40rem) {
 	.row {
