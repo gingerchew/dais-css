@@ -14,6 +14,22 @@
 
 /** COLORS **/
 :root {
+	--blue: rgb(38, 132, 255);
+	--blue_trans: rgba(38, 132, 255, 0.75);
+	--black: #121314;
+	--gray_dark: rgb(80, 95, 121);
+	--gray: rgb(137, 147, 164);
+	--gray_light: rgb(250, 251, 252);
+	--white: rgb(255, 255, 255);
+	--yellow: rgb(255, 196, 0);
+	--red: rgb(222, 53, 11);
+	--primary: var(--blue);
+	--primary_trans: var(--blue_trans);
+	--warning: var(--yellow);
+	--danger: var(--red);
+	--text: var(--black);
+	--text_light: var(--gray_dark);
+	--bg: var(--gray_light);
 }
 
 /** FONTS **/
@@ -29,4 +45,9 @@
 :root {
 	/* Example: Focus box shadow value */
 	--focus: 0 0 0 3px var(--primary_trans);
+}
+
+/** EASING **/
+:root {
+	--e: cubic-bezier(0.23, 1, 0.32, 1);
 }

@@ -30,6 +30,10 @@ h1,
 h2,
 h3,
 h4,
+.h1,
+.h2,
+.h3,
+.h4,
 p,
 ul[class],
 ol[class],
@@ -64,7 +68,8 @@ template {
 	display: none;
 }
 
-h1 {
+h1,
+.h1 {
 	/* Fix the font size and margin on 'h1' elements in 'section' and 
 	   'article' contexts in Chrome, Firefox, and Safari. [1] */
 	font-size: 2em;
