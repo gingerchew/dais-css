@@ -1,6 +1,6 @@
 const env = process.env.NODE_ENV;
 
-const { src, dest, series } = require('gulp');
+const { src, dest, series, watch } = require('gulp');
 
 const start = './css/main.css';
 
@@ -46,6 +46,7 @@ function modernize() {
 
 exports.modernizes = modernize;
 
+/* Internal functions */
 function minStyles() {
 	const sourcemaps = require('gulp-sourcemaps');
 	const plugins = [require('cssnano')];
@@ -58,8 +59,12 @@ function minStyles() {
 		.pipe(dest('.'));
 }
 
+function watchSources() {
+	watch(['css/*.css', '!css/main.css'], series(handleImport, modernize));
+}
+
 if (env === 'dev') {
-	exports.build = series(handleImport, modernize)
+	exports.build = series(handleImport, modernize, watchSources)
 } else {
 	exports.build = series(handleImport, modernize, minStyles);
 }
