@@ -9,20 +9,15 @@
 
 /** COLORS **/
 :root {
-	--black: #121314;
-	--primary: #00f;
-	--primary_trans: rgba(0, 0, 256, 0.3);
 }
 
 /** FONTS **/
 :root {
 	--font_size: 16px;
-	--font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-	--font_base: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans',
-		'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana,
-		'Verdana Ref', sans-serif;
+	--font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font_base: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
+		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
 }
 
 /** STYLES **/
@@ -30,6 +25,7 @@
 	/* Example: Focus box shadow value */
 	--focus: 0 0 0 3px var(--primary_trans);
 }
+
 /** RESET **/
 *,
 *:after,
@@ -649,9 +645,8 @@ html {
 }
 
 body {
-	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans',
-		'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana,
-		'Verdana Ref', sans-serif;
+	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
+		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
 	font-family: var(--font_base);
 	font-size: 1rem;
 	font-weight: 300;
@@ -686,9 +681,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans',
-		'DejaVu Sans', 'Bitstream Vera Sans', 'Trebuchet MS', Verdana,
-		'Verdana Ref', sans-serif;
+	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
+		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
 	font-family: var(--font_base);
 	font-weight: 500;
 }
@@ -1132,7 +1126,7 @@ select {
 textarea:focus,
 select:focus {
 	border-color: #5680cc;
-	box-shadow: 0 0 0 3px rgba(0, 0, 256, 0.3);
+	box-shadow: 0 0 0 3px var(--primary_trans);
 	box-shadow: var(--focus);
 	outline: 0;
 }
