@@ -2,7 +2,7 @@
 	"name": "dais-css",
 	"version": "0.1.0",
 	"description": "A platform to build your css upon",
-	"main": "index.html",
+	"main": "gulpfile.js",
 	"homepage": "https://github.com/frankie-tech/dais-css#readme",
 	"contributors": [
 		{
@@ -31,7 +31,7 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^9.7.3",
-		"browsersync": "^0.0.1-security",
+		"browser-sync": "^2.26.7",
 		"cssnano": "^4.1.10",
 		"gulp": "^4.0.2",
 		"gulp-cssimport": "^7.0.0",
@@ -58,7 +58,6 @@
 		"bracesSpacing": true
 	},
 	"dependencies": {
-		"del": "^5.1.0",
 		"gumshoejs": "^5.1.2"
 	}
 }

@@ -3,9 +3,10 @@ const { src, dest } = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
+const { reload } = require('browser-sync').create();
 
 const { dest: { dev, prod } } = paths = require('./gulp.paths');
-const { clean, env } = require('./gulp.utils');
+const { env } = require('./gulp.utils');
 
 const plugins = {
     process: [
@@ -36,7 +37,8 @@ function processes() {
             .pipe(rename('main.processed.css'))
             .pipe(dest(dev))
             .pipe(rename('dais.css'))
-            .pipe(dest(prod));
+            .pipe(dest(prod))
+            .pipe(reload({ stream: true }));
     }
     return src('dais.css')
         .pipe(postcss(plugins.process))

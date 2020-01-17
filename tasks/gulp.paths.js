@@ -6,6 +6,8 @@ const paths = {
     },
     outputs: ['dais.css', 'dais.min.css', 'dais.min.css.map'],
     glob: ['css/*.css', '!css/main.css'],
+    main: './index.html',
+    baseDir: './'
 }
 
 module.exports = paths;

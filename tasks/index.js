@@ -10,6 +10,8 @@ const {
 
 const { clean, env } = require('./gulp.utils');
 
+const { serve, observe } = require('./gulp.sync')
+
 module.exports = {
     paths,
     minify,
@@ -17,5 +19,7 @@ module.exports = {
     processes,
     imports,
     clean,
-    env
+    env,
+    serve,
+    observe,
 }
