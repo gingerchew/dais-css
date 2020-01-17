@@ -168,6 +168,10 @@ p {
 	margin-bottom: 1.25rem;
 }
 
+p + ul,
+p + ol {
+	margin-bottom: 1.25rem;
+}
 blockquote {
 	padding: 1rem 1.5rem;
 }
