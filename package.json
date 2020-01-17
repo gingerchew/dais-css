@@ -15,12 +15,8 @@
 	"browserslist": "defaults",
 	"scripts": {
 		"build": "NODE_ENV=dev gulp build",
-		"build:imports": "NODE_ENV=dev gulp imports",
-		"build:processes": "NODE_ENV=dev gulp processes",
-		"build:clean": "gulp clean",
-		"cleanup": "rimraf ./processing",
-		"prod": "NODE_ENV=prod gulp build && npm run cleanup",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"prod": "NODE_ENV=prod gulp build",
+		"restart": "sh clean_start.sh"
 	},
 	"repository": {
 		"type": "git",
