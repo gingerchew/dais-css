@@ -1,4 +1,4 @@
-const env = process.env.NODE_ENV;
+const env = process.env.NODE_ENV
 
 const { src, dest, series, watch } = require('gulp');
 
@@ -28,25 +28,58 @@ function handleImport() {
 exports.imports = handleImport;
 
 const postcss = require('gulp-postcss');
-function modernize() {
+function processes() {
+	const debug = require('gulp-debug');
+	const plugins = [
+		require('postcss-each'),
+		require('postcss-responsive-type'),
+		require('postcss-custom-media'),
+		require('postcss-easing-gradients'),
+		require('postcss-combine-media-query')
+	]
 
 	if (env === 'dev') {
 		return src('./processing/main.import.css')
-			.pipe(postcss())
+			.pipe(postcss(plugins))
+			.pipe(rename('main.processed.css'))
+			.pipe(dest('./processing'))
+			.pipe(rename('dais.css'))
+			.pipe(dest('.'));
+	}
+	return src('dais.css')
+		.pipe(postcss(plugins))
+		.pipe(dest('.'))
+
+}
+
+exports.process = processes;
+
+/* Internal functions */
+function preset() {
+	const postcssPreset = [
+		require('postcss-preset-env')({
+			config: {
+				stage: 3,
+				browsers: '',
+				preserve: true
+			}
+		})
+	]
+
+	if (env === 'dev') {
+		return src('main.processed.css')
+			.pipe(postcss(postcssPreset))
 			.pipe(rename('main.future.css'))
 			.pipe(dest('./processing'))
 			.pipe(rename('dais.css'))
 			.pipe(dest('.'));
 	}
 	return src('dais.css')
-		.pipe(postcss())
+		.pipe(postcss(postcssPreset))
 		.pipe(dest('.'))
-
 }
 
-exports.modernizes = modernize;
 
-/* Internal functions */
 function minStyles() {
 	const sourcemaps = require('gulp-sourcemaps');
 	const plugins = [require('cssnano')];
@@ -60,11 +93,11 @@ function minStyles() {
 }
 
 function watchSources() {
-	watch(['css/*.css', '!css/main.css'], series(handleImport, modernize));
+	watch(['css/*.css', '!css/main.css'], series(handleImport, processes));
 }
 
 if (env === 'dev') {
-	exports.build = series(handleImport, modernize, watchSources)
+	exports.build = series(handleImport, processes, watchSources);
 } else {
-	exports.build = series(handleImport, modernize, minStyles);
+	exports.build = series(handleImport, processes, preset, minStyles);
 }
