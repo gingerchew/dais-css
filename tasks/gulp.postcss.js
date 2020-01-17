@@ -13,19 +13,22 @@ const plugins = {
         require('postcss-responsive-type'),
         require('postcss-custom-media'),
         require('postcss-easing-gradients'),
-        require('postcss-combine-media-query')
+        require('postcss-combine-media-query'),
     ],
     preset: [
         require('postcss-preset-env')({
             config: {
                 stage: 3,
                 browsers: '',
-                preserve: true
+                preserve: true,
             }
         })
     ],
+    stylelint: [
+        require('stylelint'),
+    ],
     min: [
-        require('cssnano')
+        require('cssnano'),
     ]
 }
 
