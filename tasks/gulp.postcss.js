@@ -3,7 +3,6 @@ const { src, dest } = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
-const { reload } = require('browser-sync').create();
 
 const { dest: { dev, prod } } = paths = require('./gulp.paths');
 const { env } = require('./gulp.utils');
@@ -38,13 +37,12 @@ function processes() {
             .pipe(dest(dev))
             .pipe(rename('dais.css'))
             .pipe(dest(prod))
-            .pipe(reload({ stream: true }));
     }
     return src('dais.css')
         .pipe(postcss(plugins.process))
         .pipe(dest(prod))
-
 }
+processes.description = `Runs CSS through postcss plugins -> each -> responsive-type -> custom-media -> easing-gradients -> combine-media-queries`;
 
 /* Internal functions */
 function preset() {
@@ -52,7 +50,7 @@ function preset() {
         .pipe(postcss(plugins.preset))
         .pipe(dest(prod))
 }
-
+preset.description = `Applies the preset-env from postcss to make the css more compatible`;
 
 function minify() {
     return src('./dais.css')
@@ -62,6 +60,7 @@ function minify() {
         .pipe(sourcemaps.write(prod))
         .pipe(dest(prod));
 }
+minify.description = `Minifies CSS and produces a sourcemap`;
 
 module.exports = {
     minify,

@@ -1,11 +1,14 @@
-const { series, watch } = require('gulp');
+const { series } = require('gulp');
 
 const {
 	imports,
 	minify,
 	preset,
 	processes,
-	paths: { outputs, dest: { dev } },
+	paths: {
+		outputs,
+		dest: { dev }
+	},
 	env,
 	clean,
 	serve,
@@ -14,13 +17,15 @@ const {
 
 function cleanOutputs(done) {
 	[...outputs, dev].forEach(file => clean(file, done));
-	// done()
+	done();
 }
+cleanOutputs.description = `Spring cleans the directory: ${outputs.forEach(output => `${output},`)} and ${dev}`;
 
 function cleanProcesses(done) {
 	clean(dev, done);
-	// done();
+	done();
 }
+cleanProcesses.description = `executes 'rm -rf' on ${dev}`;
 
 if (env === 'dev') {
 	exports.build = series(cleanProcesses, imports, processes, serve, observe);

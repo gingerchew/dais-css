@@ -8,6 +8,6 @@ const paths = {
     glob: ['css/*.css', '!css/main.css'],
     main: './index.html',
     baseDir: './'
-}
+};
 
 module.exports = paths;

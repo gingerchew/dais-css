@@ -23,7 +23,8 @@ function imports() {
         .pipe(rename('dais.css'))
         .pipe(dest(prod));
 }
+imports.description = `Reads ${start} and imports based off of the @import rules`;
 
 module.exports = {
     imports,
-}
+};
