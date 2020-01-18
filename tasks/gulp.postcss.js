@@ -1,4 +1,4 @@
-const { src, dest } = require('gulp');
+const { src, dest, series } = require('gulp');
 
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
@@ -11,8 +11,6 @@ const plugins = {
     process: [
         require('postcss-each'),
         require('postcss-responsive-type'),
-        require('postcss-custom-media'),
-        require('postcss-easing-gradients'),
         require('postcss-combine-media-query'),
     ],
     preset: [
@@ -32,20 +30,34 @@ const plugins = {
     ]
 }
 
-function processes() {
-    if (env === 'dev') {
-        return src('./processing/main.import.css')
-            .pipe(postcss(plugins.process))
-            .pipe(rename('main.processed.css'))
-            .pipe(dest(dev))
-            .pipe(rename('dais.css'))
-            .pipe(dest(prod))
-    }
-    return src('dais.css')
-        .pipe(postcss(plugins.process))
+function each() {
+    return src('./processing/main.import.css')
+        .pipe(postcss([require('postcss-each')]))
+        .pipe(rename('main.each.css'))
+        .pipe(dest(dev));
+}
+
+function responsiveType() {
+    return src('./processing/main.each.css')
+        .pipe(postcss([require('postcss-responsive-type')]))
+        .pipe(rename('main.type.css'))
+        .pipe(dest(dev));
+}
+
+function mediaQueries() {
+    return src('./processing/main.type.css')
+        .pipe(postcss([require('postcss-combine-media-query')]))
+        .pipe(rename('main.media.css'))
+        .pipe(dest(dev));
+}
+
+function processed() {
+    return src('./processing/main.media.css')
+        .pipe(rename('main.processed.css'))
+        .pipe(dest(dev))
+        .pipe(rename('dais.css'))
         .pipe(dest(prod))
 }
-processes.description = `Runs CSS through postcss plugins -> each -> responsive-type -> custom-media -> easing-gradients -> combine-media-queries`;
 
 /* Internal functions */
 function preset() {
@@ -65,8 +77,13 @@ function minify() {
 }
 minify.description = `Minifies CSS and produces a sourcemap`;
 
+exports.processes = series(each, responsiveType, mediaQueries, processed);
+
 module.exports = {
     minify,
     preset,
-    processes,
+    processed,
+    each,
+    responsiveType,
+    mediaQueries
 };

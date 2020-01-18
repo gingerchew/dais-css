@@ -20,6 +20,19 @@
 	float: right;
 }
 
+.visually-hidden {
+	position: absolute;
+	left: -9999px;
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
 @each $color in blue, black, gray-dark, gray, gray-light, white, yellow, red, primary, warning, danger {
 	.text-$(color) {
 		color: var(--$(color));
@@ -44,7 +57,7 @@
 	.my-$(size) {
 		margin-bottom: var(--$(size));
 	}
-	@media (--mob) {
+	@media (min-width: 576px) {
 		.pt-$(size)-mob,
 		.py-$(size)-mob {
 			padding-top: var(--$(size));
@@ -62,7 +75,7 @@
 			margin-bottom: var(--$(size));
 		}
 	}
-	@media (--tab) {
+	@media (min-width: 768px) {
 		.pt-$(size)-tab,
 		.py-$(size)-tab {
 			padding-top: var(--$(size));
@@ -80,7 +93,7 @@
 			margin-bottom: var(--$(size));
 		}
 	}
-	@media (--lap) {
+	@media (min-width: 992px) {
 		.pt-$(size)-lap,
 		.py-$(size)-lap {
 			padding-top: var(--$(size));
@@ -98,7 +111,7 @@
 			margin-bottom: var(--$(size));
 		}
 	}
-	@media (--desk) {
+	@media (min-width: 1200px) {
 		.pt-$(size)-desk,
 		.py-$(size)-desk {
 			padding-top: var(--$(size));

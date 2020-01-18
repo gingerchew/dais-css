@@ -15,6 +15,15 @@ footer {
 	flex-shrink: 0;
 }
 
+nav {
+	padding-top: 0.4rem;
+	padding-bottom: 0.4rem;
+}
+
+nav > ul {
+	margin-bottom: 0;
+}
+
 main {
 	/* Allow the <main> element to grow as necessary. */
 	flex-grow: 1;

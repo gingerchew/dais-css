@@ -5,6 +5,9 @@ const b = require('browser-sync').create();
 const { baseDir, main, glob } = paths = require('./gulp.paths');
 const { imports } = require('./gulp.css');
 const { processes } = require('./gulp.postcss');
+const { cleanOutputs } = require('./gulp.utils');
+
+const buildFiles = watch(glob);
 
 function serve(done) {
     b.init({
@@ -24,7 +27,7 @@ function reload(done) {
 reload.description = `Reloads server`;
 
 function observe(done) {
-    watch(glob, series(imports, processes, reload));
+    buildFiles.on('change', series(cleanOutputs, imports, processes, reload));
     watch(main).on('change', series(reload));
     done();
 }
