@@ -1,10 +1,10 @@
 const paths = require('./gulp.paths');
+
 const {
     minify,
     preset,
+    processes
 } = require('./gulp.postcss');
-
-const processes = require('./gulp.postcss');
 
 const {
     imports,

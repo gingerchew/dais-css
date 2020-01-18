@@ -11,7 +11,10 @@ const {
 	observe
 } = require('./tasks');
 
+console.log(processes);
+
 exports.cleanOutputs = cleanOutputs;
+
 if (env === 'dev') {
 	exports.build = series(cleanOutputs, imports, processes, serve, observe);
 } else {
