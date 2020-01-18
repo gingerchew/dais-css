@@ -3,7 +3,6 @@ const { src, dest, series } = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
-const debug = require('gulp-debug');
 
 const eachPost = require('postcss-each');
 const responsiveTypePost = require('postcss-responsive-type');
@@ -26,9 +25,6 @@ const plugins = {
             preserve: true,
         }
     }),
-    stylelint: [
-        require('stylelint'),
-    ],
     min: [
         nanoPost()
     ]
