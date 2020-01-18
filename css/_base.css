@@ -35,67 +35,6 @@ code {
 	font-size: 86%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-	font-family: var(--font_base);
-	font-weight: 500;
-	margin-top: 0.5rem;
-	letter-spacing: responsive 1px -1px;
-	letter-spacing-range: 768px 1200px;
-}
-
-h1,
-.h1 {
-	font-size: responsive 26px 44px;
-	font-range: 768px 1200px;
-	line-height: 1.2;
-}
-
-h2,
-.h2 {
-	font-size: responsive 24px 36px;
-	font-range: 768px 1200px;
-	line-height: 1.25;
-}
-
-h3,
-.h3 {
-	font-size: responsive 22px 32px;
-	font-range: 768px 1200px;
-	line-height: 1.3;
-}
-
-h4,
-.h4 {
-	font-size: responsive 20px 28px;
-	font-range: 768px 1200px;
-	line-height: 1.35;
-}
-
-h5,
-.h5 {
-	font-size: responsive 18px 24px;
-	font-range: 768px 1200px;
-	line-height: 1.5;
-}
-
-h6,
-.h6 {
-	font-size: responsive 16px 20px;
-	font-range: 768px 1200px;
-	line-height: 1.4;
-}
-
 dl {
 	list-style: none;
 }

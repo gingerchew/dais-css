@@ -1,0 +1,96 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: var(--font_base);
+	font-weight: 600;
+	margin-top: 0.5rem;
+	line-height: 1.2;
+	letter-spacing: responsive 1px -1px;
+	letter-spacing-range: 768px 1200px;
+}
+
+h1,
+.h1 {
+	font-size: responsive 26px 44px;
+	font-range: 768px 1200px;
+}
+
+h2,
+.h2 {
+	font-size: responsive 24px 36px;
+	font-range: 768px 1200px;
+	line-height: 1.25;
+}
+
+h3,
+.h3 {
+	font-size: responsive 22px 32px;
+	font-range: 768px 1200px;
+	line-height: 1.3;
+}
+
+h4,
+.h4 {
+	font-size: responsive 20px 28px;
+	font-range: 768px 1200px;
+	line-height: 1.35;
+}
+
+h5,
+.h5 {
+	font-size: responsive 18px 24px;
+	font-range: 768px 1200px;
+	line-height: 1.5;
+}
+
+h6,
+.h6 {
+	font-size: responsive 16px 20px;
+	font-range: 768px 1200px;
+	line-height: 1.4;
+}
+
+h1.display,
+h2.display,
+h3.display,
+h4.display,
+.h1.display,
+.h2.display,
+.h3.display,
+.h4.display {
+	font-weight: 400;
+	line-height: 0.5;
+}
+
+h1.display,
+.h1.display {
+	font-size: responsive 32px 64px;
+	font-range: 768px 1200px;
+}
+
+h2.display,
+.h2.display {
+	font-size: responsive 28px 48px;
+	font-range: 768px 1200px;
+}
+
+h3.display,
+.h3.display {
+	font-size: responsive 26px 40px;
+	font-range: 768px 1200px;
+}
+
+h4.display,
+.h4.display {
+	font-size: responsive 24px 35px;
+	font-range: 768px 1200px;
+}

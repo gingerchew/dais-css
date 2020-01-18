@@ -1,3 +1,9 @@
+body {
+	background-color: var(--bg);
+	color: var(--text);
+	border: 5px solid var(--primary_trans);
+}
+
 /* Components / Component-like styles */
 ul.list-clean,
 ol.list-clean {
