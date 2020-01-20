@@ -10,7 +10,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-	font-family: var(--font_base);
+	font-family: var(--font-base);
 	font-weight: 600;
 	margin-top: 0.5rem;
 	line-height: 1.2;
@@ -67,7 +67,7 @@ h4.display,
 .h2.display,
 .h3.display,
 .h4.display {
-	font-weight: 400;
+	font-weight: 200;
 	line-height: 0.5;
 }
 

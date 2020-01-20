@@ -23,15 +23,15 @@
 	--danger: var(--red);
 	--text: var(--black);
 	--text-light: var(--gray-dark);
-	--bg: var(--gray_light);
+	--bg: var(--gray-light);
 }
 
 /** FONTS **/
 :root {
-	--font_size: 16px;
+	--font-size: 16px;
 	--font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
 		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-	--font_base: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
+	--font-base: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
 		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
 }
 
@@ -40,6 +40,7 @@
 	/* Example: Focus box shadow value */
 	--focus: 0 0 0 3px var(--primary-trans);
 	--border: 2px solid var(--primary);
+	--border-radius: 2px;
 }
 
 /** EASING **/
@@ -370,11 +371,11 @@ progress {
 /** Typography: font, letter-spacing, line-height, text-*, list-style-type. */
 
 html {
-	font-size: var(--font_size);
+	font-size: var(--font-size);
 }
 
 body {
-	font-family: var(--font_base);
+	font-family: var(--font-base);
 	font-size: 1rem;
 	font-weight: 300;
 	line-height: 1.6;
@@ -631,7 +632,7 @@ a {
 
 a:focus,
 a:hover {
-	color: var(--text_light);
+	color: var(--text-light);
 }
 
 blockquote {
@@ -831,7 +832,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-	font-family: var(--font_base);
+	font-family: var(--font-base);
 	font-weight: 600;
 	margin-top: 0.5rem;
 	line-height: 1.2;
@@ -881,7 +882,7 @@ h4.display,
 .h2.display,
 .h3.display,
 .h4.display {
-	font-weight: 400;
+	font-weight: 200;
 	line-height: 0.5;
 }
 
@@ -1252,7 +1253,7 @@ hgroup,
 body {
 	background-color: var(--bg);
 	color: var(--text);
-	border: 5px solid var(--primary_trans);
+	border: 5px solid var(--primary-trans);
 }
 
 /* Components / Component-like styles */

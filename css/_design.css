@@ -1,7 +1,7 @@
 body {
 	background-color: var(--bg);
 	color: var(--text);
-	border: 5px solid var(--primary_trans);
+	border: 5px solid var(--primary-trans);
 }
 
 /* Components / Component-like styles */

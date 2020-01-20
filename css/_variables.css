@@ -23,15 +23,15 @@
 	--danger: var(--red);
 	--text: var(--black);
 	--text-light: var(--gray-dark);
-	--bg: var(--gray_light);
+	--bg: var(--gray-light);
 }
 
 /** FONTS **/
 :root {
-	--font_size: 16px;
+	--font-size: 16px;
 	--font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
 		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-	--font_base: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
+	--font-base: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
 		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
 }
 
@@ -40,6 +40,7 @@
 	/* Example: Focus box shadow value */
 	--focus: 0 0 0 3px var(--primary-trans);
 	--border: 2px solid var(--primary);
+	--border-radius: 2px;
 }
 
 /** EASING **/

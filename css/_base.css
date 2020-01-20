@@ -3,11 +3,11 @@
 /** Typography: font, letter-spacing, line-height, text-*, list-style-type. */
 
 html {
-	font-size: var(--font_size);
+	font-size: var(--font-size);
 }
 
 body {
-	font-family: var(--font_base);
+	font-family: var(--font-base);
 	font-size: 1rem;
 	font-weight: 300;
 	line-height: 1.6;
@@ -264,7 +264,7 @@ a {
 
 a:focus,
 a:hover {
-	color: var(--text_light);
+	color: var(--text-light);
 }
 
 blockquote {
