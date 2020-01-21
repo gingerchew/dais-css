@@ -214,9 +214,16 @@
             <p><strong>This line rendered as bold text.</strong></p>
 
             <p><em>This line rendered as italicized text.</em></p>
+            <p>
+                <sup>Up high, </sup>
+                <sub>down low </sub>
+                <small>in the middle <small>tooslow</small></small>
+            </p>
             <blockquote>
                 <p>This is a very important quote from an interview</p>
             </blockquote>
+            <pre><code>console.log('wow! a <​code​> tag?! in <span id="insertYear"></span>?!')</code></pre>
+            <script>document.getElementById('insertYear').outerHTML=new Date().getFullYear();</script>
             <hgroup>
                 <h2 class="section-subtitle">Links & Buttons</h2>
             </hgroup>
