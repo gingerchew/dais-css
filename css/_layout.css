@@ -31,5 +31,11 @@ main {
 
 hgroup,
 .hgroup {
+	padding-top: 3rem;
 	margin-bottom: 1rem;
+}
+
+section > *:first-child,
+section > *:first-child {
+	padding-top: unset;
 }
