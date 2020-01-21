@@ -10,6 +10,7 @@
 :root {
 	--blue: rgb(38, 132, 255);
 	--blue-trans: rgba(38, 132, 255, 0.25);
+	--blue-opaque: rgba(38, 132, 255, 0.6);
 	--black: rgb(18, 19, 20);
 	--gray: rgb(137, 147, 164);
 	--gray-dark: rgb(80, 95, 121);
@@ -21,6 +22,7 @@
 	--green: rgb(54, 179, 126);
 	--primary: var(--blue);
 	--primary-trans: var(--blue-trans);
+	--primary-opaque: var(--blue-opaque);
 	--success: var(--green);
 	--warning: var(--yellow);
 	--danger: var(--red);
@@ -46,7 +48,7 @@
 	--focus: 0 0 0 3px var(--primary-trans);
 	--focus-border: 1px solid var(--primary);
 	--border: 1px solid var(--gray-dark);
-	--border-primary: 1px solid var(--primary);
+	--border-primary: 1px solid var(--primary-opaque);
 	--border-radius: 3px;
 }
 
