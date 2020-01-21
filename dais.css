@@ -363,7 +363,9 @@ textarea {
 	/* Fix the font properties in Safari. [1] */
 	font: inherit;
 }
-
+::selection {
+	background-color: var(--primary-opaque);
+}
 progress {
 	/* Add the correct vertical alignment in Chrome, Firefox, and Opera. [1] */
 	vertical-align: baseline;
@@ -718,6 +720,7 @@ select:focus {
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyOSAxNCIgd2lkdGg9IjI5Ij48cGF0aCBmaWxsPSIjOWI0ZGNhIiBkPSJNOS4zNzcyNyAzLjYyNWw1LjA4MTU0IDYuOTM1MjNMMTkuNTQwMzYgMy42MjUiLz48L3N2Zz4K');
 }
 
+/** Headers **/
 h1,
 h2,
 h3,
@@ -798,6 +801,12 @@ h3.display,
 h4.display,
 .h4.display {
 	font-size: calc(1.25rem + 1.75 * ((100vw - 48rem) / 27));
+}
+
+/** Inline Text Elements **/
+mark,
+.mark {
+	background-color: var(--primary-trans);
 }
 
 /** LAYOUT **/
