@@ -33,6 +33,10 @@
 	clip: rect(1px, 1px, 1px, 1px);
 }
 
+.justify-center {
+	justify-content: center;
+}
+
 @each $color in blue, black, gray-dark, gray, gray-light, white, yellow, red, primary, warning, danger {
 	.text-$(color) {
 		color: var(--$(color));
