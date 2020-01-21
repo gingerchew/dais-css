@@ -22,7 +22,7 @@ main section {
 
 main section > *,
 main article > * {
-	max-width: 80rem;
+	max-width: 992px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -263,7 +263,7 @@ a:hover {
 }
 
 blockquote {
-	border-left: 0.3rem solid #d1d1d1;
+	border-left: 0.3rem solid var(--primary-opaque);
 }
 
 pre,
@@ -272,7 +272,7 @@ code {
 }
 
 pre {
-	border-left: 0.3rem solid #5680cc;
+	border-left: 0.3rem solid var(--primary-opaque);
 }
 
 code {
