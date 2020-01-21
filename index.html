@@ -120,48 +120,53 @@
             </li>
         </ul>
     </nav>
-    <main id="main">
-        <article class="section" id="readMe">
-            <header class="row" id="readMeHeader">
-                <hgroup class="column two-thirds">
-                    <h1 class="section-title">A simple framework to build your own styles on</h1>
+    <main>
+        <article id="main">
+            <header id="readMeHeader">
+                <hgroup>
+                    <h1 class="section-title">A simple framework to build<br/>your own styles on</h1>
                     <h2 class="section-tagline">minimalistic, but... opinionated</h2>
                 </hgroup>
             </header>
-            <section class="row" id="readMeContent">
-                <div class="column two-thirds">
-                    <p>
-                        Inspired heavily by <a href="https://github.com/robsheldon" rel="noreferrer noopener nofollower" target="_blank">sscaffold.css</a>, I wanted to make my own stylesheet.<br/>
-                        Since sscaffold is inspired by so many other minimalist frameworks:
-                    </p>
-                    <ul class="list-clean">
-                        <li><a href="https://github.com/necolas/normalize.css/" rel="noopener nofollower noreferrer" target="_blank">normalize.css</a></li>
-                        <li><a href="https://github.com/milligram/milligram/" rel="noopener nofollower noreferrer" target="_blank">milligram.css</a></li>
-                        <li><a href="https://css-tricks.com/box-sizing/" rel="noopener nofollower noreferrer" target="_blank">CSS-Tricks Box Sizing</a></li>
-                        <li><a href="https://hankchizljaw.com/wrote/a-modern-css-reset/" rel="noopener nofollower noreferrer" target="_blank">Andy Bell: A Modern CSS Reset</a></li>
-                        <li><a href="https://github.com/jgthms/minireset.css/" rel="noopener nofollower noreferrer" target="_blank">minireset.css</a></li>
-                        <li><a href="https://github.com/dhg/Skeleton" rel="noopener nofollower noreferrer" target="_blank">Skeleton.css</a></li>
-                    </ul>
-                    <p>
-                        I have had to pick and choose what I want and what I could do without. I don't think I'll be documenting that, as it was not extremely well documented originally where things came from.<br/>
-                        My goals for making my own were:
-                    </p>
-                    <ol class="list-clean">
-                        <li>Make the system more modular 🚨BUZZWORD🚨</li>
-                        <li>Build a column system that gave me more control</li>
-                        <li>Add in my own personal preferences</li>
-                        <li>Take advantage of CSS Custom Properties</li>
-                    </ol>
-                    <p>
-                        With these things in mind, I went to work.
-                    </p>
+            <div>
+                <div class="row justify-center">
+                    <div class="three columns">
+                        <hr>
+                    </div>
                 </div>
-            </section>
+            </div>
+            <p>
+                Inspired heavily by <a href="https://github.com/robsheldon" rel="noreferrer noopener nofollower" target="_blank">sscaffold.css</a>, I wanted to make my own stylesheet.<br/>
+                Since sscaffold is inspired by so many other minimalist frameworks:
+            </p>
+            <ul class="list-clean">
+                <li><a href="https://github.com/necolas/normalize.css/" rel="noopener nofollower noreferrer" target="_blank">normalize.css</a></li>
+                <li><a href="https://github.com/milligram/milligram/" rel="noopener nofollower noreferrer" target="_blank">milligram.css</a></li>
+                <li><a href="https://css-tricks.com/box-sizing/" rel="noopener nofollower noreferrer" target="_blank">CSS-Tricks Box Sizing</a></li>
+                <li><a href="https://hankchizljaw.com/wrote/a-modern-css-reset/" rel="noopener nofollower noreferrer" target="_blank">Andy Bell: A Modern CSS Reset</a></li>
+                <li><a href="https://github.com/jgthms/minireset.css/" rel="noopener nofollower noreferrer" target="_blank">minireset.css</a></li>
+                <li><a href="https://github.com/dhg/Skeleton" rel="noopener nofollower noreferrer" target="_blank">Skeleton.css</a></li>
+            </ul>
+            <p>
+                I have had to pick and choose what I want and what I could do without. I don't think I'll be documenting that, as it was not extremely well documented originally where things came from.<br/>
+                My goals for making my own were:
+            </p>
+            <ol class="list-clean">
+                <li>Make the system more modular <strong>🚨BUZZWORD🚨</strong></li>
+                <li>Build a column system that gave me more control</li>
+                <li>Add in my own personal preferences</li>
+                <li>Take advantage of CSS Custom Properties</li>
+            </ol>
+            <p>
+                With these things in mind, I went to work.
+            </p>
         </article>
         <section class="section" id="typography">
-            <hgroup>
-                <h1 class="section-subtitle">Typography</h1>
-            </hgroup>
+            <div id="typographyHeader">
+                <hgroup>
+                    <h2 class="section-subtitle">Headers</h2>
+                </hgroup>
+            </div>
             <div>
                 <div class="row">
                     <div class="column one-half">
@@ -183,7 +188,35 @@
                         <h4 class="display">Heading 4</h4>
                     </div>
                 </div>
+                <div class="row justify-center">
+                    <div class="three columns">
+                        <hr>
+                    </div>
+                </div>
             </div>
+            <div id="inlineText">
+                <hgroup>
+                    <h2 class="section-subtitle">Inline Text</h2>
+                </hgroup>
+            </div>
+            <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+
+            <p><del>This line of text is meant to be treated as deleted text.</del></p>
+
+            <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+
+            <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+
+            <p><u>This line of text will render as underlined</u></p>
+
+            <p><small>This line of text is meant to be treated as fine print.</small></p>
+
+            <p><strong>This line rendered as bold text.</strong></p>
+
+            <p><em>This line rendered as italicized text.</em></p>
+            <blockquote>
+                <p>This is a very important quote from an interview</p>
+            </blockquote>
             <hgroup>
                 <h2 class="section-subtitle">Links & Buttons</h2>
             </hgroup>
@@ -200,24 +233,26 @@
             <hgroup>
                 <h2 class="section-subtitle">Inputs</h2>
             </hgroup>
+            <form action="">
+                <fieldset>
+                    <legend>Example Legend</legend>
+                    <input type="text">
+                    <input type="text" placeholder="Hello you!">
+                    <select name="" id="">
+                        <option value="">A</option>
+                        <option value="">B</option>
+                        <option value="">C</option>
+                    </select>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </fieldset>
+            </form>
             <div>
-                <div class="row">
-                    <form action="">
-                        <fieldset>
-                            <legend>Example Legend</legend>
-                            <input type="text">
-                            <input type="text" placeholder="Hello you!">
-                            <select name="" id="">
-                                <option value="">A</option>
-                                <option value="">B</option>
-                                <option value="">C</option>
-                            </select>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
-                        </fieldset>
-                    </form>
+                <div class="row justify-center">
+                    <div class="three columns">
+                        <hr/>
+                    </div>
                 </div>
             </div>
-            <hr>
         </section>
     </main>
     <!-- implement a sidebar to navigat a little more easily -->
