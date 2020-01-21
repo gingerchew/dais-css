@@ -302,7 +302,9 @@ textarea {
 	/* Fix the font properties in Safari. [1] */
 	font: inherit;
 }
-
+::selection {
+	background-color: var(--primary-opaque);
+}
 progress {
 	/* Add the correct vertical alignment in Chrome, Firefox, and Opera. [1] */
 	vertical-align: baseline;
