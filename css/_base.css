@@ -21,12 +21,15 @@ main section {
 }
 
 main section > *,
-main article > * {
+main article > *,
+.container {
 	max-width: 992px;
 	margin-left: auto;
 	margin-right: auto;
 }
-
+.container {
+	display: block;
+}
 main section .table-container table {
 	width: 100%;
 }
