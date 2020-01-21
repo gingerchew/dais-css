@@ -10,6 +10,7 @@
 :root {
 	--blue: rgb(38, 132, 255);
 	--blue-trans: rgba(38, 132, 255, 0.25);
+	--blue-opaque: rgba(38, 132, 255, 0.6);
 	--black: rgb(18, 19, 20);
 	--gray: rgb(137, 147, 164);
 	--gray-dark: rgb(80, 95, 121);
@@ -21,6 +22,7 @@
 	--green: rgb(54, 179, 126);
 	--primary: var(--blue);
 	--primary-trans: var(--blue-trans);
+	--primary-opaque: var(--blue-opaque);
 	--success: var(--green);
 	--warning: var(--yellow);
 	--danger: var(--red);
@@ -46,7 +48,7 @@
 	--focus: 0 0 0 3px var(--primary-trans);
 	--focus-border: 1px solid var(--primary);
 	--border: 1px solid var(--gray-dark);
-	--border-primary: 1px solid var(--primary);
+	--border-primary: 1px solid var(--primary-opaque);
 	--border-radius: 3px;
 }
 
@@ -399,7 +401,7 @@ main section {
 
 main section > *,
 main article > * {
-	max-width: 80rem;
+	max-width: 992px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -640,7 +642,7 @@ a:hover {
 }
 
 blockquote {
-	border-left: 0.3rem solid #d1d1d1;
+	border-left: 0.3rem solid var(--primary-opaque);
 }
 
 pre,
@@ -649,7 +651,7 @@ code {
 }
 
 pre {
-	border-left: 0.3rem solid #5680cc;
+	border-left: 0.3rem solid var(--primary-opaque);
 }
 
 code {
@@ -1158,6 +1160,10 @@ button.default[disabled]:hover,
 	overflow: hidden;
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.justify-center {
+	justify-content: center;
 }
 
 .text-blue {
