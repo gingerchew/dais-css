@@ -7,6 +7,7 @@ const { dest: { dev }, outputs } = paths = require('./gulp.paths');
 const clean = (glob, cb) => rimraf(glob, [], cb);
 clean.description = `Cleans a file/directory based on a given glob and a callback func (usually just use the abstract gulp(done))`;
 
+console.log(paths);
 function cleanOutputs(done) {
     [...outputs, dev].forEach(file => clean(file, done));
     done();

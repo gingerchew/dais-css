@@ -18,13 +18,13 @@ const plugins = {
         responsiveTypePost(),
         mediaQueriesPost()
     ],
-    preset: presetPost({
+    preset: {
         config: {
-            stage: 3,
+            stage: 1,
             browsers: '',
             preserve: true,
         }
-    }),
+    },
     min: [
         nanoPost()
     ]
@@ -61,8 +61,15 @@ function processed() {
 
 /* Internal functions */
 function preset() {
-    return src('dais.css')
-        .pipe(postcss(plugins.preset))
+    return src('./dais.css')
+        /*
+         * ! Error - Message: Cannot read property 'root' of undefined
+         * 
+         * fileName: /Users/gngrchw/Code/dais-css/dais.css
+         *   domainEmitter: [object Object]
+         *   domainThrown: false
+         */
+        .pipe(postcss(presetPost(plugins.preset)))
         .pipe(dest(prod))
 }
 preset.description = `Applies the preset-env from postcss to make the css more compatible`;

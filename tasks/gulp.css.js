@@ -11,17 +11,10 @@ function imports() {
     const cssimport_options = {
         includePaths: [start]
     };
-
-    if (env === 'dev') {
-        return src(start)
-            .pipe(cssimport(cssimport_options))
-            .pipe(rename('main.import.css'))
-            .pipe(dest(dev));
-    }
     return src(start)
         .pipe(cssimport(cssimport_options))
-        .pipe(rename('dais.css'))
-        .pipe(dest(prod));
+        .pipe(rename('main.import.css'))
+        .pipe(dest(dev));
 }
 imports.description = `Reads ${start} and imports based off of the @import rules`;
 
