@@ -1,0 +1,19 @@
+/** Assumes a menu structure similar to 
+*?  nav
+*?      ul
+*?          li
+*?          ...
+*?      /ul
+*?  /nav
+*/
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+nav li {
+	margin-bottom: 0;
+}
+.menu {
+	flex-flow: column;
+}
