@@ -1,0 +1,109 @@
+:root {
+	--blue: rgb(38, 132, 255);
+	--blue_trans: rgba(38, 132, 255, 0.75);
+	--black: #121314;
+	--gray_dark: rgb(80, 95, 121);
+	--gray: rgb(137, 147, 164);
+	--gray_light: rgb(250, 251, 252);
+	--white: rgb(255, 255, 255);
+	--yellow: rgb(255, 196, 0);
+	--red: rgb(222, 53, 11);
+	--primary: var(--blue);
+	--primary_trans: var(--blue_trans);
+	--warning: var(--yellow);
+	--danger: var(--red);
+	--text: var(--black);
+	--text_light: var(--gray_dark);
+	--bg: var(--gray_light);
+	--e: cubic-bezier(0.23, 1, 0.32, 1);
+}
+body {
+	background-color: var(--bg);
+	color: var(--text);
+	border: 5px solid var(--primary-opaque);
+}
+/* Components / Component-like styles */
+ul.list-clean,
+ol.list-clean {
+	padding-left: 0.5rem;
+	list-style: none inside;
+	border-left: var(--border);
+	counter-reset: ordered-list;
+}
+ol.list-clean > li {
+	position: relative;
+}
+ol.list-clean > li::before {
+	position: relative;
+	counter-increment: ordered-list;
+	content: counter(ordered-list) ': ';
+	color: var(--primary);
+}
+main {
+	padding: 2rem;
+}
+a {
+	transition: color 0.3s var(--e);
+}
+a:hover,
+a:focus {
+	color: var(--primary_trans);
+}
+hr {
+	max-width: 20rem;
+	border-color: var(--gray_dark);
+}
+.menu-title {
+	text-align: center;
+}
+.menu-title > a {
+	border-bottom: 2px solid currentColor;
+}
+.menu-title::before,
+.menu-title::after {
+	content: '🌟';
+	display: inline-block;
+	transform: rotate(360deg);
+	transform-origin: center;
+	transition: transform 0.3s var(--e);
+}
+.menu-title:hover::before,
+.menu-title:hover::after {
+	transform: rotate(0deg);
+}
+.menu-subtitle {
+	position: relative;
+}
+
+/* SECTION */
+.section {
+	padding-top: 2rem;
+}
+/*
+.section-title,
+.section-tagline {
+    margin-top: 0;
+}
+.section-title {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+.section-tagline {
+    position: relative;
+    display: block;
+    width: auto;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.05;
+}
+.section-tagline::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    border-bottom: 2px solid var(--primary_trans);
+    max-width: 20em;
+    width:100%;
+}
+*/

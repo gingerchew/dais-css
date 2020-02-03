@@ -6,11 +6,9 @@
 @import './_layout.css';
 @import './_columns.css';
 
+@import './_navigation.css';
 @import './_buttons.css';
 
 @import './_utilities.css';
 
 @import './_credits.css';
-
-/** Stylistic choices **/
-@import './_design.css';
