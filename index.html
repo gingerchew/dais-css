@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>📖 dais.css 📖</title>
     <link rel="preload" href="./dais.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="./styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
     <noscript>
         <link rel="stylesheet" href="./dais.css" />
+        <link rel="stylesheet" href="./styles.css">
     </noscript>
     <script>/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */!function(){"use strict";var t={};if(t.s=function(){var t;try{t=document.createElement("link").relList.supports("preload")}catch(e){t=!1}return function(){return t}}(),t.b=function(t){var e=t.media||"all";function n(){t.addEventListener?t.removeEventListener("load",n):t.attachEvent&&t.detachEvent("onload",n),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",n):t.attachEvent&&t.attachEvent("onload",n),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(n,3e3)},t.p=function(){if(!t.s())for(var e=document.getElementsByTagName("link"),n=0;n<e.length;n++){var a=e[n];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),t.b(a))}},!t.s()){t.p();var e=setInterval(t.p,500);addEventListener("load",function(){t.p(),clearInterval(e)})}}();</script>
 </head>
@@ -174,5 +176,6 @@
             <li><a href="#inputs">Inputs</a></li>
         </ol>
     </aside>
+    <script type="module"></script>
 </body>
 </html>
