@@ -9,29 +9,23 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-	border: var(--border);
+	border: var(--border-primary);
 	border-radius: var(--border-radius);
 	white-space: nowrap;
-	background-color: transparent;
-	color: var(--gray-dark);
+	background-color: var(--primary);
+	color: white;
 	vertical-align: text-bottom;
 	-webkit-appearance: none;
 }
 
-.button:focus,
 .button:hover,
-button:focus,
 button:hover,
-[type='button']:focus,
 [type='button']:hover,
-[type='reset']:focus,
 [type='reset']:hover,
-[type='submit']:focus,
 [type='submit']:hover {
 	outline: 0;
-	/* background-color: var(--gray-dark); */
-	border-color: var(--primary);
-	color: var(--primary);
+	background-color: var(--gray-dark);
+	border-color: var(--gray-dark);
 }
 
 .button:focus,
@@ -39,11 +33,29 @@ button:focus,
 [type='button']:focus,
 [type='reset']:focus,
 [type='submit']:focus {
+	outline: 0;
 	box-shadow: var(--focus);
 	border: var(--focus-border);
-	color: var(--primary);
+	background-color: var(--gray-dark);
+	color: white;
 }
 
+/**
+ * Filled buttons.
+ */
+.button-outline {
+	border: var(--border-primary);
+	border-radius: var(--border-radius);
+	white-space: nowrap;
+	background-color: transparent;
+	color: var(--primary);
+	vertical-align: text-bottom;
+	-webkit-appearance: none;
+}
+.button-outline:hover {
+	background-color: transparent;
+	color: var(--gray-dark);
+}
 /**
  * Disabled buttons.
  */
@@ -66,8 +78,9 @@ button[disabled]:hover,
 [type='reset'][disabled]:hover,
 [type='submit'][disabled]:focus,
 [type='submit'][disabled]:hover {
-	border-color: inherit;
-	color: var(--text-neutral);
+	border-color: var(--primary);
+	color: white;
+	background-color: var(--primary);
 }
 
 /**
