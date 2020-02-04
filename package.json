@@ -14,7 +14,7 @@
 	"license": "MIT",
 	"browserslist": "defaults",
 	"scripts": {
-		"build": "NODE_ENV=dev gulp build",
+		"start": "NODE_ENV=dev gulp build",
 		"prod": "NODE_ENV=prod gulp build",
 		"restart": "sh clean_start.sh"
 	},
