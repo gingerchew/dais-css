@@ -5,113 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>📖 dais.css 📖</title>
-    <link rel="preload" href="./dais.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <link rel="preload" href="./dais.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-        <link rel="stylesheet" href="./dais.css"/>
+        <link rel="stylesheet" href="./dais.css" />
     </noscript>
-    <style>
-        :root {
-            --blue: rgb(38, 132, 255);
-            --blue_trans: rgba(38, 132, 255, 0.75);
-            --black: #121314;
-            --gray_dark: rgb(80, 95, 121);
-            --gray: rgb(137, 147, 164);
-            --gray_light: rgb(250, 251, 252);
-            --white: rgb(255,255,255);
-            --yellow: rgb(255, 196, 0);
-            --red: rgb(222, 53, 11);
-            --primary: var(--blue);
-            --primary_trans: var(--blue_trans);
-            --warning: var(--yellow);
-            --danger: var(--red);
-            --text: var(--black);
-            --text_light: var(--gray_dark);
-            --bg: var(--gray_light);
-            --e: cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        nav li {
-            margin-bottom: 0;
-        }
-        main {
-            padding: 2rem;
-        }
-        a {
-            transition: color 0.3s var(--e);
-        }
-        a:hover,
-        a:focus {
-            color: var(--primary_trans);
-        }
-        hr {
-            max-width: 20rem;
-            border-color: var(--gray_dark);
-        }
-        .menu {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .menu-title > a {
-            border-bottom: 2px solid currentColor;
-        }
-        .menu-title::before,
-        .menu-title::after {
-            content: '🌟';
-            display: inline-block;
-            transform: rotate(360deg);
-            transform-origin: center;
-            transition: transform 0.3s var(--e);
-        }
-        .menu-title:hover::before,
-        .menu-title:hover::after {
-            transform: rotate(0deg);
-        }
-        .menu-subtitle {
-            position: relative;
-        }
-
-        /* SECTION */
-        .section {
-            padding-top: 2rem;
-        }
-        /*
-        .section-title,
-        .section-tagline {
-            margin-top: 0;
-        }
-        .section-title {
-            font-size: 1.4rem;
-            line-height: 1.8;
-            margin-bottom: 0;
-        }
-        .section-tagline {
-            position: relative;
-            display: block;
-            width: auto;
-            font-size: 1.1rem;
-            font-style: italic;
-            line-height: 1.05;
-        }
-        .section-tagline::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            border-bottom: 2px solid var(--primary_trans);
-            max-width: 20em;
-            width:100%;
-        }
-        */
-    </style>
-    <script>/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
+    <script>/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */!function(t){"use strict";var e={};if(e.s=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.b=function(t){var e=t.media||"all";function n(){t.addEventListener?t.removeEventListener("load",n):t.attachEvent&&t.detachEvent("onload",n),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",n):t.attachEvent&&t.attachEvent("onload",n),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(n,3e3)},e.p=function(){if(!e.s())for(var n=t.document.getElementsByTagName("link"),a=0;a<n.length;a++){var r=n[a];"preload"!==r.rel||"style"!==r.getAttribute("as")||r.getAttribute("data-loadcss")||(r.setAttribute("data-loadcss",!0),e.b(r))}},!e.s()){e.p();var n=t.setInterval(e.p,500);t.addEventListener?t.addEventListener("load",function(){e.p(),t.clearInterval(n)}):t.attachEvent&&t.attachEvent("onload",function(){e.p(),t.clearInterval(n)})}}("undefined"!=typeof global?global:this);</script>
 </head>
 <body>
     <a href="#main" id="top" class="visually-hidden">skip to main content</a>
     <nav id="navigation">
         <ul class="menu" id="menu">
-            <li class="menu-title">
-                <a class="h2" target="_blank" rel="noreferrer noopener" href="https://github.com/frankie-tech/dais-css">
+            <li class="menu-title h4">
+                <a target="_blank" rel="noreferrer noopener" href="https://github.com/frankie-tech/dais-css">
                     dais.css
                 </a>
             </li>
@@ -129,7 +34,7 @@
                 </hgroup>
             </header>
             <p>
-                Inspired heavily by <a href="https://github.com/robsheldon" rel="noreferrer noopener nofollower" target="_blank">sscaffold.css</a>, I wanted to make my own stylesheet.<br/>
+                Inspired heavily by <a href="https://github.com/robsheldon/sscaffold-css" rel="noreferrer noopener nofollower" target="_blank">sscaffold.css</a>, I wanted to make my own stylesheet.<br/>
                 Since sscaffold is inspired by so many other minimalist frameworks:
             </p>
             <ul class="list-clean">
@@ -147,7 +52,7 @@
             <ol class="list-clean">
                 <li>Make the system more modular <strong>🚨BUZZWORD🚨</strong></li>
                 <li>Build a column system that gave me more control</li>
-                <li>Add in my own personal preferences</li>
+                <li><del>Add in my own personal preferences</del></li>
                 <li>Take advantage of CSS Custom Properties</li>
             </ol>
             <p>
@@ -155,11 +60,9 @@
             </p>
         </article>
         <section class="section" id="typography">
-            <div id="typographyHeader">
-                <hgroup>
-                    <h2 class="section-subtitle">Headers</h2>
-                </hgroup>
-            </div>
+            <hgroup id="headings">
+                <h2 class="section-subtitle">Headers</h2>
+            </hgroup>
             <div>
                 <div class="row">
                     <div class="column one-half">
@@ -181,17 +84,13 @@
                         <h4 class="display">Heading 4</h4>
                     </div>
                 </div>
-                <div class="row justify-center">
-                    <div class="three columns">
-                        <hr>
-                    </div>
-                </div>
             </div>
-            <div id="inlineText">
-                <hgroup>
-                    <h2 class="section-subtitle">Inline Text</h2>
-                </hgroup>
-            </div>
+            <hr>
+            
+            <hgroup id="inlineText">
+                <h2 class="section-subtitle">Inline Text</h2>
+            </hgroup>
+
             <p>You can use the mark tag to <mark>highlight</mark> text.</p>
 
             <p><del>This line of text is meant to be treated as deleted text.</del></p>
@@ -207,26 +106,32 @@
             <p><strong>This line rendered as bold text.</strong></p>
 
             <p><em>This line rendered as italicized text.</em></p>
+
             <p>
                 <sup>Up high, </sup>
                 <sub>down low </sub>
                 <small>in the middle <small>tooslow</small></small>
             </p>
+            
             <blockquote>
                 <p>This is a very important quote from an interview</p>
             </blockquote>
+
             <pre><code>console.log('wow! a <​code​> tag?! in <span id="insertYear"></span>?!')</code></pre>
+            
             <script>document.getElementById('insertYear').outerHTML=new Date().getFullYear();</script>
+        </section>
+        <section class="section" id="buttons">
             <hgroup>
                 <h2 class="section-subtitle">Links & Buttons</h2>
             </hgroup>
+            
             <div>
                 <div class="row">
-                    <div class="column">
+                    <div>
                         <button>button</button>
-                    </div>
-                    <div class="column">
                         <button disabled>disabled</button>
+                        <button class="button-outline">outline</button>
                     </div>
                 </div>
             </div>
@@ -255,7 +160,7 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footer id="footer">
         <section class="container">
             Made with 🛠️ by <a href="https://github.com/frankie-tech" target="_blank" rel="noopener">me</a>
         </section>
@@ -269,54 +174,5 @@
             <li><a href="#inputs">Inputs</a></li>
         </ol>
     </aside>
-    <!--
-    <script type="module">
-        function loadscript({src, resolve, reject}) {
-            return new Promise(function(resolve, reject) {
-                const el = document.createElement('script');
-                el.src = src;
-                el.onload = () => resolve();
-                el.onerror = () => reject();
-                document.body.appendChild(el);
-            })
-        }
-        (scripts => scripts.forEach(loadscript))([
-            {
-                src: 'node_modules/gumshoejs/dist/gumshoe.min.js',
-                resolve: () => new Gumshoe('#sidebar a'),
-            }
-        ]);
-    </script>
-    <script type="module">
-        /*
-        const INTERACT_EVENTS = ['mousedown', 'touchstart'];
-        const sidebarLinks = document.querySelectorAll('#sidebar a');
-        sidebarLinks.forEach(
-            link => INTERACT_EVENTS.forEach(
-                e => link.addEventListener(e, 
-                    () => history.replaceState("", document.title, window.location.pathname + window.location.search)
-                )
-            )
-        )
-        */
-        // TODO: Make this work!
-        /*
-        function removeLocationHash(){
-            var noHashURL = window.location.href.replace(/#.*$/, '');
-            window.history.replaceState('', document.title, noHashURL) 
-        }
-        window.addEventListener("popstate", function(event){
-            removeLocationHash();
-        });
-        window.addEventListener("hashchange", function(event){
-            event.preventDefault();
-            removeLocationHash();
-        });
-        window.addEventListener("load", function(){
-            removeLocationHash();
-        });
-        */
-    </script>
-    -->
 </body>
 </html>
