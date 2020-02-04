@@ -46,9 +46,9 @@
 :root {
 	/* Example: Focus box shadow value */
 	--focus: 0 0 0 3px var(--primary-trans);
-	--focus-border: 1px solid var(--primary);
+	--focus-border: 1px solid var(--primary-opaque);
 	--border: 1px solid var(--gray-dark);
-	--border-primary: 1px solid var(--primary-opaque);
+	--border-primary: 1px solid var(--primary);
 	--border-radius: 3px;
 }
 
@@ -394,19 +394,26 @@ body {
 	line-height: 1.6;
 }
 
-main article,
-main section {
-	padding: 7.5rem 1rem;
+main > article,
+main > section {
+	padding: 0 1rem 7.5rem;
 	position: relative;
 	width: 100%;
 }
-
+main > section + section {
+	padding: 0 1rem 2.5rem;
+}
 main section > *,
 main article > *,
 .container {
 	max-width: 992px;
 	margin-left: auto;
 	margin-right: auto;
+}
+main article > hr,
+main section > hr,
+hr {
+	max-width: 33%;
 }
 .container {
 	display: block;
@@ -643,7 +650,8 @@ a {
 
 a:focus,
 a:hover {
-	color: var(--text-light);
+	color: var(--text-dark);
+	text-decoration: underline;
 }
 
 blockquote {
@@ -668,6 +676,8 @@ pre > code {
 }
 
 hr {
+	margin-right: auto;
+	margin-left: auto;
 	border: 0;
 	--border-width: 2px;
 	border-top: var(--border);
@@ -712,15 +722,6 @@ select:focus {
 	border-color: var(--primary);
 	box-shadow: var(--focus);
 	outline: 0;
-}
-
-select {
-	background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI5IDE0IiB3aWR0aD0iMjkiPjxwYXRoIGZpbGw9IiNkMWQxZDEiIGQ9Ik05LjM3NzI3IDMuNjI1bDUuMDgxNTQgNi45MzUyM0wxOS41NDAzNiAzLjYyNSIvPjwvc3ZnPgo=')
-		center right no-repeat;
-}
-
-select:focus {
-	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyOSAxNCIgd2lkdGg9IjI5Ij48cGF0aCBmaWxsPSIjOWI0ZGNhIiBkPSJNOS4zNzcyNyAzLjYyNWw1LjA4MTU0IDYuOTM1MjNMMTkuNTQwMzYgMy42MjUiLz48L3N2Zz4K');
 }
 
 /** Headers **/
@@ -1019,6 +1020,26 @@ section > *:first-child {
 /** 12 COLUMN GRID **/
 
 
+/** Assumes a menu structure similar to 
+*?  nav
+*?      ul
+*?          li
+*?          ...
+*?      /ul
+*?  /nav
+*/
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+nav li {
+	margin-bottom: 0;
+}
+.menu {
+	flex-flow: column;
+}
+
 /**
  * Button styling. All buttons start with the "outline" style defined in
  * milligram.css [2]. Buttons with a "submit" type or a "default" attribute
@@ -1030,29 +1051,23 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-	border: var(--border);
+	border: var(--border-primary);
 	border-radius: var(--border-radius);
 	white-space: nowrap;
-	background-color: transparent;
-	color: var(--gray-dark);
+	background-color: var(--primary);
+	color: white;
 	vertical-align: text-bottom;
 	-webkit-appearance: none;
 }
 
-.button:focus,
 .button:hover,
-button:focus,
 button:hover,
-[type='button']:focus,
 [type='button']:hover,
-[type='reset']:focus,
 [type='reset']:hover,
-[type='submit']:focus,
 [type='submit']:hover {
 	outline: 0;
-	/* background-color: var(--gray-dark); */
-	border-color: var(--primary);
-	color: var(--primary);
+	background-color: var(--gray-dark);
+	border-color: var(--gray-dark);
 }
 
 .button:focus,
@@ -1060,11 +1075,29 @@ button:focus,
 [type='button']:focus,
 [type='reset']:focus,
 [type='submit']:focus {
+	outline: 0;
 	box-shadow: var(--focus);
 	border: var(--focus-border);
-	color: var(--primary);
+	background-color: var(--gray-dark);
+	color: white;
 }
 
+/**
+ * Filled buttons.
+ */
+.button-outline {
+	border: var(--border-primary);
+	border-radius: var(--border-radius);
+	white-space: nowrap;
+	background-color: transparent;
+	color: var(--primary);
+	vertical-align: text-bottom;
+	-webkit-appearance: none;
+}
+.button-outline:hover {
+	background-color: transparent;
+	color: var(--gray-dark);
+}
 /**
  * Disabled buttons.
  */
@@ -1087,8 +1120,9 @@ button[disabled]:hover,
 [type='reset'][disabled]:hover,
 [type='submit'][disabled]:focus,
 [type='submit'][disabled]:hover {
-	border-color: inherit;
-	color: var(--text-neutral);
+	border-color: var(--primary);
+	color: white;
+	background-color: var(--primary);
 }
 
 /**
@@ -1285,30 +1319,6 @@ button.default[disabled]:hover,
  */
 
 
-/** Stylistic choices **/
-body {
-	background-color: var(--bg);
-	color: var(--text);
-	border: 5px solid var(--primary-trans);
-}
-
-/* Components / Component-like styles */
-ul.list-clean,
-ol.list-clean {
-	padding-left: 0.5rem;
-	list-style: none inside;
-	border-left: var(--border);
-	counter-reset: ordered-list;
-}
-ol.list-clean > li {
-	position: relative;
-}
-ol.list-clean > li::before {
-	position: relative;
-	counter-increment: ordered-list;
-	content: counter(ordered-list) ': ';
-	color: var(--primary);
-}
 @media (prefers-reduced-motion: reduce) {
 	* {
 		animation-duration: 0.01ms !important;
@@ -1317,6 +1327,8 @@ ol.list-clean > li::before {
 		scroll-behavior: auto !important;
 	}
 }
+
+
 @media (min-width: 40rem) {
 	.row {
 		flex-direction: row;
@@ -1495,6 +1507,8 @@ ol.list-clean > li::before {
 		margin-left: 52%;
 	}
 }
+
+
 @media screen and (min-width: 1200px) {
 	h1,
 h2,
@@ -1551,6 +1565,8 @@ h6,
 		font-size: 3rem;
 	}
 }
+
+
 @media screen and (max-width: 768px) {
 	h1,
 h2,
@@ -1607,6 +1623,8 @@ h6,
 		font-size: 1.25rem;
 	}
 }
+
+
 @media (min-width: 576px) {
 		.pt-sm-mob,
 		.py-sm-mob {
@@ -1657,6 +1675,8 @@ h6,
 			margin-bottom: var(--lg);
 		}
 }
+
+
 @media (min-width: 768px) {
 		.pt-sm-tab,
 		.py-sm-tab {
@@ -1707,6 +1727,8 @@ h6,
 			margin-bottom: var(--lg);
 		}
 }
+
+
 @media (min-width: 992px) {
 		.pt-sm-lap,
 		.py-sm-lap {
@@ -1757,6 +1779,8 @@ h6,
 			margin-bottom: var(--lg);
 		}
 }
+
+
 @media (min-width: 1200px) {
 		.pt-sm-desk,
 		.py-sm-desk {
