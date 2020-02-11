@@ -5,7 +5,7 @@ const paths = {
         prod: '.'
     },
     outputs: ['dais.css', 'dais.min.css', 'dais.min.css.map'],
-    glob: ['css/*.css', '!css/main.css'],
+    glob: ['css/*.css', '!css/main.css', 'styles.css'],
     main: './index.html',
     baseDir: './'
 };
