@@ -99,12 +99,22 @@ mark,
 }
 
 /** Form Titles **/
-legend,
-label {
+legend {
+	position: relative;
 	font-size: responsive 1rem 1.6rem;
 	font-range: 768px 1200px;
 }
-
+legend::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 1.5em;
+	border-bottom: 1px solid var(--primary);
+}
+label {
+	font-size: 0.9rem;
+	font-weight: 300;
+}
 del {
 	color: var(--danger);
 }
@@ -114,4 +124,9 @@ ins {
 cite {
 	font-style: normal;
 	border-bottom: 1px dashed var(--primary);
+}
+
+label > input {
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
 }
