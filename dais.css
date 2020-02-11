@@ -413,7 +413,9 @@ main article > *,
 main article > hr,
 main section > hr,
 hr {
-	max-width: 33%;
+	margin-right: 2.5vw;
+	margin-left: 2.5vw;
+	/* max-width: 33%; */
 }
 .container {
 	display: block;
@@ -449,7 +451,44 @@ ul ol,
 ul ul {
 	font-size: 90%;
 }
-
+dl > dt,
+dl > dd {
+	position: relative;
+}
+dl > dd {
+	line-height: 1.25;
+	padding-bottom: 0.5em;
+}
+dl > dt::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 1.5em;
+	border-bottom: 1px solid var(--primary);
+}
+dl > dd {
+	display: inline-flex;
+	align-items: center;
+}
+dl > dd::before {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	bottom: 0;
+	left: -1ex;
+	height: 1em;
+	border-left: 1px solid var(--primary);
+}
+ul > li::marker,
+ol > li::marker {
+	color: var(--primary);
+}
+ul > li li::marker,
+ol > li li::marker {
+	color: inherit;
+}
 .button,
 button,
 [type='button'],
@@ -462,7 +501,23 @@ button,
 	text-align: center;
 	text-decoration: none;
 }
-
+button.link {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding: unset;
+	line-height: 1;
+	text-align: unset;
+	text-decoration: none;
+	background-color: transparent;
+	color: var(--primary);
+	font-weight: inherit;
+	border: unset;
+}
+button.link:hover {
+	color: var(--black);
+	background-color: transparent;
+}
 label,
 legend {
 	font-size: 1.6rem;
@@ -491,6 +546,30 @@ pre,
 table,
 ul {
 	margin-bottom: 2.5rem;
+}
+
+figure {
+	display: block;
+}
+figcaption {
+	padding: 0.75rem;
+}
+figure.figure-background figcaption {
+	background-color: var(--gray-neutral);
+}
+figure.figure-right,
+figure.figure-left {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-flow: row dense;
+}
+figure.figure-left img {
+	grid-column: 2;
+}
+figure.figure-right figcaption,
+figure.figure-left figcaption {
+	align-self: center;
+	padding-left: 1rem;
 }
 
 p {
@@ -547,7 +626,7 @@ ol ul,
 ul dl,
 ul ol,
 ul ul {
-	margin: 1.5rem 0 1.5rem 3rem;
+	margin: 0.5rem 0 0.5rem 1rem;
 }
 
 dd,
@@ -757,22 +836,22 @@ h2,
 
 h3,
 .h3 {
-	font-size: calc(22px + -19.75 * ((100vw - 768px) / 432));
+	font-size: calc(1.4rem + 0.6000000000000001 * ((100vw - 48rem) / 27));
 }
 
 h4,
 .h4 {
-	font-size: calc(20px + 8 * ((100vw - 768px) / 432));
+	font-size: calc(1.1rem + 0.6499999999999999 * ((100vw - 48rem) / 27));
 }
 
 h5,
 .h5 {
-	font-size: calc(18px + 6 * ((100vw - 768px) / 432));
+	font-size: calc(18px + -16.5 * ((100vw - 768px) / 432));
 }
 
 h6,
 .h6 {
-	font-size: calc(16px + 4 * ((100vw - 768px) / 432));
+	font-size: calc(1rem + 0.25 * ((100vw - 48rem) / 27));
 }
 
 h1.display,
@@ -811,6 +890,23 @@ h4.display,
 mark,
 .mark {
 	background-color: var(--primary-trans);
+}
+
+/** Form Titles **/
+legend,
+label {
+	font-size: calc(1rem + 0.6000000000000001 * ((100vw - 48rem) / 27));
+}
+
+del {
+	color: var(--danger);
+}
+ins {
+	color: var(--success);
+}
+cite {
+	font-style: normal;
+	border-bottom: 1px dashed var(--primary);
 }
 
 /** LAYOUT **/
@@ -1534,19 +1630,19 @@ h6,
 	}
 	h3,
 .h3 {
-		font-size: 2.25rem;
+		font-size: 2rem;
 	}
 	h4,
 .h4 {
-		font-size: 28px;
+		font-size: 1.75rem;
 	}
 	h5,
 .h5 {
-		font-size: 24px;
+		font-size: 1.5rem;
 	}
 	h6,
 .h6 {
-		font-size: 20px;
+		font-size: 1.25rem;
 	}
 	h1.display,
 .h1.display {
@@ -1563,6 +1659,10 @@ h6,
 	h4.display,
 .h4.display {
 		font-size: 3rem;
+	}
+	legend,
+label {
+		font-size: 1.6rem;
 	}
 }
 
@@ -1592,11 +1692,11 @@ h6,
 	}
 	h3,
 .h3 {
-		font-size: 22px;
+		font-size: 1.4rem;
 	}
 	h4,
 .h4 {
-		font-size: 20px;
+		font-size: 1.1rem;
 	}
 	h5,
 .h5 {
@@ -1604,7 +1704,7 @@ h6,
 	}
 	h6,
 .h6 {
-		font-size: 16px;
+		font-size: 1rem;
 	}
 	h1.display,
 .h1.display {
@@ -1621,6 +1721,10 @@ h6,
 	h4.display,
 .h4.display {
 		font-size: 1.25rem;
+	}
+	legend,
+label {
+		font-size: 1rem;
 	}
 }
 

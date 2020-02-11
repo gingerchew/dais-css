@@ -34,25 +34,25 @@ h2,
 
 h3,
 .h3 {
-	font-size: responsive 22px 2.25rem;
+	font-size: responsive 1.4rem 2rem;
 	font-range: 768px 1200px;
 }
 
 h4,
 .h4 {
-	font-size: responsive 20px 28px;
+	font-size: responsive 1.1rem 1.75rem;
 	font-range: 768px 1200px;
 }
 
 h5,
 .h5 {
-	font-size: responsive 18px 24px;
+	font-size: responsive 18px 1.5rem;
 	font-range: 768px 1200px;
 }
 
 h6,
 .h6 {
-	font-size: responsive 16px 20px;
+	font-size: responsive 1rem 1.25rem;
 	font-range: 768px 1200px;
 }
 
@@ -96,4 +96,22 @@ h4.display,
 mark,
 .mark {
 	background-color: var(--primary-trans);
+}
+
+/** Form Titles **/
+legend,
+label {
+	font-size: responsive 1rem 1.6rem;
+	font-range: 768px 1200px;
+}
+
+del {
+	color: var(--danger);
+}
+ins {
+	color: var(--success);
+}
+cite {
+	font-style: normal;
+	border-bottom: 1px dashed var(--primary);
 }

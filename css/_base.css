@@ -32,7 +32,9 @@ main article > *,
 main article > hr,
 main section > hr,
 hr {
-	max-width: 33%;
+	margin-right: 2.5vw;
+	margin-left: 2.5vw;
+	/* max-width: 33%; */
 }
 .container {
 	display: block;
@@ -68,7 +70,44 @@ ul ol,
 ul ul {
 	font-size: 90%;
 }
-
+dl > dt,
+dl > dd {
+	position: relative;
+}
+dl > dd {
+	line-height: 1.25;
+	padding-bottom: 0.5em;
+}
+dl > dt::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 1.5em;
+	border-bottom: 1px solid var(--primary);
+}
+dl > dd {
+	display: inline-flex;
+	align-items: center;
+}
+dl > dd::before {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	bottom: 0;
+	left: -1ex;
+	height: 1em;
+	border-left: 1px solid var(--primary);
+}
+ul > li::marker,
+ol > li::marker {
+	color: var(--primary);
+}
+ul > li li::marker,
+ol > li li::marker {
+	color: inherit;
+}
 .button,
 button,
 [type='button'],
@@ -81,7 +120,23 @@ button,
 	text-align: center;
 	text-decoration: none;
 }
-
+button.link {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding: unset;
+	line-height: 1;
+	text-align: unset;
+	text-decoration: none;
+	background-color: transparent;
+	color: var(--primary);
+	font-weight: inherit;
+	border: unset;
+}
+button.link:hover {
+	color: var(--black);
+	background-color: transparent;
+}
 label,
 legend {
 	font-size: 1.6rem;
@@ -110,6 +165,30 @@ pre,
 table,
 ul {
 	margin-bottom: 2.5rem;
+}
+
+figure {
+	display: block;
+}
+figcaption {
+	padding: 0.75rem;
+}
+figure.figure-background figcaption {
+	background-color: var(--gray-neutral);
+}
+figure.figure-right,
+figure.figure-left {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-flow: row dense;
+}
+figure.figure-left img {
+	grid-column: 2;
+}
+figure.figure-right figcaption,
+figure.figure-left figcaption {
+	align-self: center;
+	padding-left: 1rem;
 }
 
 p {
@@ -166,7 +245,7 @@ ol ul,
 ul dl,
 ul ol,
 ul ul {
-	margin: 1.5rem 0 1.5rem 3rem;
+	margin: 0.5rem 0 0.5rem 1rem;
 }
 
 dd,
