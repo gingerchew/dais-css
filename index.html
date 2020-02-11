@@ -45,7 +45,7 @@
                 <button class="link" data-section="#buttons">Links & Buttons</button>
             </li>
             <li>
-                <button class="link" data-section="#inputs">Inputs</button>
+                <button class="link" data-section="#inputs">Forms & Inputs</button>
             </li>
             <li>
                 <button class="link" data-section="#images">Images</button>
@@ -208,14 +208,19 @@
         </section>
         <section class="section" id="inputs">
             <hgroup>
-                <h2 class="section-subtitle">Inputs</h2>
+                <h2 class="section-subtitle">Forms & Inputs</h2>
             </hgroup>
+
             <form action="">
+                <small>Remember to never enter personal information into forms you don't know/trust</small>
                 <fieldset>
                     <legend>Example Legend</legend>
-                    <input type="text">
-                    <input type="text" placeholder="Hello you!">
+                    <label>Wrap your inputs with a label
+                        <input type="text">
+                    </label>
+                    <input type="text" placeholder="I have a placeholder">
                     <select name="">
+                        <option value="">This is a select</option>
                         <option value="">A</option>
                         <option value="">B</option>
                         <option value="">C</option>
@@ -253,11 +258,11 @@
     </main>
     <footer id="footer">
         <section class="container">
-            Made with 💞 by <a href="https://github.com/frankie-tech" target="_blank" rel="noopener">me</a> &copy; <i id="copy"></i>
+            Made with 💞 by <a href="https://github.com/frankie-tech" target="_blank" rel="noopener">me</a> MPL 2.0
         </section>
     </footer>
     <script defer src="./js/gumshoe.min.js"></script>
-    <script>window.onload = () => new Gumshoe('#sidebar a', { offset: 75 });document.getElementById('copy').outerHTML = new Date().getFullYear();</script>
+    <script>window.onload = () => new Gumshoe('#sidebar a', { offset: 75 });</script>
     <script>const scrollTo = ({ target }) => window.scroll({ behavior: 'smooth', left: 0, top: document.querySelector(target.dataset.section).offsetTop });</script>
     <script>document.getElementById('sidebar').addEventListener('click', scrollTo);</script>
 </body>
