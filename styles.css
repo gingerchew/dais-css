@@ -24,3 +24,9 @@ footer {
 .sidebar li:not(.active) > a {
 	opacity: 0.4;
 }
+form small {
+	display: none;
+}
+form:focus-within small {
+	display: block;
+}
