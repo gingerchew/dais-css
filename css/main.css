@@ -1,10 +1,14 @@
 @import './_variables.css';
 @import './_reset.css';
 
-@import './_utilities.css';
+@import './_base.css';
+@import './_typography.css';
 @import './_layout.css';
 @import './_columns.css';
 
-@import './_base.css';
+@import './_navigation.css';
+@import './_buttons.css';
+
+@import './_utilities.css';
 
 @import './_credits.css';

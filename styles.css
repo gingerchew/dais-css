@@ -1,0 +1,32 @@
+body.navigation-grid {
+	display: grid;
+	grid-template-columns: 2fr 4fr minmax(80px, 1fr);
+}
+
+nav {
+	display: flex;
+	padding-top: 58px;
+	justify-content: unset;
+	align-items: unset;
+	padding-left: 5vw;
+	flex-flow: column;
+	position: sticky;
+	top: 1rem;
+	align-self: start;
+	grid-area: 1 / 1 / 2 / 2;
+}
+footer {
+	grid-area: 2 / 1 / 3 / 2;
+}
+.sidebar a {
+	transition: opacity 0.3s ease-out;
+}
+.sidebar li:not(.active) > a {
+	opacity: 0.4;
+}
+form small {
+	display: none;
+}
+form:focus-within small {
+	display: block;
+}

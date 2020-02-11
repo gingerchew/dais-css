@@ -1,0 +1,132 @@
+/** Headers **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: var(--font-base);
+	font-weight: 600;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	line-height: 1.25;
+	letter-spacing: responsive 1px -1px;
+	letter-spacing-range: 768px 1200px;
+}
+
+h1,
+.h1 {
+	font-size: responsive 1.7rem 3rem;
+	font-range: 768px 1200px;
+}
+
+h2,
+.h2 {
+	font-size: responsive 1.5rem 2.5rem;
+	font-range: 768px 1200px;
+}
+
+h3,
+.h3 {
+	font-size: responsive 1.4rem 2rem;
+	font-range: 768px 1200px;
+}
+
+h4,
+.h4 {
+	font-size: responsive 1.1rem 1.75rem;
+	font-range: 768px 1200px;
+}
+
+h5,
+.h5 {
+	font-size: responsive 18px 1.5rem;
+	font-range: 768px 1200px;
+}
+
+h6,
+.h6 {
+	font-size: responsive 1rem 1.25rem;
+	font-range: 768px 1200px;
+}
+
+h1.display,
+h2.display,
+h3.display,
+h4.display,
+.h1.display,
+.h2.display,
+.h3.display,
+.h4.display {
+	font-weight: 200;
+	line-height: 1;
+}
+
+h1.display,
+.h1.display {
+	font-size: responsive 2rem 5rem;
+	font-range: 768px 1200px;
+}
+
+h2.display,
+.h2.display {
+	font-size: responsive 1.75rem 4rem;
+	font-range: 768px 1200px;
+}
+
+h3.display,
+.h3.display {
+	font-size: responsive 1.5rem 3.25rem;
+	font-range: 768px 1200px;
+}
+
+h4.display,
+.h4.display {
+	font-size: responsive 1.25rem 3rem;
+	font-range: 768px 1200px;
+}
+
+/** Inline Text Elements **/
+mark,
+.mark {
+	background-color: var(--primary-trans);
+}
+
+/** Form Titles **/
+legend {
+	position: relative;
+	font-size: responsive 1rem 1.6rem;
+	font-range: 768px 1200px;
+}
+legend::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 1.5em;
+	border-bottom: 1px solid var(--primary);
+}
+label {
+	font-size: 0.9rem;
+	font-weight: 300;
+}
+del {
+	color: var(--danger);
+}
+ins {
+	color: var(--success);
+}
+cite {
+	font-style: normal;
+	border-bottom: 1px dashed var(--primary);
+}
+
+label > input {
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+}
