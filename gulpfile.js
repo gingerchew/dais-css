@@ -1,20 +1,9 @@
-const { series } = require('gulp');
+const { series, parallel } = require('gulp');
 
-const {
-	imports,
-	minify,
-	preset,
-	processes,
-	env,
-	cleanOutputs,
-	serve,
-	observe
-} = require('./tasks');
+const { imports, minify, preset, processes, cleanOutputs, serve, observe } = require('./tasks');
 
 exports.cleanOutputs = cleanOutputs;
 
-if (env === 'dev') {
-	exports.build = series(cleanOutputs, imports, processes, serve, observe);
-} else {
-	exports.build = series(cleanOutputs, imports, processes, preset, minify);
-}
+exports.default = parallel(series(cleanOutputs, imports, processes), series(serve, observe));
+/* task.production: task runs and builds everything properly, but doesn't ever terminate back to the terminal */
+exports.production = series(cleanOutputs, imports, processes, preset, minify);

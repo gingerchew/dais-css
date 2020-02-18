@@ -24,4 +24,5 @@ for i in ${REMOVE[@]}; do
     fi
 done
 #! figure out a way to re install based on package manager npm/yarn/pnpm
+pnpm i
 exit 0

@@ -10,9 +10,10 @@ const mediaQueriesPost = require('postcss-combine-media-query');
 const presetPost = require('postcss-preset-env');
 const nanoPost = require('cssnano');
 
+const paths = require('./gulp.paths');
 const {
 	dest: { dev, prod }
-} = (paths = require('./gulp.paths'));
+} = paths;
 
 const plugins = {
 	process: [eachPost(), responsiveTypePost(), mediaQueriesPost()],
@@ -63,7 +64,7 @@ function preset() {
 }
 preset.description = `Applies the preset-env from postcss to make the css more compatible`;
 
-function minify() {
+function minify(done) {
 	return src('./dais.css')
 		.pipe(sourcemaps.init())
 		.pipe(postcss(plugins.min))
@@ -76,9 +77,5 @@ minify.description = `Minifies CSS and produces a sourcemap`;
 module.exports = {
 	minify,
 	preset,
-	processed,
-	processes: series(each, responsiveType, mediaQueries, processed),
-	each,
-	responsiveType,
-	mediaQueries
+	processes: series(each, responsiveType, mediaQueries, processed)
 };
