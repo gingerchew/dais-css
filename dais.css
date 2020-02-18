@@ -15,7 +15,7 @@
 	--gray: rgb(137, 147, 164);
 	--gray-dark: rgb(80, 95, 121);
 	--gray-neutral: rgb(185, 187, 192);
-	--gray-light: rgb(250, 251, 252);
+	--gray-light: rgb(244, 245, 246);
 	--white: rgb(255, 255, 255);
 	--yellow: rgb(255, 196, 0);
 	--red: rgb(222, 53, 11);
@@ -239,7 +239,6 @@ body img {
 	width: 100%;
 	max-width: 100%;
 }
-
 td:not([align]),
 th:not([align]) {
 	/* Borrow a rule from [5], modifying a rule from [2] to give table cells
@@ -509,13 +508,20 @@ button.link {
 	line-height: 1;
 	text-align: unset;
 	text-decoration: none;
+	border: 1px solid transparent;
 	background-color: transparent;
 	color: var(--primary);
 	font-weight: inherit;
-	border: unset;
 }
 button.link:hover {
 	color: var(--black);
+	background-color: transparent;
+	border-color: transparent;
+}
+button.link:focus {
+	outline: 0;
+	box-shadow: var(--focus);
+	color: var(--primary);
 	background-color: transparent;
 }
 label,
@@ -555,7 +561,9 @@ figcaption {
 	padding: 0.75rem;
 }
 figure.figure-background figcaption {
-	background-color: var(--gray-neutral);
+	background-color: var(--gray-light);
+	border-bottom-right-radius: var(--border-radius);
+	border-bottom-left-radius: var(--border-radius);
 }
 figure.figure-right,
 figure.figure-left {
@@ -568,8 +576,17 @@ figure.figure-left img {
 }
 figure.figure-right figcaption,
 figure.figure-left figcaption {
-	align-self: center;
+	border-radius: unset;
 	padding-left: 1rem;
+}
+figure.figure-right figcaption {
+	border-top-right-radius: var(--border-radius);
+	border-bottom-right-radius: var(--border-radius);
+}
+
+figure.figure-left figcaption {
+	border-top-left-radius: var(--border-radius);
+	border-bottom-left-radius: var(--border-radius);
 }
 
 p {
@@ -638,21 +655,22 @@ li {
 
 table {
 	border-spacing: 0;
+	font-variant-numeric: tabular-nums;
 }
 
 td,
 th {
-	padding: 1.2rem 1.5rem;
+	padding: 0.75rem 1.25rem;
 }
 
 td:first-child,
 th:first-child {
-	padding-left: 0;
+	padding-left: 1rem;
 }
 
 td:last-child,
 th:last-child {
-	padding-right: 0;
+	padding-right: 1rem;
 }
 
 input,
@@ -661,7 +679,13 @@ fieldset,
 textarea {
 	margin-bottom: 1.5rem;
 }
-
+@supports (font-size: max(16px)) {
+	input,
+	textarea,
+	select:focus {
+		font-size: max(16px, inherit);
+	}
+}
 textarea {
 	min-height: 6.5rem;
 }
@@ -725,12 +749,26 @@ body {
 a {
 	color: var(--blue);
 	text-decoration: none;
+	border: 1px dashed transparent;
 }
 
 a:focus,
 a:hover {
 	color: var(--text-dark);
 	text-decoration: underline;
+}
+a:focus {
+	border-color: var(--primary);
+}
+a[target='_blank'] > span,
+.visually-hidden {
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap; /* added line */
 }
 
 blockquote {
@@ -739,7 +777,7 @@ blockquote {
 
 pre,
 code {
-	background: #f4f5f6;
+	background: var(--gray-light);
 }
 
 pre {
@@ -907,6 +945,11 @@ legend::before {
 label {
 	font-size: 0.9rem;
 	font-weight: 300;
+	color: var(--black);
+	opacity: 0.75;
+}
+label:focus-within {
+	opacity: 1;
 }
 del {
 	color: var(--danger);
@@ -927,6 +970,33 @@ label > input {
 	display: inline-block;
 	margin-bottom: -0.5rem;
 }
+.sidebar ol li::marker {
+	color: inherit;
+}
+a.announce-inline[target='_blank'] {
+	position: relative;
+}
+a.announce-inline[target='_blank'] > span {
+	position: absolute;
+	bottom: calc(100% + 0.5rem);
+	padding: 0.25rem;
+	opacity: 0;
+	background-color: var(--gray-light);
+	color: var(--blue);
+	width: 200px;
+	height: auto;
+	clip: unset;
+	text-align: center;
+	text-decoration: underline;
+	border-radius: var(--border-radius);
+	white-space: initial;
+	transition: opacity 0.3s var(--e);
+	pointer-events: none;
+}
+a.announce-inline[target='_blank']:hover > span {
+	opacity: 1;
+}
+
 /** LAYOUT **/
 body {
 	/* Ensure that the page body fills the display even if the content does not. [4] */
@@ -967,6 +1037,10 @@ hgroup,
 section > *:first-child,
 section > *:first-child {
 	padding-top: unset;
+}
+thead,
+tbody > tr:nth-child(even) {
+	background-color: var(--gray-light);
 }
 
 /** FLEXBOX-BASED COLUMNS **/
@@ -1439,6 +1513,15 @@ button.default[disabled]:hover,
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
+	}
+}
+
+
+@media (max-width: 576px) {
+	input,
+	textarea,
+	select:focus {
+		font-size: 16px !important;
 	}
 }
 
