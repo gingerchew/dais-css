@@ -39,3 +39,7 @@ section > *:first-child,
 section > *:first-child {
 	padding-top: unset;
 }
+thead,
+tbody > tr:nth-child(even) {
+	background-color: var(--gray-light);
+}
