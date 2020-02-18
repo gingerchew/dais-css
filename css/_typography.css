@@ -113,6 +113,11 @@ legend::before {
 label {
 	font-size: 0.9rem;
 	font-weight: 300;
+	color: var(--black);
+	opacity: 0.75;
+}
+label:focus-within {
+	opacity: 1;
 }
 del {
 	color: var(--danger);
@@ -132,4 +137,30 @@ label > input {
 .code-inline {
 	display: inline-block;
 	margin-bottom: -0.5rem;
+}
+.sidebar ol li::marker {
+	color: inherit;
+}
+a.announce-inline[target='_blank'] {
+	position: relative;
+}
+a.announce-inline[target='_blank'] > span {
+	position: absolute;
+	bottom: calc(100% + 0.5rem);
+	padding: 0.25rem;
+	opacity: 0;
+	background-color: var(--gray-light);
+	color: var(--blue);
+	width: 200px;
+	height: auto;
+	clip: unset;
+	text-align: center;
+	text-decoration: underline;
+	border-radius: var(--border-radius);
+	white-space: initial;
+	transition: opacity 0.3s var(--e);
+	pointer-events: none;
+}
+a.announce-inline[target='_blank']:hover > span {
+	opacity: 1;
 }
