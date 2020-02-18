@@ -178,7 +178,6 @@ body img {
 	width: 100%;
 	max-width: 100%;
 }
-
 td:not([align]),
 th:not([align]) {
 	/* Borrow a rule from [5], modifying a rule from [2] to give table cells
