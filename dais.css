@@ -981,13 +981,13 @@ a.announce-inline[target='_blank'] > span {
 	bottom: calc(100% + 0.5rem);
 	padding: 0.25rem;
 	opacity: 0;
+	font-size: 1rem;
 	background-color: var(--gray-light);
 	color: var(--blue);
 	width: 200px;
 	height: auto;
 	clip: unset;
 	text-align: center;
-	text-decoration: underline;
 	border-radius: var(--border-radius);
 	white-space: initial;
 	transition: opacity 0.3s var(--e);
