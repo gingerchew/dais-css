@@ -28,29 +28,29 @@ const plugins = {
 };
 
 function each() {
-	return src('./processing/main.import.css')
+	return src('./processing/imports.css')
 		.pipe(postcss([eachPost()]))
-		.pipe(rename('main.each.css'))
+		.pipe(rename('each.css'))
 		.pipe(dest(dev));
 }
 
 function responsiveType() {
-	return src('./processing/main.each.css')
+	return src('./processing/each.css')
 		.pipe(postcss([responsiveTypePost()]))
-		.pipe(rename('main.type.css'))
+		.pipe(rename('type.css'))
 		.pipe(dest(dev));
 }
 
 function mediaQueries() {
-	return src('./processing/main.type.css')
+	return src('./processing/type.css')
 		.pipe(postcss([mediaQueriesPost()]))
-		.pipe(rename('main.media.css'))
+		.pipe(rename('media.css'))
 		.pipe(dest(dev));
 }
 
 function processed() {
-	return src('./processing/main.media.css')
-		.pipe(rename('main.processed.css'))
+	return src('./processing/media.css')
+		.pipe(rename('processed.css'))
 		.pipe(dest(dev))
 		.pipe(rename('dais.css'))
 		.pipe(dest(prod));
@@ -64,7 +64,7 @@ function preset() {
 }
 preset.description = `Applies the preset-env from postcss to make the css more compatible`;
 
-function minify(done) {
+function minify() {
 	return src('./dais.css')
 		.pipe(sourcemaps.init())
 		.pipe(postcss(plugins.min))

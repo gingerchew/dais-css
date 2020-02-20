@@ -22,5 +22,6 @@ function cleanProcesses(done) {
 cleanProcesses.description = `executes 'rm -rf' on ${dev}`;
 
 module.exports = {
-	cleanOutputs
+	cleanOutputs,
+	cleanProcesses
 };

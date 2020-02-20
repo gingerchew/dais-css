@@ -7,7 +7,6 @@ const {
 	dest: { dev },
 	start
 } = paths;
-const { env } = require('./gulp.utils');
 
 //* Handle imports/Concatenate Files
 function imports() {
@@ -16,7 +15,7 @@ function imports() {
 	};
 	return src(start)
 		.pipe(cssimport(cssimport_options))
-		.pipe(rename('main.import.css'))
+		.pipe(rename('imports.css'))
 		.pipe(dest(dev));
 }
 imports.description = `Reads ${start} and imports based off of the @import rules`;
