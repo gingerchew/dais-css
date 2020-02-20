@@ -21,14 +21,21 @@
 		<a href="#main" id="top" class="visually-hidden">skip to main content</a>
 		<nav class="sidebar">
 			<a
-				class="menu-title h4"
+				class="menu-title h4 no-icon"
 				target="_blank"
 				rel="noreferrer noopener"
 				href="https://github.com/frankie-tech/dais-css"
-				><span>opens in a new window</span>
+			>
+				<span>opens in a new window</span>
 				🌟 dais.css 🌟
 			</a>
-			<span class="menu-subtitle h6"><i>noun: </i><b>a raised platform for a seat of honor</b></span>
+			<div class="menu-subtitle h6">
+				<i>noun: </i>
+				<b>
+					a raised<br />
+					platform for a seat of honor
+				</b>
+			</div>
 			<ol id="sidebar">
 				<li>
 					<button class="link" data-section="#main">ReadMe</button>
@@ -208,7 +215,13 @@
 					<p>This is a very important quote from an interview</p>
 				</blockquote>
 
-				<pre><code>console.log('wow! a <​code​> tag?! in <span id="insertYear"></span>?!')</code></pre>
+				<small>code</small>
+				<code>const navItems = document.getElementsByClassName('nav-item').length</code>
+				<br />
+				<small>code.code-inline</small>
+				<p><code class="code-inline">let arr = [1,23,48,2];</code>is an example of an inline code block</p>
+				<small>pre > code</small>
+				<pre><code>console.log('wow! a &lt;code​> tag?! in <span id="insertYear"></span>?! Ever heard of Prism.js???')</code></pre>
 
 				<script>
 					document.getElementById('insertYear').outerHTML = new Date().getFullYear();
@@ -217,23 +230,24 @@
 				<p>This text contains a <a href="#inlineText">link.</a></p>
 
 				<h6>Opening links in a new window</h6>
-				<!-- prettier-ignore -->
 				<p>
-                    Since opening new windows with <code class="code-inline">target="_blank"</code> is not announced, it is important to label those links appropriately.<br/>
-                    To make this easier, links written like this:
-                </p>
-				<pre><code><​a href="..." target="_blank"><​span>opens in a new window<​/span>github<​/a></code></pre>
-				<p>
-					Renders like this:
-					<!-- prettier-ignore -->
-					<a href="https://github.com/frankie-tech" target="_blank">
-                        <span>opens in a new window</span>github
-                    </a>
+					Since opening new windows with <code class="code-inline">target="_blank"</code> is not announced, it
+					is important to label those links appropriately.<br />
+					To make this easier, links written like this:
 				</p>
-				<p>You can also use <code>.announce-inline</code> to announce it visually, as well.</p>
-				<a href="https://github.com/frankie-tech" class="announce-inline" target="_blank"
-					><span>opens in a new window</span>github</a
-				>
+				<pre><code>&lt;a href="..." target="_blank">
+  &lt;span>opens in a new window&lt;/span>github
+&lt;/a></code></pre>
+				<p>
+					Renders either with an icon or a popup. Here it is with an icon and an inner label:
+					<!-- prettier-ignore -->
+					<a href="https://github.com/frankie-tech" target="_blank"><span>opens in a new window</span>github</a>
+				</p>
+				<p>
+					You can also use <code>.announce-inline</code> to announce it visually, as well.
+					<!-- prettier-ignore -->
+					<a href="https://github.com/frankie-tech" class="announce-inline" target="_blank"><span>opens in a new window</span>github</a>
+				</p>
 				<hr />
 			</section>
 			<section class="section" id="lists">
@@ -278,6 +292,10 @@
 					<dt>Term 3</dt>
 					<dd>Description 3</dd>
 				</dl>
+				<small>
+					Add class <code class="code-inline">.list-clean</code> to remove list styles and left
+					padding/margin.
+				</small>
 				<hr />
 			</section>
 			<section class="section" id="buttons">
@@ -335,9 +353,9 @@
 				</form>
 				<h5>Opinionated section</h5>
 				<small>The preferred input "<i>group</i>" looks like this:</small>
-				<pre><code><​label​>
-    <​input name="..." id="..." type="..."​/>
-<​/label>
+				<pre><code>&lt;label​>
+    &lt;input name="..." id="..." type="..."​/>
+&lt;/label>
 </code></pre>
 				<small>But, I'm just a website, I can't stop you.</small>
 				<hr />
@@ -345,10 +363,10 @@
 			<section class="section" id="images">
 				<hgroup>
 					<h2 class="section-subtitle">Images</h2>
-					<small
-						>images sourced randomly from
-						<a href="https://unsplash.com/" rel="noopener" target="_blank">Unsplash 📸</a></small
-					>
+					<small>
+						images sourced randomly from
+						<a href="https://unsplash.com/" rel="noopener" target="_blank">Unsplash 📸</a>
+					</small>
 				</hgroup>
 				<div>
 					<figure class="four columns">
@@ -392,28 +410,10 @@
 				<hgroup>
 					<h2>Tables</h2>
 				</hgroup>
-				<div>
-					<table>
-						<thead>
-							<tr>
-								<td>Head 1</td>
-								<td>Head 2</td>
-								<td>Head 3</td>
-								<td>Head 4</td>
-								<td>Head 5</td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Item 1</td>
-								<td>Item 2</td>
-								<td>Item 3</td>
-								<td>Item 4</td>
-								<td>Item 5</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				<p>
+					Originally I was going to add personalized styles for tables, but I hardly ever need/want to use
+					tables. So I have skipped them. I might revisit them later.
+				</p>
 			</section>
 		</main>
 		<footer id="footer">
