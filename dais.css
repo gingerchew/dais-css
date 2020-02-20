@@ -186,8 +186,7 @@ a {
 
 a:not([class]) {
 	/* Makes links a bit more readable while avoiding conflicts. [4] */
-	-webkit-text-decoration-skip: ink;
-	        text-decoration-skip-ink: auto;
+	text-decoration-skip-ink: auto;
 }
 
 abbr[title] {
@@ -195,8 +194,7 @@ abbr[title] {
 	border-bottom: none;
 	/* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. [1] */
 	text-decoration: underline;
-	-webkit-text-decoration: underline dotted;
-	        text-decoration: underline dotted;
+	text-decoration: underline dotted;
 }
 
 b,
@@ -364,12 +362,7 @@ textarea {
 	/* Fix the font properties in Safari. [1] */
 	font: inherit;
 }
-::-moz-selection {
-	background-color: rgba(38, 132, 255, 0.6);
-	background-color: var(--primary-opaque);
-}
 ::selection {
-	background-color: rgba(38, 132, 255, 0.6);
 	background-color: var(--primary-opaque);
 }
 progress {
@@ -390,13 +383,10 @@ progress {
 /** Typography: font, letter-spacing, line-height, text-*, list-style-type. */
 
 html {
-	font-size: 16px;
 	font-size: var(--font-size);
 }
 
 body {
-	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
-		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
 	font-family: var(--font-base);
 	font-size: 1rem;
 	font-weight: 300;
@@ -474,7 +464,6 @@ dl > dt::after {
 	bottom: 0;
 	left: 0;
 	width: 1.5em;
-	border-bottom: 1px solid rgb(38, 132, 255);
 	border-bottom: 1px solid var(--primary);
 }
 dl > dd {
@@ -489,12 +478,10 @@ dl > dd::before {
 	bottom: 0;
 	left: -1ex;
 	height: 1em;
-	border-left: 1px solid rgb(38, 132, 255);
 	border-left: 1px solid var(--primary);
 }
 ul > li::marker,
 ol > li::marker {
-	color: rgb(38, 132, 255);
 	color: var(--primary);
 }
 ul > li li::marker,
@@ -523,21 +510,17 @@ button.link {
 	text-decoration: none;
 	border: 1px solid transparent;
 	background-color: transparent;
-	color: rgb(38, 132, 255);
 	color: var(--primary);
 	font-weight: inherit;
 }
 button.link:hover {
-	color: rgb(18, 19, 20);
 	color: var(--black);
 	background-color: transparent;
 	border-color: transparent;
 }
 button.link:focus {
 	outline: 0;
-	box-shadow: 0 0 0 3px rgba(38, 132, 255, 0.25);
 	box-shadow: var(--focus);
-	color: rgb(38, 132, 255);
 	color: var(--primary);
 	background-color: transparent;
 }
@@ -578,11 +561,8 @@ figcaption {
 	padding: 0.75rem;
 }
 figure.figure-background figcaption {
-	background-color: rgb(244, 245, 246);
 	background-color: var(--gray-light);
-	border-bottom-right-radius: 3px;
 	border-bottom-right-radius: var(--border-radius);
-	border-bottom-left-radius: 3px;
 	border-bottom-left-radius: var(--border-radius);
 }
 figure.figure-right,
@@ -600,16 +580,12 @@ figure.figure-left figcaption {
 	padding-left: 1rem;
 }
 figure.figure-right figcaption {
-	border-top-right-radius: 3px;
 	border-top-right-radius: var(--border-radius);
-	border-bottom-right-radius: 3px;
 	border-bottom-right-radius: var(--border-radius);
 }
 
 figure.figure-left figcaption {
-	border-top-left-radius: 3px;
 	border-top-left-radius: var(--border-radius);
-	border-bottom-left-radius: 3px;
 	border-bottom-left-radius: var(--border-radius);
 }
 
@@ -679,7 +655,6 @@ li {
 
 table {
 	border-spacing: 0;
-	font-feature-settings: "tnum";
 	font-variant-numeric: tabular-nums;
 }
 
@@ -772,7 +747,6 @@ body {
 }
 
 a {
-	color: rgb(38, 132, 255);
 	color: var(--blue);
 	text-decoration: none;
 	border: 1px dashed transparent;
@@ -780,12 +754,10 @@ a {
 
 a:focus,
 a:hover {
-	color: rgb(80, 95, 121);
 	color: var(--text-dark);
 	text-decoration: underline;
 }
 a:focus {
-	border-color: rgb(38, 132, 255);
 	border-color: var(--primary);
 }
 a[target='_blank'] > span,
@@ -800,18 +772,15 @@ a[target='_blank'] > span,
 }
 
 blockquote {
-	border-left: 0.3rem solid rgba(38, 132, 255, 0.6);
 	border-left: 0.3rem solid var(--primary-opaque);
 }
 
 pre,
 code {
-	background: rgb(244, 245, 246);
 	background: var(--gray-light);
 }
 
 pre {
-	border-left: 0.3rem solid rgba(38, 132, 255, 0.6);
 	border-left: 0.3rem solid var(--primary-opaque);
 }
 
@@ -828,13 +797,11 @@ hr {
 	margin-left: auto;
 	border: 0;
 	--border-width: 2px;
-	border-top: 1px solid rgb(80, 95, 121);
 	border-top: var(--border);
 }
 
 td,
 th {
-	border-bottom: 1px solid rgb(80, 95, 121);
 	border-bottom: var(--border);
 }
 
@@ -855,9 +822,7 @@ select {
 	-moz-appearance: none;
 	appearance: none;
 	background-color: transparent;
-	border: 1px solid rgb(80, 95, 121);
 	border: var(--border);
-	border-radius: 3px;
 	border-radius: var(--border-radius);
 	box-shadow: none;
 }
@@ -871,9 +836,7 @@ select {
 [type='url']:focus,
 textarea:focus,
 select:focus {
-	border-color: rgb(38, 132, 255);
 	border-color: var(--primary);
-	box-shadow: 0 0 0 3px rgba(38, 132, 255, 0.25);
 	box-shadow: var(--focus);
 	outline: 0;
 }
@@ -891,8 +854,6 @@ h6,
 .h4,
 .h5,
 .h6 {
-	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
-		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
 	font-family: var(--font-base);
 	font-weight: 600;
 	margin-top: 0.5em;
@@ -966,7 +927,6 @@ h4.display,
 /** Inline Text Elements **/
 mark,
 .mark {
-	background-color: rgba(38, 132, 255, 0.25);
 	background-color: var(--primary-trans);
 }
 
@@ -980,33 +940,25 @@ legend::before {
 	position: absolute;
 	bottom: 0;
 	width: 1.5em;
-	border-bottom: 1px solid rgb(38, 132, 255);
 	border-bottom: 1px solid var(--primary);
 }
 label {
 	font-size: 0.9rem;
 	font-weight: 300;
-	color: rgb(18, 19, 20);
 	color: var(--black);
 	opacity: 0.75;
-}
-label[focus-within] {
-	opacity: 1;
 }
 label:focus-within {
 	opacity: 1;
 }
 del {
-	color: rgb(222, 53, 11);
 	color: var(--danger);
 }
 ins {
-	color: rgb(54, 179, 126);
 	color: var(--success);
 }
 cite {
 	font-style: normal;
-	border-bottom: 1px dashed rgb(38, 132, 255);
 	border-bottom: 1px dashed var(--primary);
 }
 
@@ -1021,6 +973,20 @@ label > input {
 .sidebar ol li::marker {
 	color: inherit;
 }
+a[target='_blank'] {
+	display: inline-flex;
+	align-items: center;
+}
+a[target='_blank']::after {
+	content: '\21d7';
+	margin: -10px 0 0 5px;
+	display: inline-block;
+	color: inherit;
+	font-size: 1.25em;
+}
+a[target='_blank'].no-icon::after {
+	content: unset;
+}
 a.announce-inline[target='_blank'] {
 	position: relative;
 }
@@ -1030,19 +996,14 @@ a.announce-inline[target='_blank'] > span {
 	padding: 0.25rem;
 	opacity: 0;
 	font-size: 1rem;
-	background-color: rgb(244, 245, 246);
 	background-color: var(--gray-light);
-	color: rgb(38, 132, 255);
 	color: var(--blue);
 	width: 200px;
 	height: auto;
 	clip: unset;
 	text-align: center;
-	border-radius: 3px;
 	border-radius: var(--border-radius);
-	white-space: normal;
 	white-space: initial;
-	transition: opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 	transition: opacity 0.3s var(--e);
 	pointer-events: none;
 }
@@ -1107,7 +1068,6 @@ section > *:first-child {
 }
 thead,
 tbody > tr:nth-child(even) {
-	background-color: rgb(244, 245, 246);
 	background-color: var(--gray-light);
 }
 
@@ -1307,12 +1267,9 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-	border: 1px solid rgb(38, 132, 255);
 	border: var(--border-primary);
-	border-radius: 3px;
 	border-radius: var(--border-radius);
 	white-space: nowrap;
-	background-color: rgb(38, 132, 255);
 	background-color: var(--primary);
 	color: white;
 	vertical-align: text-bottom;
@@ -1325,9 +1282,7 @@ button:hover,
 [type='reset']:hover,
 [type='submit']:hover {
 	outline: 0;
-	background-color: rgb(80, 95, 121);
 	background-color: var(--gray-dark);
-	border-color: rgb(80, 95, 121);
 	border-color: var(--gray-dark);
 }
 
@@ -1337,11 +1292,8 @@ button:focus,
 [type='reset']:focus,
 [type='submit']:focus {
 	outline: 0;
-	box-shadow: 0 0 0 3px rgba(38, 132, 255, 0.25);
 	box-shadow: var(--focus);
-	border: 1px solid rgba(38, 132, 255, 0.6);
 	border: var(--focus-border);
-	background-color: rgb(80, 95, 121);
 	background-color: var(--gray-dark);
 	color: white;
 }
@@ -1350,20 +1302,16 @@ button:focus,
  * Filled buttons.
  */
 .button-outline {
-	border: 1px solid rgb(38, 132, 255);
 	border: var(--border-primary);
-	border-radius: 3px;
 	border-radius: var(--border-radius);
 	white-space: nowrap;
 	background-color: transparent;
-	color: rgb(38, 132, 255);
 	color: var(--primary);
 	vertical-align: text-bottom;
 	-webkit-appearance: none;
 }
 .button-outline:hover {
 	background-color: transparent;
-	color: rgb(80, 95, 121);
 	color: var(--gray-dark);
 }
 /**
@@ -1388,10 +1336,8 @@ button[disabled]:hover,
 [type='reset'][disabled]:hover,
 [type='submit'][disabled]:focus,
 [type='submit'][disabled]:hover {
-	border-color: rgb(38, 132, 255);
 	border-color: var(--primary);
 	color: white;
-	background-color: rgb(38, 132, 255);
 	background-color: var(--primary);
 }
 
@@ -1405,9 +1351,7 @@ button.default,
 [type='button'].default,
 [type='reset'].default,
 [type='submit'] {
-	background-color: rgb(80, 95, 121);
 	background-color: var(--gray-dark);
-	color: rgb(244, 245, 246);
 	color: var(--gray-light);
 }
 
@@ -1423,11 +1367,8 @@ button.default:hover,
 [type='reset'].default:hover,
 [type='submit']:focus,
 [type='submit']:hover {
-	background-color: rgb(38, 132, 255);
 	background-color: var(--primary);
-	border-color: rgb(38, 132, 255);
 	border-color: var(--primary);
-	color: rgb(244, 245, 246);
 	color: var(--gray-light);
 }
 
@@ -1443,9 +1384,7 @@ button.default[disabled]:hover,
 [type='reset'].default[disabled]:hover,
 [type='submit'].default[disabled]:focus,
 [type='submit'].default[disabled]:hover {
-	background-color: rgb(38, 132, 255);
 	background-color: var(--primary);
-	border-color: rgb(38, 132, 255);
 	border-color: var(--primary);
 }
 
@@ -1490,119 +1429,96 @@ button.default[disabled]:hover,
 }
 
 .text-blue {
-		color: rgb(38, 132, 255);
 		color: var(--blue);
 	}
 
 .text-black {
-		color: rgb(18, 19, 20);
 		color: var(--black);
 	}
 
 .text-gray-dark {
-		color: rgb(80, 95, 121);
 		color: var(--gray-dark);
 	}
 
 .text-gray {
-		color: rgb(137, 147, 164);
 		color: var(--gray);
 	}
 
 .text-gray-light {
-		color: rgb(244, 245, 246);
 		color: var(--gray-light);
 	}
 
 .text-white {
-		color: rgb(255, 255, 255);
 		color: var(--white);
 	}
 
 .text-yellow {
-		color: rgb(255, 196, 0);
 		color: var(--yellow);
 	}
 
 .text-red {
-		color: rgb(222, 53, 11);
 		color: var(--red);
 	}
 
 .text-primary {
-		color: rgb(38, 132, 255);
 		color: var(--primary);
 	}
 
 .text-warning {
-		color: rgb(255, 196, 0);
 		color: var(--warning);
 	}
 
 .text-danger {
-		color: rgb(222, 53, 11);
 		color: var(--danger);
 	}
 
 /** SPACING UTILITIES **/
 .pt-sm,
 	.py-sm {
-		padding-top: 35px;
 		padding-top: var(--sm);
 	}
 .pb-sm,
 	.py-sm {
-		padding-bottom: 35px;
 		padding-bottom: var(--sm);
 	}
 .mt-sm,
 	.my-sm {
-		margin-top: 35px;
 		margin-top: var(--sm);
 	}
 .mb-sm,
 	.my-sm {
-		margin-bottom: 35px;
 		margin-bottom: var(--sm);
 	}
 .pt-md,
 	.py-md {
-		padding-top: 85px;
 		padding-top: var(--md);
 	}
 .pb-md,
 	.py-md {
-		padding-bottom: 85px;
 		padding-bottom: var(--md);
 	}
 .mt-md,
 	.my-md {
-		margin-top: 85px;
 		margin-top: var(--md);
 	}
 .mb-md,
 	.my-md {
-		margin-bottom: 85px;
 		margin-bottom: var(--md);
 	}
 .pt-lg,
 	.py-lg {
-		padding-top: 120px;
 		padding-top: var(--lg);
 	}
 .pb-lg,
 	.py-lg {
-		padding-bottom: 120px;
 		padding-bottom: var(--lg);
 	}
 .mt-lg,
 	.my-lg {
-		margin-top: 120px;
 		margin-top: var(--lg);
 	}
 .mb-lg,
 	.my-lg {
-		margin-bottom: 120px;
 		margin-bottom: var(--lg);
 	}
 
@@ -1621,10 +1537,8 @@ button.default[disabled]:hover,
 
 @media (prefers-reduced-motion: reduce) {
 	* {
-		-webkit-animation-duration: 0.01ms !important;
-		        animation-duration: 0.01ms !important;
-		-webkit-animation-iteration-count: 1 !important;
-		        animation-iteration-count: 1 !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
 	}
@@ -1917,62 +1831,50 @@ button.default[disabled]:hover,
 @media (min-width: 576px) {
 		.pt-sm-mob,
 		.py-sm-mob {
-			padding-top: 35px;
 			padding-top: var(--sm);
 		}
 		.pb-sm-mob,
 		.py-sm-mob {
-			padding-bottom: 35px;
 			padding-bottom: var(--sm);
 		}
 		.mt-sm-mob,
 		.my-sm-mob {
-			margin-top: 35px;
 			margin-top: var(--sm);
 		}
 		.mb-sm-mob,
 		.my-sm-mob {
-			margin-bottom: 35px;
 			margin-bottom: var(--sm);
 		}
 		.pt-md-mob,
 		.py-md-mob {
-			padding-top: 85px;
 			padding-top: var(--md);
 		}
 		.pb-md-mob,
 		.py-md-mob {
-			padding-bottom: 85px;
 			padding-bottom: var(--md);
 		}
 		.mt-md-mob,
 		.my-md-mob {
-			margin-top: 85px;
 			margin-top: var(--md);
 		}
 		.mb-md-mob,
 		.my-md-mob {
-			margin-bottom: 85px;
 			margin-bottom: var(--md);
 		}
 		.pt-lg-mob,
 		.py-lg-mob {
-			padding-top: 120px;
 			padding-top: var(--lg);
 		}
 		.pb-lg-mob,
 		.py-lg-mob {
-			padding-bottom: 120px;
 			padding-bottom: var(--lg);
 		}
 		.mt-lg-mob,
 		.my-lg-mob {
-			margin-top: 120px;
 			margin-top: var(--lg);
 		}
 		.mb-lg-mob,
 		.my-lg-mob {
-			margin-bottom: 120px;
 			margin-bottom: var(--lg);
 		}
 }
@@ -1981,62 +1883,50 @@ button.default[disabled]:hover,
 @media (min-width: 768px) {
 		.pt-sm-tab,
 		.py-sm-tab {
-			padding-top: 35px;
 			padding-top: var(--sm);
 		}
 		.pb-sm-tab,
 		.py-sm-tab {
-			padding-bottom: 35px;
 			padding-bottom: var(--sm);
 		}
 		.mt-sm-tab,
 		.my-sm-tab {
-			margin-top: 35px;
 			margin-top: var(--sm);
 		}
 		.mb-sm-tab,
 		.my-sm-tab {
-			margin-bottom: 35px;
 			margin-bottom: var(--sm);
 		}
 		.pt-md-tab,
 		.py-md-tab {
-			padding-top: 85px;
 			padding-top: var(--md);
 		}
 		.pb-md-tab,
 		.py-md-tab {
-			padding-bottom: 85px;
 			padding-bottom: var(--md);
 		}
 		.mt-md-tab,
 		.my-md-tab {
-			margin-top: 85px;
 			margin-top: var(--md);
 		}
 		.mb-md-tab,
 		.my-md-tab {
-			margin-bottom: 85px;
 			margin-bottom: var(--md);
 		}
 		.pt-lg-tab,
 		.py-lg-tab {
-			padding-top: 120px;
 			padding-top: var(--lg);
 		}
 		.pb-lg-tab,
 		.py-lg-tab {
-			padding-bottom: 120px;
 			padding-bottom: var(--lg);
 		}
 		.mt-lg-tab,
 		.my-lg-tab {
-			margin-top: 120px;
 			margin-top: var(--lg);
 		}
 		.mb-lg-tab,
 		.my-lg-tab {
-			margin-bottom: 120px;
 			margin-bottom: var(--lg);
 		}
 }
@@ -2045,62 +1935,50 @@ button.default[disabled]:hover,
 @media (min-width: 992px) {
 		.pt-sm-lap,
 		.py-sm-lap {
-			padding-top: 35px;
 			padding-top: var(--sm);
 		}
 		.pb-sm-lap,
 		.py-sm-lap {
-			padding-bottom: 35px;
 			padding-bottom: var(--sm);
 		}
 		.mt-sm-lap,
 		.my-sm-lap {
-			margin-top: 35px;
 			margin-top: var(--sm);
 		}
 		.mb-sm-lap,
 		.my-sm-lap {
-			margin-bottom: 35px;
 			margin-bottom: var(--sm);
 		}
 		.pt-md-lap,
 		.py-md-lap {
-			padding-top: 85px;
 			padding-top: var(--md);
 		}
 		.pb-md-lap,
 		.py-md-lap {
-			padding-bottom: 85px;
 			padding-bottom: var(--md);
 		}
 		.mt-md-lap,
 		.my-md-lap {
-			margin-top: 85px;
 			margin-top: var(--md);
 		}
 		.mb-md-lap,
 		.my-md-lap {
-			margin-bottom: 85px;
 			margin-bottom: var(--md);
 		}
 		.pt-lg-lap,
 		.py-lg-lap {
-			padding-top: 120px;
 			padding-top: var(--lg);
 		}
 		.pb-lg-lap,
 		.py-lg-lap {
-			padding-bottom: 120px;
 			padding-bottom: var(--lg);
 		}
 		.mt-lg-lap,
 		.my-lg-lap {
-			margin-top: 120px;
 			margin-top: var(--lg);
 		}
 		.mb-lg-lap,
 		.my-lg-lap {
-			margin-bottom: 120px;
 			margin-bottom: var(--lg);
 		}
 }
@@ -2109,62 +1987,50 @@ button.default[disabled]:hover,
 @media (min-width: 1200px) {
 		.pt-sm-desk,
 		.py-sm-desk {
-			padding-top: 35px;
 			padding-top: var(--sm);
 		}
 		.pb-sm-desk,
 		.py-sm-desk {
-			padding-bottom: 35px;
 			padding-bottom: var(--sm);
 		}
 		.mt-sm-desk,
 		.my-sm-desk {
-			margin-top: 35px;
 			margin-top: var(--sm);
 		}
 		.mb-sm-desk,
 		.my-sm-desk {
-			margin-bottom: 35px;
 			margin-bottom: var(--sm);
 		}
 		.pt-md-desk,
 		.py-md-desk {
-			padding-top: 85px;
 			padding-top: var(--md);
 		}
 		.pb-md-desk,
 		.py-md-desk {
-			padding-bottom: 85px;
 			padding-bottom: var(--md);
 		}
 		.mt-md-desk,
 		.my-md-desk {
-			margin-top: 85px;
 			margin-top: var(--md);
 		}
 		.mb-md-desk,
 		.my-md-desk {
-			margin-bottom: 85px;
 			margin-bottom: var(--md);
 		}
 		.pt-lg-desk,
 		.py-lg-desk {
-			padding-top: 120px;
 			padding-top: var(--lg);
 		}
 		.pb-lg-desk,
 		.py-lg-desk {
-			padding-bottom: 120px;
 			padding-bottom: var(--lg);
 		}
 		.mt-lg-desk,
 		.my-lg-desk {
-			margin-top: 120px;
 			margin-top: var(--lg);
 		}
 		.mb-lg-desk,
 		.my-lg-desk {
-			margin-bottom: 120px;
 			margin-bottom: var(--lg);
 		}
 }
