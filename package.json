@@ -53,8 +53,5 @@
 		"arrowParens": "always",
 		"bracketSpacing": true,
 		"bracesSpacing": true
-	},
-	"dependencies": {
-		"gumshoejs": "^5.1.2"
 	}
 }
