@@ -28,7 +28,6 @@ main {
 	/* Allow the <main> element to grow as necessary. */
 	flex-grow: 1;
 }
-<<<<<<< HEAD
 /*
 	Expected Structure:
 	.hgroup
@@ -43,8 +42,7 @@ main {
 }
 .hgroup > :last-child {
 	margin-bottom: 0;
-=======
-
+}
 hgroup,
 .hgroup {
 	padding-top: 3rem;
@@ -58,5 +56,4 @@ section > *:first-child {
 thead,
 tbody > tr:nth-child(even) {
 	background-color: var(--gray-light);
->>>>>>> master
 }
