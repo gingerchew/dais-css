@@ -2,7 +2,8 @@
 	"name": "dais-css",
 	"version": "0.1.0",
 	"description": "A platform to build your css upon",
-	"main": "gulpfile.js",
+	"main": "index.html",
+	"license": "MIT",
 	"homepage": "https://github.com/frankie-tech/dais-css#readme",
 	"contributors": [
 		{
@@ -11,20 +12,22 @@
 			"url": "https://github.com/frankie-tech"
 		}
 	],
-	"license": "MIT",
-	"browserslist": "defaults",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/frankie-tech/dais-css.git"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
+	},
+	"bugs": {
+		"url": "https://github.com/frankie-tech/dais-css/issues"
+	},
 	"scripts": {
 		"start": "gulp",
 		"prod": "gulp production",
 		"restart": "sh clean_start.sh"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/frankie-tech/dais-css.git"
-	},
-	"bugs": {
-		"url": "https://github.com/frankie-tech/dais-css/issues"
-	},
+	"browserslist": "defaults",
 	"devDependencies": {
 		"autoprefixer": "^9.7.3",
 		"browser-sync": "^2.26.7",
