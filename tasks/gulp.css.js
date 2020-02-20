@@ -2,7 +2,7 @@ const { src, dest } = require('gulp');
 
 const rename = require('gulp-rename');
 const cssimport = require('gulp-cssimport');
-const paths = require('./gulp.utils');
+const paths = require('./gulp.paths');
 const {
 	dest: { dev },
 	start
