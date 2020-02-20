@@ -1,53 +1,60 @@
-/** VARIABLES **/
-
-@custom-media --mob (min-width: 576px);
-@custom-media --tab (min-width: 768px);
-@custom-media --lap (min-width: 992px);
-@custom-media --desk (min-width: 1200px);
-
 /** SPACING **/
 :root {
 	--sm: 35px;
 	--md: 85px;
 	--lg: 120px;
+	--xl: 150px;
 }
 
 /** COLORS **/
 :root {
 	--blue: rgb(38, 132, 255);
-	--blue_trans: rgba(38, 132, 255, 0.75);
-	--black: #121314;
-	--gray_dark: rgb(80, 95, 121);
+	--blue-trans: rgba(38, 132, 255, 0.25);
+	--blue-opaque: rgba(38, 132, 255, 0.6);
+	--black: rgb(18, 19, 20);
 	--gray: rgb(137, 147, 164);
-	--gray_light: rgb(250, 251, 252);
+	--gray-dark: rgb(80, 95, 121);
+	--gray-neutral: rgb(185, 187, 192);
+	--gray-light: rgb(244, 245, 246);
 	--white: rgb(255, 255, 255);
 	--yellow: rgb(255, 196, 0);
 	--red: rgb(222, 53, 11);
+	--green: rgb(54, 179, 126);
 	--primary: var(--blue);
-	--primary_trans: var(--blue_trans);
+	--primary-trans: var(--blue-trans);
+	--primary-opaque: var(--blue-opaque);
+	--success: var(--green);
 	--warning: var(--yellow);
 	--danger: var(--red);
-	--text: var(--black);
-	--text_light: var(--gray_dark);
-	--bg: var(--gray_light);
+	--text-body: var(--black);
+	--text-dark: var(--gray-dark);
+	--text-neutral: var(--gray-neutral);
+	--text-light: var(--gray-light);
+	--bg: var(--gray-light);
 }
 
 /** FONTS **/
 :root {
-	--font_size: 16px;
+	--font-size: 16px;
 	--font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
 		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-	--font_base: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
+	--font-base: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
 		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
 }
 
 /** STYLES **/
 :root {
 	/* Example: Focus box shadow value */
-	--focus: 0 0 0 3px var(--primary_trans);
+	--focus: 0 0 0 3px var(--primary-trans);
+	--focus-border: 1px solid var(--primary-opaque);
+	--border: 1px solid var(--gray-dark);
+	--border-primary: 1px solid var(--primary);
+	--border-radius: 3px;
 }
 
 /** EASING **/
 :root {
 	--e: cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+/** INPUTS **/

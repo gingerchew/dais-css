@@ -15,10 +15,20 @@ footer {
 	flex-shrink: 0;
 }
 
+nav {
+	padding-top: 0.4rem;
+	padding-bottom: 0.4rem;
+}
+
+nav > ul {
+	margin-bottom: 0;
+}
+
 main {
 	/* Allow the <main> element to grow as necessary. */
 	flex-grow: 1;
 }
+<<<<<<< HEAD
 /*
 	Expected Structure:
 	.hgroup
@@ -33,4 +43,20 @@ main {
 }
 .hgroup > :last-child {
 	margin-bottom: 0;
+=======
+
+hgroup,
+.hgroup {
+	padding-top: 3rem;
+	margin-bottom: 1rem;
+}
+
+section > *:first-child,
+section > *:first-child {
+	padding-top: unset;
+}
+thead,
+tbody > tr:nth-child(even) {
+	background-color: var(--gray-light);
+>>>>>>> master
 }

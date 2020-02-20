@@ -35,8 +35,8 @@ h4,
 .h3,
 .h4,
 p,
-ul[class],
-ol[class],
+ul,
+ol,
 dl,
 li,
 blockquote,
@@ -178,7 +178,6 @@ body img {
 	width: 100%;
 	max-width: 100%;
 }
-
 td:not([align]),
 th:not([align]) {
 	/* Borrow a rule from [5], modifying a rule from [2] to give table cells
@@ -302,7 +301,9 @@ textarea {
 	/* Fix the font properties in Safari. [1] */
 	font: inherit;
 }
-
+::selection {
+	background-color: var(--primary-opaque);
+}
 progress {
 	/* Add the correct vertical alignment in Chrome, Firefox, and Opera. [1] */
 	vertical-align: baseline;
