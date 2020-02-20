@@ -141,6 +141,20 @@ label > input {
 .sidebar ol li::marker {
 	color: inherit;
 }
+a[target='_blank'] {
+	display: inline-flex;
+	align-items: center;
+}
+a[target='_blank']::after {
+	content: '\21d7';
+	margin: -10px 0 0 5px;
+	display: inline-block;
+	color: inherit;
+	font-size: 1.25em;
+}
+a[target='_blank'].no-icon::after {
+	content: unset;
+}
 a.announce-inline[target='_blank'] {
 	position: relative;
 }
