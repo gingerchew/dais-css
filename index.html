@@ -6,64 +6,62 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta name="designer" content="frankie w." />
 		<title>dais | a raised platform for a seat of honor</title>
-		<link rel="preload" href="dist/dais.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-		<link rel="preload" href="./styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+		<link rel="stylesheet" media="print" href="dist/dais.min.css" onload="this.media='all'" />
+		<link rel="stylesheet" media="print" href="./styles.css" onload="this.media='all'" />
 		<noscript>
 			<link rel="stylesheet" href="dist/dais.min.css" />
 			<link rel="stylesheet" href="./styles.css" />
 		</noscript>
-		<!-- prettier-ignore -->
-		<script>/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */!function(){"use strict";var t={};if(t.s=function(){var t;try{t=document.createElement("link").relList.supports("preload")}catch(e){t=!1}return function(){return t}}(),t.b=function(t){var e=t.media||"all";function n(){t.addEventListener?t.removeEventListener("load",n):t.attachEvent&&t.detachEvent("onload",n),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",n):t.attachEvent&&t.attachEvent("onload",n),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(n,3e3)},t.p=function(){if(!t.s())for(var e=document.getElementsByTagName("link"),n=0;n<e.length;n++){var a=e[n];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),t.b(a))}},!t.s()){t.p();var e=setInterval(t.p,500);addEventListener("load",function(){t.p(),clearInterval(e)})}}();</script>
 		<base href="" />
 	</head>
 	<body class="navigation-grid">
 		<!-- implement a sidebar to navigat a little more easily -->
-		<a href="#main" id="top" class="visually-hidden">skip to main content</a>
-		<nav class="sidebar">
-			<a
-				class="menu-title h4 no-icon"
-				target="_blank"
-				rel="noreferrer noopener"
-				href="https://github.com/frankie-tech/dais-css"
-			>
-				<span>opens in a new window</span>
-				🌟 dais.css 🌟
-			</a>
-			<div class="menu-subtitle h6">
-				<i>noun: </i>
-				<b>
-					a raised<br />
-					platform for a seat of honor
-				</b>
-			</div>
-			<ol id="sidebar">
-				<li>
-					<button class="link" data-section="#main">ReadMe</button>
-				</li>
-				<li>
-					<button class="link" data-section="#headers">Headings</button>
-				</li>
-				<li>
-					<button class="link" data-section="#inlineText">Inline Text</button>
-				</li>
-				<li>
-					<button class="link" data-section="#lists">Lists</button>
-				</li>
-				<li>
-					<button class="link" data-section="#buttons">Links & Buttons</button>
-				</li>
-				<li>
-					<button class="link" data-section="#inputs">Forms & Inputs</button>
-				</li>
-				<li>
-					<button class="link" data-section="#images">Images</button>
-				</li>
-				<li>
-					<button class="link" data-section="#tables">Tables</button>
-				</li>
-			</ol>
-		</nav>
 		<main>
+			<a href="#main" id="top" class="visually-hidden">skip to main content</a>
+			<nav class="sidebar">
+				<a
+					class="menu-title h4 no-icon"
+					target="_blank"
+					rel="noreferrer noopener"
+					href="https://github.com/frankie-tech/dais-css"
+				>
+					<span>opens in a new window</span>
+					🌟 dais.css 🌟
+				</a>
+				<div class="menu-subtitle h6">
+					<i>noun: </i>
+					<b>
+						a raised<br />
+						platform for a seat of honor
+					</b>
+				</div>
+				<ol id="sidebar">
+					<li>
+						<button class="link" data-section="#main">ReadMe</button>
+					</li>
+					<li>
+						<button class="link" data-section="#headers">Headings</button>
+					</li>
+					<li>
+						<button class="link" data-section="#inlineText">Inline Text</button>
+					</li>
+					<li>
+						<button class="link" data-section="#lists">Lists</button>
+					</li>
+					<li>
+						<button class="link" data-section="#buttons">Links & Buttons</button>
+					</li>
+					<li>
+						<button class="link" data-section="#inputs">Forms & Inputs</button>
+					</li>
+					<li>
+						<button class="link" data-section="#images">Images</button>
+					</li>
+					<li>
+						<button class="link" data-section="#tables">Tables</button>
+					</li>
+				</ol>
+			</nav>
 			<article id="main">
 				<header id="readMeHeader">
 					<hgroup>
