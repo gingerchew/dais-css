@@ -2,6 +2,15 @@ const { series, parallel } = require('gulp');
 
 const { buildCSS, devCSS, serve, observe } = require('./tasks');
 
-exports.default = parallel(series(cleanOutputs, devCSS), series(serve, observe));
-/* task.production: task runs and builds everything properly, but doesn't ever terminate back to the terminal */
-exports.production = buildCSS;
+const process = require('process');
+
+const exit = function(done) {
+	return new Promise((resolve) => {
+		resolve(() => process.exit(0));
+		done();
+	});
+};
+
+exports.default = parallel(devCSS, series(serve, observe));
+
+exports.production = series(buildCSS);
