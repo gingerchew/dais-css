@@ -1029,6 +1029,19 @@ address .city {
 address .state {
 	font-style: initial;
 }
+/** Abbreviation **/
+abbr {
+	font-size: 1.05em;
+	text-decoration-color: var(--primary);
+}
+abbr[title=''] {
+	text-decoration-color: var(--red);
+}
+/** Quote **/
+q {
+	font-size: 0.85em;
+	font-style: italic;
+}
 
 /** LAYOUT **/
 body {
