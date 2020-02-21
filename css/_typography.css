@@ -178,3 +178,22 @@ a.announce-inline[target='_blank'] > span {
 a.announce-inline[target='_blank']:hover > span {
 	opacity: 1;
 }
+/** Address **/
+address {
+	display: inline-block;
+	font-style: unset;
+}
+address.address-block {
+	background-color: var(--gray-light);
+	padding: 15px;
+}
+address .street {
+	margin-bottom: 0;
+}
+address .city {
+	font-weight: bold;
+	font-style: italic;
+}
+address .state {
+	font-style: initial;
+}
