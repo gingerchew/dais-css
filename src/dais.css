@@ -391,8 +391,18 @@ body {
 	font-size: 1rem;
 	font-weight: 300;
 	line-height: 1.6;
+	animation: fadeIn ease-out 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }
-
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 main > article,
 main > section {
 	padding: 0 1rem 7.5rem;
