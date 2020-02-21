@@ -2,8 +2,6 @@ const { src, dest } = require('gulp');
 
 const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
-
-const debug = require('gulp-debug');
 const importGulp = require('gulp-cssimport');
 const eachPost = require('postcss-each');
 const responsiveTypePost = require('postcss-responsive-type');
