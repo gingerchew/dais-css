@@ -1,0 +1,2225 @@
+/** SPACING **/
+:root {
+	--sm: 35px;
+	--md: 85px;
+	--lg: 120px;
+	--xl: 150px;
+}
+
+/** COLORS **/
+:root {
+	--blue: rgb(38, 132, 255);
+	--blue-trans: rgba(38, 132, 255, 0.25);
+	--blue-opaque: rgba(38, 132, 255, 0.6);
+	--black: rgb(18, 19, 20);
+	--gray: rgb(137, 147, 164);
+	--gray-dark: rgb(80, 95, 121);
+	--gray-neutral: rgb(185, 187, 192);
+	--gray-light: rgb(244, 245, 246);
+	--white: rgb(255, 255, 255);
+	--yellow: rgb(255, 196, 0);
+	--red: rgb(222, 53, 11);
+	--green: rgb(54, 179, 126);
+	--primary: var(--blue);
+	--primary-trans: var(--blue-trans);
+	--primary-opaque: var(--blue-opaque);
+	--success: var(--green);
+	--warning: var(--yellow);
+	--danger: var(--red);
+	--text-body: var(--black);
+	--text-dark: var(--gray-dark);
+	--text-neutral: var(--gray-neutral);
+	--text-light: var(--gray-light);
+	--bg: var(--gray-light);
+}
+
+/** FONTS **/
+:root {
+	--font-size: 16px;
+	--font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-base: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
+		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
+}
+
+/** STYLES **/
+:root {
+	/* Example: Focus box shadow value */
+	--focus: 0 0 0 3px var(--primary-trans);
+	--focus-border: 1px solid var(--primary-opaque);
+	--border: 1px solid var(--gray-dark);
+	--border-primary: 1px solid var(--primary);
+	--border-radius: 3px;
+}
+
+/** EASING **/
+:root {
+	--e: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/** INPUTS **/
+
+/** RESET **/
+*,
+*:after,
+*:before {
+	/* Set universal box sizing with inheritance. [3] */
+	box-sizing: inherit;
+}
+
+html {
+	/* Fix the line height in all browsers. [1] */
+	line-height: 1.15;
+	/* Set universal box sizing with inheritance. [3] */
+	box-sizing: border-box;
+}
+
+body {
+	/* Smoothly scroll between anchors. [4] */
+	scroll-behavior: smooth;
+	/* Prevent adjustments of font size after orientation changes in iOS. [1] */
+	-webkit-text-size-adjust: 100%;
+	/* optimizeLegibility may cause some performance issues in some browsers
+	   (https://marco.org/2012/11/15/text-rendering-optimize-legibility) -- not sure if
+	   this is still current. Probably safe to assume that an appropriately legible
+	   font will be used anyway. [4] */
+	text-rendering: optimizeSpeed;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4,
+p,
+ul,
+ol,
+dl,
+li,
+blockquote,
+figure,
+figcaption,
+button,
+input,
+optgroup,
+select,
+textarea {
+	/* Remove the default margin for these elements in all browsers. [1],[4] */
+	margin: 0;
+}
+
+main,
+details {
+	/* Render <main> consistently in IE and add the correct display for <details>
+	   in Edge, IE 10+, and Firefox. [1] */
+	display: block;
+}
+
+summary {
+	/* Add the correct display in all browsers. [1] */
+	display: list-item;
+}
+
+template {
+	/* Add the correct display in IE 10+. [1] */
+	display: none;
+}
+
+h1,
+.h1 {
+	/* Fix the font size and margin on 'h1' elements in 'section' and 
+	   'article' contexts in Chrome, Firefox, and Safari. [1] */
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+hr {
+	/* Add the correct box sizing in Firefox. [1] */
+	box-sizing: content-box;
+	height: 0;
+	/* Show the overflow in Edge and IE. [1] */
+	overflow: visible;
+}
+
+pre,
+code,
+kbd,
+samp {
+	/* Fix the inheritance and scaling of font size in all browsers. [1] */
+	font-family: monospace, monospace;
+	/* Fix the odd 'em' font sizing in all browsers. [1] */
+	font-size: 1em;
+	/* Ensure that these are block-level elements by default. */
+	display: block;
+	/* Ensure that these elements don't soft-wrap by default. [2] */
+	white-space: pre;
+	/* Since white-space is set to "pre", ensure that the element has
+	   scrollbars as necessary. */
+	overflow: auto;
+}
+
+p > pre,
+p > code,
+p > kbd,
+p > samp {
+	/* Render code blocks contained by <p> blocks as inline. */
+	display: inline;
+}
+
+ul[class],
+ol[class],
+dl[class] {
+	/* Remove default padding from list elements that have a class attribute. [4] */
+	padding: 0;
+	/* Reset list style for lists with class attributes. [4] */
+	list-style: none;
+}
+
+a {
+	/* Remove the gray background on active links in IE 10. [1] */
+	background-color: transparent;
+}
+
+a:not([class]) {
+	/* Makes links a bit more readable while avoiding conflicts. [4] */
+	-webkit-text-decoration-skip: ink;
+	        text-decoration-skip-ink: auto;
+}
+
+abbr[title] {
+	/* Remove the bottom border in Chrome 57-. [1] */
+	border-bottom: none;
+	/* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. [1] */
+	text-decoration: underline;
+	-webkit-text-decoration: underline dotted;
+	        text-decoration: underline dotted;
+}
+
+b,
+strong {
+	/* Add the correct font weight in Chrome, Edge, and Safari. [1] */
+	/* This has been changed from [1] because the 'bolder' value is not well
+	   enough supported in common fonts: https://css-tricks.com/almanac/properties/f/font-weight/ */
+	font-weight: bold;
+}
+
+small {
+	/* Enforce the correct font size in all browsers. [1] */
+	font-size: 80%;
+}
+
+sub,
+sup {
+	/* Prevent 'sub' and 'sup' elements from affecting the line height
+	   in all browsers. [1] */
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	/* Enforce 'sub' positioning in all browsers. [1] */
+	bottom: -0.25em;
+}
+
+sup {
+	/* Enforce 'sup' positioning in all browsers. [1] */
+	top: -0.5em;
+}
+
+body img {
+	/* Remove the border on images inside links in IE 10. [1] */
+	border-style: none;
+	/* Go ahead and make these block-level elements. I'm not sure about this. [4] */
+	display: block;
+	/* [2] */
+	width: 100%;
+	max-width: 100%;
+}
+td:not([align]),
+th:not([align]) {
+	/* Borrow a rule from [5], modifying a rule from [2] to give table cells
+	   a default left alignment unless alignment is specified in the element. */
+	text-align: left;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	/* Set the font styles to match the rest of the document in
+	   all browsers. [1],[4] */
+	font: inherit;
+	line-height: 1.15;
+	/* Remove the margin in Firefox and Safari. [1] */
+	margin: 0;
+}
+
+button,
+input {
+	/* Show the overflow in Edge. [1] */
+	overflow: visible;
+}
+
+button,
+select {
+	/* Remove the inheritance of text transform in Edge, Firefox, and IE. [1] */
+	text-transform: none;
+}
+
+.button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	/* Fix the inability to style clickable types in iOS and Safari. [1] */
+	-webkit-appearance: button;
+	/* Set the correct cursor for these elements. [2] */
+	cursor: pointer;
+}
+
+.button[disabled],
+button[disabled],
+[type='button'][disabled],
+[type='reset'][disabled],
+[type='submit'][disabled] {
+	/* Reset the cursor for disabled button elements. [2] */
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+	/* Remove the inner border and padding in Firefox. [1] */
+	border-style: none;
+	padding: 0;
+}
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+	/* Restore the focus styles unset by the previous rule. [1] */
+	outline: 1px dotted ButtonText;
+}
+
+fieldset {
+	/* Fix 'fieldset' padding in Firefox. [1] */
+	padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+	/* Fix text wrapping in Edge and IE. [1] */
+	box-sizing: border-box;
+	display: table;
+	max-width: 100%;
+	white-space: normal;
+	/* Fix color inheritance from 'fieldset' elements in IE. [1] */
+	color: inherit;
+	/* Remove padding so developer are not surprised when they zero out
+	   'fieldset' elements in all browsers. [1] */
+	padding: 0;
+}
+
+textarea {
+	/* Remove the default vertical scrollbar in IE 10+. [1] */
+	overflow: auto;
+}
+
+[type='checkbox'],
+[type='radio'] {
+	/* Add the correct box sizing in IE 10. [1] */
+	box-sizing: border-box;
+	/* Remove the padding present in IE 10. [1] */
+	padding: 0;
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+	/* Fix the cursor style of increment and decrement buttons in Chrome. [1] */
+	height: auto;
+}
+
+[type='search'] {
+	/* Fix appearance in Chrome and Safari. [1] */
+	-webkit-appearance: textfield;
+	/* Fix the outline style in Safari. [1] */
+	outline-offset: -2px;
+}
+
+[type='search']::-webkit-search-decoration {
+	/* Remove the inner padding in Chrome and Safari on MacOS. [1] */
+	-webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+	/* Fix the inability to sytle clickable types in iOS and Safari. [1] */
+	-webkit-appearance: button;
+	/* Fix the font properties in Safari. [1] */
+	font: inherit;
+}
+::-moz-selection {
+	background-color: rgba(38, 132, 255, 0.6);
+	background-color: var(--primary-opaque);
+}
+::selection {
+	background-color: rgba(38, 132, 255, 0.6);
+	background-color: var(--primary-opaque);
+}
+progress {
+	/* Add the correct vertical alignment in Chrome, Firefox, and Opera. [1] */
+	vertical-align: baseline;
+}
+
+[hidden] {
+	/* Add the correct display in IE 10. [1] */
+	display: none;
+}
+
+/* Prevent animations and transitions for users that want that. [4] */
+
+
+/** BASE THEME **/
+
+/** Typography: font, letter-spacing, line-height, text-*, list-style-type. */
+
+html {
+	font-size: 16px;
+	font-size: var(--font-size);
+}
+
+body {
+	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
+		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
+	font-family: var(--font-base);
+	font-size: 1rem;
+	font-weight: 300;
+	line-height: 1.6;
+}
+
+main > article,
+main > section {
+	padding: 0 1rem 7.5rem;
+	position: relative;
+	width: 100%;
+}
+main > section + section {
+	padding: 0 1rem 2.5rem;
+}
+main section > *,
+main article > *,
+.container {
+	max-width: 992px;
+	margin-left: auto;
+	margin-right: auto;
+}
+main article > hr,
+main section > hr,
+hr {
+	margin-right: 2.5vw;
+	margin-left: 2.5vw;
+	/* max-width: 33%; */
+}
+.container {
+	display: block;
+}
+main section .table-container table {
+	width: 100%;
+}
+
+code {
+	font-size: 86%;
+}
+
+dl {
+	list-style: none;
+}
+
+ol {
+	list-style: decimal inside;
+}
+
+ul {
+	list-style: disc inside;
+}
+
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ol ol,
+ol ul,
+ul dl,
+ul ol,
+ul ul {
+	font-size: 90%;
+}
+dl > dt,
+dl > dd {
+	position: relative;
+}
+dl > dd {
+	line-height: 1.25;
+	padding-bottom: 0.5em;
+}
+dl > dt::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 1.5em;
+	border-bottom: 1px solid rgb(38, 132, 255);
+	border-bottom: 1px solid var(--primary);
+}
+dl > dd {
+	display: inline-flex;
+	align-items: center;
+}
+dl > dd::before {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	bottom: 0;
+	left: -1ex;
+	height: 1em;
+	border-left: 1px solid rgb(38, 132, 255);
+	border-left: 1px solid var(--primary);
+}
+ul > li::marker,
+ol > li::marker {
+	color: rgb(38, 132, 255);
+	color: var(--primary);
+}
+ul > li li::marker,
+ol > li li::marker {
+	color: inherit;
+}
+.button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	font-family: inherit;
+	font-weight: 700;
+	letter-spacing: inherit;
+	line-height: 2.5rem;
+	text-align: center;
+	text-decoration: none;
+}
+button.link {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding: unset;
+	line-height: 1;
+	text-align: unset;
+	text-decoration: none;
+	border: 1px solid transparent;
+	background-color: transparent;
+	color: rgb(38, 132, 255);
+	color: var(--primary);
+	font-weight: inherit;
+}
+button.link:hover {
+	color: rgb(18, 19, 20);
+	color: var(--black);
+	background-color: transparent;
+	border-color: transparent;
+}
+button.link:focus {
+	outline: 0;
+	box-shadow: 0 0 0 3px rgba(38, 132, 255, 0.25);
+	box-shadow: var(--focus);
+	color: rgb(38, 132, 255);
+	color: var(--primary);
+	background-color: transparent;
+}
+label,
+legend {
+	font-size: 1.6rem;
+	font-weight: 700;
+}
+
+label.inline,
+legend.inline {
+	font-weight: normal;
+}
+
+/**
+ * Layout: Display, margin, padding, height, and width.
+ */
+
+.table-container {
+	max-width: 80rem;
+}
+
+blockquote,
+dl,
+figure,
+form,
+ol,
+pre,
+table,
+ul {
+	margin-bottom: 2.5rem;
+}
+
+figure {
+	display: block;
+}
+figcaption {
+	padding: 0.75rem;
+}
+figure.figure-background figcaption {
+	background-color: rgb(244, 245, 246);
+	background-color: var(--gray-light);
+	border-bottom-right-radius: 3px;
+	border-bottom-right-radius: var(--border-radius);
+	border-bottom-left-radius: 3px;
+	border-bottom-left-radius: var(--border-radius);
+}
+figure.figure-right,
+figure.figure-left {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-flow: row dense;
+}
+figure.figure-left img {
+	grid-column: 2;
+}
+figure.figure-right figcaption,
+figure.figure-left figcaption {
+	border-radius: unset;
+	padding-left: 1rem;
+}
+figure.figure-right figcaption {
+	border-top-right-radius: 3px;
+	border-top-right-radius: var(--border-radius);
+	border-bottom-right-radius: 3px;
+	border-bottom-right-radius: var(--border-radius);
+}
+
+figure.figure-left figcaption {
+	border-top-left-radius: 3px;
+	border-top-left-radius: var(--border-radius);
+	border-bottom-left-radius: 3px;
+	border-bottom-left-radius: var(--border-radius);
+}
+
+p {
+	margin-bottom: 1.25rem;
+}
+
+p + ul,
+p + ol {
+	margin-bottom: 1.25rem;
+}
+blockquote {
+	padding: 1rem 1.5rem;
+}
+
+blockquote *:last-child {
+	margin-bottom: 0;
+}
+
+code {
+	margin: 0 0.2rem;
+	padding: 0.2rem 0.5rem;
+}
+
+pre > code {
+	padding: 1rem 1.5rem;
+}
+
+hr {
+	margin: 3rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0.75em;
+}
+
+dl,
+ol,
+ul {
+	margin-top: 0;
+	padding-left: 0;
+}
+
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ol ol,
+ol ul,
+ul dl,
+ul ol,
+ul ul {
+	margin: 0.5rem 0 0.5rem 1rem;
+}
+
+dd,
+dt,
+li {
+	margin-bottom: 0;
+	line-height: 1.5;
+}
+
+table {
+	border-spacing: 0;
+	font-feature-settings: "tnum";
+	font-variant-numeric: tabular-nums;
+}
+
+td,
+th {
+	padding: 0.75rem 1.25rem;
+}
+
+td:first-child,
+th:first-child {
+	padding-left: 1rem;
+}
+
+td:last-child,
+th:last-child {
+	padding-right: 1rem;
+}
+
+input,
+select,
+fieldset,
+textarea {
+	margin-bottom: 1.5rem;
+}
+@supports (font-size: max(16px)) {
+	input,
+	textarea,
+	select:focus {
+		font-size: max(16px, inherit);
+	}
+}
+textarea {
+	min-height: 6.5rem;
+}
+
+.button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	display: inline-block;
+	padding: 0 1rem;
+}
+
+[type='email'],
+[type='number'],
+[type='password'],
+[type='search'],
+[type='tel'],
+[type='text'],
+[type='url'],
+textarea,
+select {
+	padding: 0.6rem 1rem;
+	width: 100%;
+}
+
+[type='checkbox'],
+[type='radio'] {
+	display: inline;
+}
+
+select {
+	padding-right: 3rem;
+}
+
+label,
+legend {
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+label.inline,
+legend.inline {
+	display: inline-block;
+	margin-left: 0.5rem;
+}
+
+fieldset {
+	border-width: 0;
+	padding: 0;
+}
+
+/**
+ * Colors, borders, outline, box-shadow, appearance, and opacity.
+ */
+
+body {
+	color: var(--text);
+}
+
+a {
+	color: rgb(38, 132, 255);
+	color: var(--blue);
+	text-decoration: none;
+	border: 1px dashed transparent;
+}
+
+a:focus,
+a:hover {
+	color: rgb(80, 95, 121);
+	color: var(--text-dark);
+	text-decoration: underline;
+}
+a:focus {
+	border-color: rgb(38, 132, 255);
+	border-color: var(--primary);
+}
+a[target='_blank'] > span,
+.visually-hidden {
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap; /* added line */
+}
+
+blockquote {
+	border-left: 0.3rem solid rgba(38, 132, 255, 0.6);
+	border-left: 0.3rem solid var(--primary-opaque);
+}
+
+pre,
+code {
+	background: rgb(244, 245, 246);
+	background: var(--gray-light);
+}
+
+pre {
+	border-left: 0.3rem solid rgba(38, 132, 255, 0.6);
+	border-left: 0.3rem solid var(--primary-opaque);
+}
+
+code {
+	border-radius: 0.4rem;
+}
+
+pre > code {
+	border-radius: 0;
+}
+
+hr {
+	margin-right: auto;
+	margin-left: auto;
+	border: 0;
+	--border-width: 2px;
+	border-top: 1px solid rgb(80, 95, 121);
+	border-top: var(--border);
+}
+
+td,
+th {
+	border-bottom: 1px solid rgb(80, 95, 121);
+	border-bottom: var(--border);
+}
+
+/**
+ * Other form elements.
+ */
+
+[type='email'],
+[type='number'],
+[type='password'],
+[type='search'],
+[type='tel'],
+[type='text'],
+[type='url'],
+textarea,
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	border: 1px solid rgb(80, 95, 121);
+	border: var(--border);
+	border-radius: 3px;
+	border-radius: var(--border-radius);
+	box-shadow: none;
+}
+
+[type='email']:focus,
+[type='number']:focus,
+[type='password']:focus,
+[type='search']:focus,
+[type='tel']:focus,
+[type='text']:focus,
+[type='url']:focus,
+textarea:focus,
+select:focus {
+	border-color: rgb(38, 132, 255);
+	border-color: var(--primary);
+	box-shadow: 0 0 0 3px rgba(38, 132, 255, 0.25);
+	box-shadow: var(--focus);
+	outline: 0;
+}
+
+/** Headers **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
+		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
+	font-family: var(--font-base);
+	font-weight: 600;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	line-height: 1.25;
+	letter-spacing: -1px;
+}
+
+h1,
+.h1 {
+	font-size: calc(1.7rem + 1.3 * ((100vw - 48rem) / 27));
+}
+
+h2,
+.h2 {
+	font-size: calc(1.5rem + 1 * ((100vw - 48rem) / 27));
+}
+
+h3,
+.h3 {
+	font-size: calc(1.4rem + 0.6000000000000001 * ((100vw - 48rem) / 27));
+}
+
+h4,
+.h4 {
+	font-size: calc(1.25rem + 0.5 * ((100vw - 48rem) / 27));
+}
+
+h5,
+.h5 {
+	font-size: calc(1.1rem + 0.3999999999999999 * ((100vw - 48rem) / 27));
+}
+
+h6,
+.h6 {
+	font-size: calc(1rem + 0.25 * ((100vw - 48rem) / 27));
+}
+
+h1.display,
+h2.display,
+h3.display,
+h4.display,
+.h1.display,
+.h2.display,
+.h3.display,
+.h4.display {
+	font-weight: 200;
+	line-height: 1;
+}
+
+h1.display,
+.h1.display {
+	font-size: calc(2rem + 3 * ((100vw - 48rem) / 27));
+}
+
+h2.display,
+.h2.display {
+	font-size: calc(1.75rem + 2.25 * ((100vw - 48rem) / 27));
+}
+
+h3.display,
+.h3.display {
+	font-size: calc(1.5rem + 1.75 * ((100vw - 48rem) / 27));
+}
+
+h4.display,
+.h4.display {
+	font-size: calc(1.25rem + 1.75 * ((100vw - 48rem) / 27));
+}
+
+/** Inline Text Elements **/
+mark,
+.mark {
+	background-color: rgba(38, 132, 255, 0.25);
+	background-color: var(--primary-trans);
+}
+
+/** Form Titles **/
+legend {
+	position: relative;
+	font-size: calc(1rem + 0.6000000000000001 * ((100vw - 48rem) / 27));
+}
+legend::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 1.5em;
+	border-bottom: 1px solid rgb(38, 132, 255);
+	border-bottom: 1px solid var(--primary);
+}
+label {
+	font-size: 0.9rem;
+	font-weight: 300;
+	color: rgb(18, 19, 20);
+	color: var(--black);
+	opacity: 0.75;
+}
+label[focus-within] {
+	opacity: 1;
+}
+label:focus-within {
+	opacity: 1;
+}
+del {
+	color: rgb(222, 53, 11);
+	color: var(--danger);
+}
+ins {
+	color: rgb(54, 179, 126);
+	color: var(--success);
+}
+cite {
+	font-style: normal;
+	border-bottom: 1px dashed rgb(38, 132, 255);
+	border-bottom: 1px dashed var(--primary);
+}
+
+label > input {
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+}
+.code-inline {
+	display: inline-block;
+	margin-bottom: -0.5rem;
+}
+.sidebar ol li::marker {
+	color: inherit;
+}
+a[target='_blank'] {
+	display: inline-flex;
+	align-items: center;
+}
+a[target='_blank']::after {
+	content: '\21d7';
+	margin: -10px 0 0 5px;
+	display: inline-block;
+	color: inherit;
+	font-size: 1.25em;
+}
+a[target='_blank'].no-icon::after {
+	content: unset;
+}
+a.announce-inline[target='_blank'] {
+	position: relative;
+}
+a.announce-inline[target='_blank'] > span {
+	position: absolute;
+	bottom: calc(100% + 0.5rem);
+	padding: 0.25rem;
+	opacity: 0;
+	font-size: 1rem;
+	background-color: rgb(244, 245, 246);
+	background-color: var(--gray-light);
+	color: rgb(38, 132, 255);
+	color: var(--blue);
+	width: 200px;
+	height: auto;
+	clip: unset;
+	text-align: center;
+	border-radius: 3px;
+	border-radius: var(--border-radius);
+	white-space: normal;
+	white-space: initial;
+	transition: opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	transition: opacity 0.3s var(--e);
+	pointer-events: none;
+}
+a.announce-inline[target='_blank']:hover > span {
+	opacity: 1;
+}
+/** Address **/
+address {
+	display: inline-block;
+	font-style: unset;
+}
+address.address-block {
+	background-color: rgb(244, 245, 246);
+	background-color: var(--gray-light);
+	padding: 15px;
+}
+address .street {
+	margin-bottom: 0;
+}
+address .city {
+	font-weight: bold;
+	font-style: italic;
+}
+address .state {
+	font-style: normal;
+	font-style: initial;
+}
+/** Abbreviation **/
+abbr {
+	font-size: 1.05em;
+	-webkit-text-decoration-color: rgb(38, 132, 255);
+	        text-decoration-color: rgb(38, 132, 255);
+	-webkit-text-decoration-color: var(--primary);
+	        text-decoration-color: var(--primary);
+}
+abbr[title=''] {
+	-webkit-text-decoration-color: rgb(222, 53, 11);
+	        text-decoration-color: rgb(222, 53, 11);
+	-webkit-text-decoration-color: var(--red);
+	        text-decoration-color: var(--red);
+}
+/** Quote **/
+q {
+	font-size: 0.85em;
+	font-style: italic;
+}
+
+/** LAYOUT **/
+body {
+	/* Ensure that the page body fills the display even if the content does not. [4] */
+	min-height: 100vh;
+	/* The following two rules allow the header and footer elements to be positioned
+	   correctly assuming they're all direct descendants of the <body> element. */
+	display: flex;
+	flex-direction: column;
+}
+
+header,
+footer {
+	/* Prevent these two eleemnts from shrinking when content is added to the <body>
+	   element. */
+	flex-shrink: 0;
+}
+
+nav {
+	padding-top: 0.4rem;
+	padding-bottom: 0.4rem;
+}
+
+nav > ul {
+	margin-bottom: 0;
+}
+
+main {
+	/* Allow the <main> element to grow as necessary. */
+	flex-grow: 1;
+}
+/*
+	Expected Structure:
+	.hgroup
+		h*
+		h*
+		h*
+	/.hgroup
+*/
+.hgroup {
+	/* Used primarily in section headers (reminiscent of the yet to be implemented hgroup) */
+	margin-bottom: 0.5rem;
+}
+.hgroup > :last-child {
+	margin-bottom: 0;
+}
+hgroup,
+.hgroup {
+	padding-top: 3rem;
+	margin-bottom: 1rem;
+}
+
+section > *:first-child,
+section > *:first-child {
+	padding-top: unset;
+}
+thead,
+tbody > tr:nth-child(even) {
+	background-color: rgb(244, 245, 246);
+	background-color: var(--gray-light);
+}
+
+/** FLEXBOX-BASED COLUMNS **/
+.row {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.row.row-no-padding {
+	padding: 0;
+}
+
+.row.row-no-padding > .column {
+	padding: 0;
+}
+
+.row.row-wrap {
+	flex-wrap: wrap;
+}
+
+.row.row-top {
+	align-items: flex-start;
+}
+
+.row.row-bottom {
+	align-items: flex-end;
+}
+
+.row.row-center {
+	align-items: center;
+}
+
+.row.row-stretch {
+	align-items: stretch;
+}
+
+.row.row-baseline {
+	align-items: baseline;
+}
+
+.row .column {
+	display: block;
+	flex: 1 1 auto;
+	margin-left: 0;
+	max-width: 100%;
+	width: 100%;
+}
+
+.row .column.column-offset-10 {
+	margin-left: 10%;
+}
+
+.row .column.column-offset-20 {
+	margin-left: 20%;
+}
+
+.row .column.column-offset-25 {
+	margin-left: 25%;
+}
+
+.row .column.column-offset-33,
+.row .column.column-offset-34 {
+	margin-left: 33.3333%;
+}
+
+.row .column.column-offset-50 {
+	margin-left: 50%;
+}
+
+.row .column.column-offset-66,
+.row .column.column-offset-67 {
+	margin-left: 66.6666%;
+}
+
+.row .column.column-offset-75 {
+	margin-left: 75%;
+}
+
+.row .column.column-offset-80 {
+	margin-left: 80%;
+}
+
+.row .column.column-offset-90 {
+	margin-left: 90%;
+}
+
+.row .column.column-10 {
+	flex: 0 0 10%;
+	max-width: 10%;
+}
+
+.row .column.column-20 {
+	flex: 0 0 20%;
+	max-width: 20%;
+}
+
+.row .column.column-25 {
+	flex: 0 0 25%;
+	max-width: 25%;
+}
+
+.row .column.column-33,
+.row .column.column-34 {
+	flex: 0 0 33.3333%;
+	max-width: 33.3333%;
+}
+
+.row .column.column-40 {
+	flex: 0 0 40%;
+	max-width: 40%;
+}
+
+.row .column.column-50 {
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+
+.row .column.column-60 {
+	flex: 0 0 60%;
+	max-width: 60%;
+}
+
+.row .column.column-66,
+.row .column.column-67 {
+	flex: 0 0 66.6666%;
+	max-width: 66.6666%;
+}
+
+.row .column.column-70 {
+	flex: 0 0 70%;
+	max-width: 70%;
+}
+
+.row .column.column-75 {
+	flex: 0 0 75%;
+	max-width: 75%;
+}
+
+.row .column.column-80 {
+	flex: 0 0 80%;
+	max-width: 80%;
+}
+
+.row .column.column-90 {
+	flex: 0 0 90%;
+	max-width: 90%;
+}
+
+.row .column .column-top {
+	align-self: flex-start;
+}
+
+.row .column .column-bottom {
+	align-self: flex-end;
+}
+
+.row .column .column-center {
+	-ms-grid-row-align: center;
+	align-self: center;
+}
+
+/** 12 COLUMN GRID **/
+
+
+/** Assumes a menu structure similar to 
+*?  nav
+*?      ul
+*?          li
+*?          ...
+*?      /ul
+*?  /nav
+*/
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+nav li {
+	margin-bottom: 0;
+}
+.menu {
+	flex-flow: column;
+}
+
+/**
+ * Button styling. All buttons start with the "outline" style defined in
+ * milligram.css [2]. Buttons with a "submit" type or a "default" attribute
+ * or class get the default style defined in milligram.
+ */
+
+.button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	border: 1px solid rgb(38, 132, 255);
+	border: var(--border-primary);
+	border-radius: 3px;
+	border-radius: var(--border-radius);
+	white-space: nowrap;
+	background-color: rgb(38, 132, 255);
+	background-color: var(--primary);
+	color: white;
+	vertical-align: text-bottom;
+	-webkit-appearance: none;
+}
+
+.button:hover,
+button:hover,
+[type='button']:hover,
+[type='reset']:hover,
+[type='submit']:hover {
+	outline: 0;
+	background-color: rgb(80, 95, 121);
+	background-color: var(--gray-dark);
+	border-color: rgb(80, 95, 121);
+	border-color: var(--gray-dark);
+}
+
+.button:focus,
+button:focus,
+[type='button']:focus,
+[type='reset']:focus,
+[type='submit']:focus {
+	outline: 0;
+	box-shadow: 0 0 0 3px rgba(38, 132, 255, 0.25);
+	box-shadow: var(--focus);
+	border: 1px solid rgba(38, 132, 255, 0.6);
+	border: var(--focus-border);
+	background-color: rgb(80, 95, 121);
+	background-color: var(--gray-dark);
+	color: white;
+}
+
+/**
+ * Filled buttons.
+ */
+.button-outline {
+	border: 1px solid rgb(38, 132, 255);
+	border: var(--border-primary);
+	border-radius: 3px;
+	border-radius: var(--border-radius);
+	white-space: nowrap;
+	background-color: transparent;
+	color: rgb(38, 132, 255);
+	color: var(--primary);
+	vertical-align: text-bottom;
+	-webkit-appearance: none;
+}
+.button-outline:hover {
+	background-color: transparent;
+	color: rgb(80, 95, 121);
+	color: var(--gray-dark);
+}
+/**
+ * Disabled buttons.
+ */
+
+.button[disabled],
+button[disabled],
+[type='button'][disabled],
+[type='reset'][disabled],
+[type='submit'][disabled] {
+	opacity: 0.5;
+}
+
+.button[disabled]:focus,
+.button[disabled]:hover,
+button[disabled]:focus,
+button[disabled]:hover,
+[type='button'][disabled]:focus,
+[type='button'][disabled]:hover,
+[type='reset'][disabled]:focus,
+[type='reset'][disabled]:hover,
+[type='submit'][disabled]:focus,
+[type='submit'][disabled]:hover {
+	border-color: rgb(38, 132, 255);
+	border-color: var(--primary);
+	color: white;
+	background-color: rgb(38, 132, 255);
+	background-color: var(--primary);
+}
+
+/**
+ * Submit buttons and buttons with a "default" class or attribute.
+ */
+
+.button.default,
+button.default,
+[type='button'][default],
+[type='button'].default,
+[type='reset'].default,
+[type='submit'] {
+	background-color: rgb(80, 95, 121);
+	background-color: var(--gray-dark);
+	color: rgb(244, 245, 246);
+	color: var(--gray-light);
+}
+
+.button.default:focus,
+.button.default:hover,
+button.default:focus,
+button.default:hover,
+[type='button'][default]:focus,
+[type='button'][default]:hover,
+[type='button'].default:focus,
+[type='button'].default:hover,
+[type='reset'].default:focus,
+[type='reset'].default:hover,
+[type='submit']:focus,
+[type='submit']:hover {
+	background-color: rgb(38, 132, 255);
+	background-color: var(--primary);
+	border-color: rgb(38, 132, 255);
+	border-color: var(--primary);
+	color: rgb(244, 245, 246);
+	color: var(--gray-light);
+}
+
+.button.default[disabled]:focus,
+.button.default[disabled]:hover,
+button.default[disabled]:focus,
+button.default[disabled]:hover,
+[type='button'][default][disabled]:focus,
+[type='button'][default][disabled]:hover,
+[type='button'].default[disabled]:focus,
+[type='button'].default[disabled]:hover,
+[type='reset'].default[disabled]:focus,
+[type='reset'].default[disabled]:hover,
+[type='submit'].default[disabled]:focus,
+[type='submit'].default[disabled]:hover {
+	background-color: rgb(38, 132, 255);
+	background-color: var(--primary);
+	border-color: rgb(38, 132, 255);
+	border-color: var(--primary);
+}
+
+
+/** UTILITY CLASSES **/
+.table-container {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.visually-hidden {
+	position: absolute;
+	left: -9999px;
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.text-blue {
+		color: rgb(38, 132, 255);
+		color: var(--blue);
+	}
+
+.text-black {
+		color: rgb(18, 19, 20);
+		color: var(--black);
+	}
+
+.text-gray-dark {
+		color: rgb(80, 95, 121);
+		color: var(--gray-dark);
+	}
+
+.text-gray {
+		color: rgb(137, 147, 164);
+		color: var(--gray);
+	}
+
+.text-gray-light {
+		color: rgb(244, 245, 246);
+		color: var(--gray-light);
+	}
+
+.text-white {
+		color: rgb(255, 255, 255);
+		color: var(--white);
+	}
+
+.text-yellow {
+		color: rgb(255, 196, 0);
+		color: var(--yellow);
+	}
+
+.text-red {
+		color: rgb(222, 53, 11);
+		color: var(--red);
+	}
+
+.text-primary {
+		color: rgb(38, 132, 255);
+		color: var(--primary);
+	}
+
+.text-warning {
+		color: rgb(255, 196, 0);
+		color: var(--warning);
+	}
+
+.text-danger {
+		color: rgb(222, 53, 11);
+		color: var(--danger);
+	}
+
+/** SPACING UTILITIES **/
+.pt-sm,
+	.py-sm {
+		padding-top: 35px;
+		padding-top: var(--sm);
+	}
+.pb-sm,
+	.py-sm {
+		padding-bottom: 35px;
+		padding-bottom: var(--sm);
+	}
+.mt-sm,
+	.my-sm {
+		margin-top: 35px;
+		margin-top: var(--sm);
+	}
+.mb-sm,
+	.my-sm {
+		margin-bottom: 35px;
+		margin-bottom: var(--sm);
+	}
+.pt-md,
+	.py-md {
+		padding-top: 85px;
+		padding-top: var(--md);
+	}
+.pb-md,
+	.py-md {
+		padding-bottom: 85px;
+		padding-bottom: var(--md);
+	}
+.mt-md,
+	.my-md {
+		margin-top: 85px;
+		margin-top: var(--md);
+	}
+.mb-md,
+	.my-md {
+		margin-bottom: 85px;
+		margin-bottom: var(--md);
+	}
+.pt-lg,
+	.py-lg {
+		padding-top: 120px;
+		padding-top: var(--lg);
+	}
+.pb-lg,
+	.py-lg {
+		padding-bottom: 120px;
+		padding-bottom: var(--lg);
+	}
+.mt-lg,
+	.my-lg {
+		margin-top: 120px;
+		margin-top: var(--lg);
+	}
+.mb-lg,
+	.my-lg {
+		margin-bottom: 120px;
+		margin-bottom: var(--lg);
+	}
+
+
+/**
+ *   CREDITS
+ *   [1] normalize.css, https://github.com/necolas/normalize.css/
+ *   [2] milligram.css, https://github.com/milligram/milligram/
+ *   [3] https://css-tricks.com/box-sizing/
+ *   [4] https://hankchizljaw.com/wrote/a-modern-css-reset/
+ *   [5] https://github.com/jgthms/minireset.css/
+ *   [6] skeleton.css, https://github.com/dhg/Skeleton
+ *   [7] sscaffold.css, https://github.com/robsheldon/sscaffold-css
+ */
+
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		-webkit-animation-duration: 0.01ms !important;
+		        animation-duration: 0.01ms !important;
+		-webkit-animation-iteration-count: 1 !important;
+		        animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+
+@media (max-width: 576px) {
+	input,
+	textarea,
+	select:focus {
+		font-size: 16px !important;
+	}
+}
+
+
+@media (min-width: 40rem) {
+	.row {
+		flex-direction: row;
+	}
+	.row .column {
+		margin-bottom: inherit;
+		padding: 0 1rem;
+	}
+	.one.column,
+	.one.columns,
+	.two.columns,
+	.three.columns,
+	.four.columns,
+	.five.columns,
+	.six.columns,
+	.seven.columns,
+	.eight.columns,
+	.nine.columns,
+	.ten.columns,
+	.eleven.columns,
+	.twelve.columns,
+	.one-third.column,
+	.two-thirds.column,
+	.one-half.column {
+		margin-left: 4%;
+		padding: 0;
+	}
+
+	.one.column:first-child,
+	.one.columns:first-child,
+	.two.columns:first-child,
+	.three.columns:first-child,
+	.four.columns:first-child,
+	.five.columns:first-child,
+	.six.columns:first-child,
+	.seven.columns:first-child,
+	.eight.columns:first-child,
+	.nine.columns:first-child,
+	.ten.columns:first-child,
+	.eleven.columns:first-child,
+	.twelve.columns:first-child,
+	.one-third.column:first-child,
+	.two-thirds.column:first-child,
+	.one-half.column:first-child {
+		margin-left: 0;
+	}
+
+	.one.column,
+	.one.columns {
+		width: 4.66666666667%;
+	}
+
+	.two.columns {
+		width: 13.3333333333%;
+	}
+
+	.three.columns {
+		width: 22%;
+	}
+
+	.four.columns {
+		width: 30.6666666667%;
+	}
+
+	.five.columns {
+		width: 39.3333333333%;
+	}
+
+	.six.columns {
+		width: 48%;
+	}
+
+	.seven.columns {
+		width: 56.6666666667%;
+	}
+
+	.eight.columns {
+		width: 65.3333333333%;
+	}
+
+	.nine.columns {
+		width: 74%;
+	}
+
+	.ten.columns {
+		width: 82.6666666667%;
+	}
+
+	.eleven.columns {
+		width: 91.3333333333%;
+	}
+
+	.twelve.columns {
+		width: 100%;
+	}
+
+	.one-third.column {
+		width: 30.6666666667%;
+	}
+
+	.two-thirds.column {
+		width: 65.3333333333%;
+	}
+
+	.one-half.column {
+		width: 48%;
+	}
+
+	.offset-by-one.column,
+	.offset-by-one.columns {
+		margin-left: 8.66666666667%;
+	}
+
+	.offset-by-two.column,
+	.offset-by-two.columns {
+		margin-left: 17.3333333333%;
+	}
+
+	.offset-by-three.column,
+	.offset-by-three.columns {
+		margin-left: 26%;
+	}
+
+	.offset-by-four.column,
+	.offset-by-four.columns {
+		margin-left: 34.6666666667%;
+	}
+
+	.offset-by-five.column,
+	.offset-by-five.columns {
+		margin-left: 43.3333333333%;
+	}
+
+	.offset-by-six.column,
+	.offset-by-six.columns {
+		margin-left: 52%;
+	}
+
+	.offset-by-seven.column,
+	.offset-by-seven.columns {
+		margin-left: 60.6666666667%;
+	}
+
+	.offset-by-eight.column,
+	.offset-by-eight.columns {
+		margin-left: 69.3333333333%;
+	}
+
+	.offset-by-nine.column,
+	.offset-by-nine.columns {
+		margin-left: 78%;
+	}
+
+	.offset-by-ten.column,
+	.offset-by-ten.columns {
+		margin-left: 86.6666666667%;
+	}
+
+	.offset-by-eleven.column,
+	.offset-by-eleven.columns {
+		margin-left: 95.3333333333%;
+	}
+
+	.offset-by-one-third.column,
+	.offset-by-one-third.columns {
+		margin-left: 34.6666666667%;
+	}
+
+	.offset-by-two-thirds.column,
+	.offset-by-two-thirds.columns {
+		margin-left: 69.3333333333%;
+	}
+
+	.offset-by-one-half.column,
+	.offset-by-one-half.columns {
+		margin-left: 52%;
+	}
+}
+
+
+@media screen and (min-width: 1200px) {
+	h1,
+.h1 {
+		font-size: 3rem;
+	}
+	h2,
+.h2 {
+		font-size: 2.5rem;
+	}
+	h3,
+.h3 {
+		font-size: 2rem;
+	}
+	h4,
+.h4 {
+		font-size: 1.75rem;
+	}
+	h5,
+.h5 {
+		font-size: 1.5rem;
+	}
+	h6,
+.h6 {
+		font-size: 1.25rem;
+	}
+	h1.display,
+.h1.display {
+		font-size: 5rem;
+	}
+	h2.display,
+.h2.display {
+		font-size: 4rem;
+	}
+	h3.display,
+.h3.display {
+		font-size: 3.25rem;
+	}
+	h4.display,
+.h4.display {
+		font-size: 3rem;
+	}
+	legend {
+		font-size: 1.6rem;
+	}
+}
+
+
+@media screen and (max-width: 768px) {
+	h1,
+.h1 {
+		font-size: 1.7rem;
+	}
+	h2,
+.h2 {
+		font-size: 1.5rem;
+	}
+	h3,
+.h3 {
+		font-size: 1.4rem;
+	}
+	h4,
+.h4 {
+		font-size: 1.25rem;
+	}
+	h5,
+.h5 {
+		font-size: 1.1rem;
+	}
+	h6,
+.h6 {
+		font-size: 1rem;
+	}
+	h1.display,
+.h1.display {
+		font-size: 2rem;
+	}
+	h2.display,
+.h2.display {
+		font-size: 1.75rem;
+	}
+	h3.display,
+.h3.display {
+		font-size: 1.5rem;
+	}
+	h4.display,
+.h4.display {
+		font-size: 1.25rem;
+	}
+	legend {
+		font-size: 1rem;
+	}
+}
+
+
+@media (min-width: 576px) {
+		.pt-sm-mob,
+		.py-sm-mob {
+			padding-top: 35px;
+			padding-top: var(--sm);
+		}
+		.pb-sm-mob,
+		.py-sm-mob {
+			padding-bottom: 35px;
+			padding-bottom: var(--sm);
+		}
+		.mt-sm-mob,
+		.my-sm-mob {
+			margin-top: 35px;
+			margin-top: var(--sm);
+		}
+		.mb-sm-mob,
+		.my-sm-mob {
+			margin-bottom: 35px;
+			margin-bottom: var(--sm);
+		}
+		.pt-md-mob,
+		.py-md-mob {
+			padding-top: 85px;
+			padding-top: var(--md);
+		}
+		.pb-md-mob,
+		.py-md-mob {
+			padding-bottom: 85px;
+			padding-bottom: var(--md);
+		}
+		.mt-md-mob,
+		.my-md-mob {
+			margin-top: 85px;
+			margin-top: var(--md);
+		}
+		.mb-md-mob,
+		.my-md-mob {
+			margin-bottom: 85px;
+			margin-bottom: var(--md);
+		}
+		.pt-lg-mob,
+		.py-lg-mob {
+			padding-top: 120px;
+			padding-top: var(--lg);
+		}
+		.pb-lg-mob,
+		.py-lg-mob {
+			padding-bottom: 120px;
+			padding-bottom: var(--lg);
+		}
+		.mt-lg-mob,
+		.my-lg-mob {
+			margin-top: 120px;
+			margin-top: var(--lg);
+		}
+		.mb-lg-mob,
+		.my-lg-mob {
+			margin-bottom: 120px;
+			margin-bottom: var(--lg);
+		}
+}
+
+
+@media (min-width: 768px) {
+		.pt-sm-tab,
+		.py-sm-tab {
+			padding-top: 35px;
+			padding-top: var(--sm);
+		}
+		.pb-sm-tab,
+		.py-sm-tab {
+			padding-bottom: 35px;
+			padding-bottom: var(--sm);
+		}
+		.mt-sm-tab,
+		.my-sm-tab {
+			margin-top: 35px;
+			margin-top: var(--sm);
+		}
+		.mb-sm-tab,
+		.my-sm-tab {
+			margin-bottom: 35px;
+			margin-bottom: var(--sm);
+		}
+		.pt-md-tab,
+		.py-md-tab {
+			padding-top: 85px;
+			padding-top: var(--md);
+		}
+		.pb-md-tab,
+		.py-md-tab {
+			padding-bottom: 85px;
+			padding-bottom: var(--md);
+		}
+		.mt-md-tab,
+		.my-md-tab {
+			margin-top: 85px;
+			margin-top: var(--md);
+		}
+		.mb-md-tab,
+		.my-md-tab {
+			margin-bottom: 85px;
+			margin-bottom: var(--md);
+		}
+		.pt-lg-tab,
+		.py-lg-tab {
+			padding-top: 120px;
+			padding-top: var(--lg);
+		}
+		.pb-lg-tab,
+		.py-lg-tab {
+			padding-bottom: 120px;
+			padding-bottom: var(--lg);
+		}
+		.mt-lg-tab,
+		.my-lg-tab {
+			margin-top: 120px;
+			margin-top: var(--lg);
+		}
+		.mb-lg-tab,
+		.my-lg-tab {
+			margin-bottom: 120px;
+			margin-bottom: var(--lg);
+		}
+}
+
+
+@media (min-width: 992px) {
+		.pt-sm-lap,
+		.py-sm-lap {
+			padding-top: 35px;
+			padding-top: var(--sm);
+		}
+		.pb-sm-lap,
+		.py-sm-lap {
+			padding-bottom: 35px;
+			padding-bottom: var(--sm);
+		}
+		.mt-sm-lap,
+		.my-sm-lap {
+			margin-top: 35px;
+			margin-top: var(--sm);
+		}
+		.mb-sm-lap,
+		.my-sm-lap {
+			margin-bottom: 35px;
+			margin-bottom: var(--sm);
+		}
+		.pt-md-lap,
+		.py-md-lap {
+			padding-top: 85px;
+			padding-top: var(--md);
+		}
+		.pb-md-lap,
+		.py-md-lap {
+			padding-bottom: 85px;
+			padding-bottom: var(--md);
+		}
+		.mt-md-lap,
+		.my-md-lap {
+			margin-top: 85px;
+			margin-top: var(--md);
+		}
+		.mb-md-lap,
+		.my-md-lap {
+			margin-bottom: 85px;
+			margin-bottom: var(--md);
+		}
+		.pt-lg-lap,
+		.py-lg-lap {
+			padding-top: 120px;
+			padding-top: var(--lg);
+		}
+		.pb-lg-lap,
+		.py-lg-lap {
+			padding-bottom: 120px;
+			padding-bottom: var(--lg);
+		}
+		.mt-lg-lap,
+		.my-lg-lap {
+			margin-top: 120px;
+			margin-top: var(--lg);
+		}
+		.mb-lg-lap,
+		.my-lg-lap {
+			margin-bottom: 120px;
+			margin-bottom: var(--lg);
+		}
+}
+
+
+@media (min-width: 1200px) {
+		.pt-sm-desk,
+		.py-sm-desk {
+			padding-top: 35px;
+			padding-top: var(--sm);
+		}
+		.pb-sm-desk,
+		.py-sm-desk {
+			padding-bottom: 35px;
+			padding-bottom: var(--sm);
+		}
+		.mt-sm-desk,
+		.my-sm-desk {
+			margin-top: 35px;
+			margin-top: var(--sm);
+		}
+		.mb-sm-desk,
+		.my-sm-desk {
+			margin-bottom: 35px;
+			margin-bottom: var(--sm);
+		}
+		.pt-md-desk,
+		.py-md-desk {
+			padding-top: 85px;
+			padding-top: var(--md);
+		}
+		.pb-md-desk,
+		.py-md-desk {
+			padding-bottom: 85px;
+			padding-bottom: var(--md);
+		}
+		.mt-md-desk,
+		.my-md-desk {
+			margin-top: 85px;
+			margin-top: var(--md);
+		}
+		.mb-md-desk,
+		.my-md-desk {
+			margin-bottom: 85px;
+			margin-bottom: var(--md);
+		}
+		.pt-lg-desk,
+		.py-lg-desk {
+			padding-top: 120px;
+			padding-top: var(--lg);
+		}
+		.pb-lg-desk,
+		.py-lg-desk {
+			padding-bottom: 120px;
+			padding-bottom: var(--lg);
+		}
+		.mt-lg-desk,
+		.my-lg-desk {
+			margin-top: 120px;
+			margin-top: var(--lg);
+		}
+		.mb-lg-desk,
+		.my-lg-desk {
+			margin-bottom: 120px;
+			margin-bottom: var(--lg);
+		}
+}
+
