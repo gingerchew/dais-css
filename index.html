@@ -244,10 +244,36 @@
 					<a href="https://github.com/frankie-tech" target="_blank"><span>opens in a new window</span>github</a>
 				</p>
 				<p>
-					You can also use <code>.announce-inline</code> to announce it visually, as well.
+					You can also use <code class="code-inline">.announce-inline</code> to announce it visually, as well.
 					<!-- prettier-ignore -->
 					<a href="https://github.com/frankie-tech" class="announce-inline" target="_blank"><span>opens in a new window</span>github</a>
 				</p>
+				<p>
+					In an attempt to include each HTML element, here is an address block.
+					<br/>
+					<small>Add <code class="code-inline">.address-block</code> to give it a background and some padding</small>
+					<br/>
+					<address>
+						<p class="street">1630 Revello Drive,</p>
+						<h5 class="city"> Sunnydale,<small> CA</small></h5>
+					</address>
+					<br/>
+					<br/>
+					<address class="address-block">
+						<p class="street">1630 Revello Drive,</p>
+						<h5 class="city"> Sunnydale,<small class="state"> CA</small></h5>
+					</address>
+				</p>
+				<p>
+					The address block comes with some premade classes, <code class="inline">.street, .city, .state</code>. These primarily just give flair to the address block.
+					<br>
+					<small>To set up an address block like the one above, copy this:</small>
+				</p>
+				<!-- prettier-ignore -->
+<pre><code>&lt;address>
+  &lt;p class="street">/* STREET NAME */&lt;/p>
+  &lt;h5 class="city">/* CITY NAME */&lt;small class="state">/* STATE */&lt;/small>&lt;/h5>
+&lt;/address></code></pre>
 				<hr />
 			</section>
 			<section class="section" id="lists">
@@ -331,7 +357,6 @@
 					</a>
 				</small>
 				<form action="" method="post" target="_blank">
-					<h6>###### TODO Add accessibility :focus-within to notify about target="_blank" on forms</h6>
 					<small>Remember to never enter personal information into forms you don't know/trust</small>
 					<fieldset>
 						<legend>
