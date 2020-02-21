@@ -4,6 +4,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
 
+const importGulp = require('gulp-cssimport');
 const eachPost = require('postcss-each');
 const responsiveTypePost = require('postcss-responsive-type');
 const mediaQueriesPost = require('postcss-combine-media-query');
@@ -26,7 +27,7 @@ const plugins = {
 	},
 	min: [nanoPost()]
 };
-
+plugins.all = [eachPost(), responsiveTypePost(), mediaQueriesPost(), presetPost(plugins.preset)];
 function each() {
 	return src('./processing/imports.css')
 		.pipe(postcss([eachPost()]))
@@ -74,8 +75,42 @@ function minify() {
 }
 minify.description = `Minifies CSS and produces a sourcemap`;
 
+function buildCSS() {
+	const d = 'dist/';
+	const s = 'src/css/main.css';
+	return src(s)
+		.pipe(
+			importGulp({
+				includePaths: [s]
+			})
+		)
+		.pipe(postcss(plugins.all))
+		.pipe(rename('dais.css'))
+		.pipe(dest(d))
+		.pipe(rename({ extname: '.min.css' }))
+		.pipe(postcss([nanoPost()]))
+		.pipe(dest(d));
+}
+
+function devCSS() {
+	const d = 'src/';
+	const s = 'src/css/main.css';
+
+	return src(s)
+		.pipe(
+			importGulp({
+				includePaths: [s]
+			})
+		)
+		.pipe(rename('dais.css'))
+		.pipe(postcss(plugins.process))
+		.pipe(dest(d));
+}
+
 module.exports = {
 	minify,
 	preset,
-	processes: series(each, responsiveType, mediaQueries, processed)
+	processes: series(each, responsiveType, mediaQueries, processed),
+	buildCSS,
+	devCSS
 };

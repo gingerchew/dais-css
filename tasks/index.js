@@ -1,6 +1,4 @@
-const { minify, preset, processes } = require('./gulp.postcss');
-
-const { imports } = require('./gulp.css');
+const { minify, preset, processes, buildCSS, devCSS } = require('./gulp.postcss');
 
 const { cleanOutputs, cleanProcesses } = require('./gulp.utils');
 
@@ -10,9 +8,10 @@ module.exports = {
 	minify,
 	preset,
 	processes,
-	imports,
 	cleanOutputs,
 	cleanProcesses,
 	serve,
-	observe
+	observe,
+	buildCSS,
+	devCSS
 };

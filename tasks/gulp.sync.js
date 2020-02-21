@@ -3,8 +3,7 @@ const { watch, series } = require('gulp');
 const b = require('browser-sync').create();
 
 const { baseDir, main, glob } = (paths = require('./gulp.paths'));
-const { imports } = require('./gulp.css');
-const { processes } = require('./gulp.postcss');
+const { devCSS } = require('./gulp.postcss');
 const { cleanOutputs } = require('./gulp.utils');
 
 const buildFiles = watch(glob);
@@ -27,7 +26,7 @@ function reload(done) {
 reload.description = `Reloads server`;
 
 function observe(done) {
-	buildFiles.on('change', series(cleanOutputs, imports, processes, reload));
+	buildFiles.on('change', series(cleanOutputs, devCSS, reload));
 	watch(main).on('change', series(reload));
 	done();
 }
