@@ -14,9 +14,9 @@
 		</noscript>
 		<base href="" />
 	</head>
-	<body class="navigation-grid">
+	<body>
 		<!-- implement a sidebar to navigat a little more easily -->
-		<main>
+		<main class="grid-breakout">
 			<a href="#main" id="top" class="visually-hidden">skip to main content</a>
 			<nav class="sidebar">
 				<a
@@ -201,12 +201,19 @@
 
 				<p><em>This line rendered as italicized text.</em></p>
 
-				<p>This has my important <cite><a href="https://en.wikipedia.org/wiki/Cat%27s_Cradle">citation</a></cite> for my English Final. During my interview, they said <q>Please don't quote me</q></p>
+				<p>
+					This has my important
+					<cite><a href="https://en.wikipedia.org/wiki/Cat%27s_Cradle">citation</a></cite> for my English
+					Final. During my interview, they said <q>Please don't quote me</q>
+				</p>
 
 				<p>
-					I had an accident at my job, so I was told to call <abbr title="">OSHA</abbr> but I didn't know what that stood for.
-					<br/>
-					Some JRPG's are hard to understand at the start, but once you understand what <abbr title="experience points">XP</abbr>, <abbr title="magic power">MP</abbr>, and <abbr title="health points">HP</abbr> are, you'll get the hang of it!
+					I had an accident at my job, so I was told to call <abbr title="">OSHA</abbr> but I didn't know what
+					that stood for.
+					<br />
+					Some JRPG's are hard to understand at the start, but once you understand what
+					<abbr title="experience points">XP</abbr>, <abbr title="magic power">MP</abbr>, and
+					<abbr title="health points">HP</abbr> are, you'll get the hang of it!
 				</p>
 
 				<p>
@@ -254,23 +261,27 @@
 				</p>
 				<p>
 					In an attempt to include each HTML element, here is an address block.
-					<br/>
-					<small>Add <code class="code-inline">.address-block</code> to give it a background and some padding</small>
-					<br/>
-					<address>
-						<p class="street">1630 Revello Drive,</p>
-						<h5 class="city"> Sunnydale,<small> CA</small></h5>
-					</address>
-					<br/>
-					<br/>
-					<address class="address-block">
-						<p class="street">1630 Revello Drive,</p>
-						<h5 class="city"> Sunnydale,<small class="state"> CA</small></h5>
-					</address>
+					<br />
+					<small
+						>Add <code class="code-inline">.address-block</code> to give it a background and some
+						padding</small
+					>
+					<br />
 				</p>
+
+				<address>
+					1630 Revello Drive, Sunnydale, CA
+				</address>
+				<br />
+				<br />
+				<address class="address-block">
+					1630 Revello Drive, Sunnydale, CA
+				</address>
 				<p>
-					The address block comes with some premade classes, <code class="inline">.street, .city, .state</code>. These primarily just give flair to the address block.
-					<br>
+					The address block comes with some premade classes,
+					<code class="inline">.street, .city, .state</code>. These primarily just give flair to the address
+					block.
+					<br />
 					<small>To set up an address block like the one above, copy this:</small>
 				</p>
 				<!-- prettier-ignore -->
