@@ -4,10 +4,12 @@ body {
 	min-height: 100vh;
 	/* The following two rules allow the header and footer elements to be positioned
 	   correctly assuming they're all direct descendants of the <body> element. */
+	/*
 	display: flex;
 	flex-direction: column;
+	*/
 }
-
+/* something new */
 header,
 footer {
 	/* Prevent these two eleemnts from shrinking when content is added to the <body>
@@ -56,4 +58,15 @@ section > *:first-child {
 thead,
 tbody > tr:nth-child(even) {
 	background-color: var(--gray-light);
+}
+main.grid-breakout {
+	display: grid;
+	grid-template-columns: [gutter-start] minmax(2rem, 1fr) [main-start] minmax(0, 40em) [main-end] minmax(2rem, 1fr) [gutter-end];
+}
+main.grid-breakout > nav.nav-column {
+	grid-area: 1 / 1 / 2 / 2;
+}
+main.grid-breakout > article,
+main.grid-breakout > section {
+	grid-area: auto / 2 / auto / 3;
 }
