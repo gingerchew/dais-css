@@ -393,7 +393,6 @@ html {
 	font-size: 16px;
 	font-size: var(--font-size);
 }
-
 body {
 	font-family: 'Montserrat', 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitstream Vera Sans',
 		'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
@@ -402,7 +401,30 @@ body {
 	font-weight: 300;
 	line-height: 1.6;
 }
-
+body.loads {
+	-webkit-animation: fadeIn ease-out 3s;
+	        animation: fadeIn ease-out 3s;
+	-webkit-animation-iteration-count: 1;
+	        animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	        animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 main > article,
 main > section {
 	padding: 0 1rem 7.5rem;
@@ -432,7 +454,6 @@ hr {
 main section .table-container table {
 	width: 100%;
 }
-
 code {
 	font-size: 86%;
 }
@@ -1110,10 +1131,12 @@ body {
 	min-height: 100vh;
 	/* The following two rules allow the header and footer elements to be positioned
 	   correctly assuming they're all direct descendants of the <body> element. */
+	/*
 	display: flex;
 	flex-direction: column;
+	*/
 }
-
+/* something new */
 header,
 footer {
 	/* Prevent these two eleemnts from shrinking when content is added to the <body>
@@ -1163,6 +1186,17 @@ thead,
 tbody > tr:nth-child(even) {
 	background-color: rgb(244, 245, 246);
 	background-color: var(--gray-light);
+}
+main.grid-breakout {
+	display: grid;
+	grid-template-columns: [gutter-start] minmax(2rem, 1fr) [main-start] minmax(0, 40em) [main-end] minmax(2rem, 1fr) [gutter-end];
+}
+main.grid-breakout > nav.nav-column {
+	grid-area: 1 / 1 / 2 / 2;
+}
+main.grid-breakout > article,
+main.grid-breakout > section {
+	grid-area: auto / 2 / auto / 3;
 }
 
 /** FLEXBOX-BASED COLUMNS **/
@@ -1340,6 +1374,7 @@ tbody > tr:nth-child(even) {
 */
 nav {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 }

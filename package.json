@@ -24,7 +24,7 @@
 	},
 	"scripts": {
 		"start": "gulp",
-		"build": "gulp production"
+		"build": "gulp production --prod true"
 	},
 	"browserslist": "defaults",
 	"devDependencies": {
