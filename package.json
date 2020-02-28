@@ -14,13 +14,13 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/frankie-tech/dais-css.git"
-	},
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
+		"url": "git://github.com/frankie-tech/dais-css.git"
 	},
 	"bugs": {
 		"url": "https://github.com/frankie-tech/dais-css/issues"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
 	},
 	"scripts": {
 		"start": "gulp",
