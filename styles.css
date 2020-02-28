@@ -22,18 +22,53 @@ footer {
 	padding-bottom: 1rem;
 }
 */
+.navigation {
+	grid-column-start: main-start;
+	grid-column-end: main-end;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background-color: white;
+}
+.navigation .menu-title {
+	position: relative;
+}
+.navigation .menu-subtitle {
+	text-align: center;
+}
+.navigation ol {
+	margin-bottom: 0;
+	display: inline-flex;
+	width: 100%;
+	justify-content: space-between;
+	max-width: 40em;
+}
+.navigation ol > li {
+	display: inline;
+}
 .sidebar a {
 	transition: opacity 0.3s ease-out;
 }
 .sidebar li:not(.active) > a {
 	opacity: 0.4;
 }
-.menu-title {
-	position: relative;
-	left: 1.5em;
-}
 .menu-subtitle {
 	margin-bottom: 0.75rem;
+}
+.navigation .menu-subtitle {
+	height: auto;
+	max-height: 1000px;
+	overflow: hidden;
+	transition: max-height 0.5s ease-out;
+}
+.scrolled .menu-subtitle {
+	max-height: 0;
+}
+body > footer {
+	text-align: center;
 }
 form small {
 	opacity: 0;
