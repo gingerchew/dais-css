@@ -1,5 +1,5 @@
 {
-	"name": "dais-css",
+	"name": "@frankie-tech/dais-css",
 	"version": "0.1.0",
 	"description": "A platform to build your css upon",
 	"main": "index.html",
@@ -12,10 +12,7 @@
 			"url": "https://github.com/frankie-tech"
 		}
 	],
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/frankie-tech/dais-css.git"
-	},
+	"repository": "git://github.com/frankie-tech/dais-css.git",
 	"bugs": {
 		"url": "https://github.com/frankie-tech/dais-css/issues"
 	},
