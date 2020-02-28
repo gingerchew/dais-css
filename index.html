@@ -6,10 +6,22 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta name="designer" content="frankie w." />
 		<title>dais | a raised platform for a seat of honor</title>
-		<link rel="stylesheet" media="print" href="dist/dais.min.css" onload="this.media='all'" />
-		<link rel="stylesheet" media="print" href="./styles.css" onload="this.media='all'" />
+		<link
+			rel="stylesheet"
+			media="print"
+			href="./src/dais.css"
+			onload="this.onload=null;this.media='all'"
+			onerror="this.onerror='null';this.media='all'"
+		/>
+		<link
+			rel="stylesheet"
+			media="print"
+			href="./styles.css"
+			onload="this.onload=null;this.media='all'"
+			onerror="this.onerror=null;this.media='all'"
+		/>
 		<noscript>
-			<link rel="stylesheet" href="dist/dais.min.css" />
+			<link rel="stylesheet" href="./src/dais.css" />
 			<link rel="stylesheet" href="./styles.css" />
 		</noscript>
 		<base href="" />
@@ -18,7 +30,7 @@
 		<!-- implement a sidebar to navigat a little more easily -->
 		<main class="grid-breakout">
 			<a href="#main" id="top" class="visually-hidden">skip to main content</a>
-			<nav class="sidebar">
+			<nav class="navigation" id="navigation">
 				<a
 					class="menu-title h4 no-icon"
 					target="_blank"
@@ -423,7 +435,7 @@
 					</figure>
 				</div>
 				<div>
-					<figure class="four columns figure-background">
+					<figure class="figure-background">
 						<img id="qr" src="" alt="" loading="lazy" height="242" width="242" />
 						<figcaption>
 							This caption has a background<br />
@@ -461,6 +473,16 @@
 				Made with 💞 by <a href="https://github.com/frankie-tech" target="_blank" rel="noopener">me</a> MPL 2.0
 			</section>
 		</footer>
+		<script>
+			window.addEventListener(
+				'scroll',
+				() =>
+					document.getElementById('main').getBoundingClientRect().top < 0
+						? document.getElementById('navigation').classList.add('scrolled')
+						: document.getElementById('navigation').classList.remove('scrolled'),
+				{ passive: true }
+			);
+		</script>
 		<script defer src="./js/gumshoe.min.js"></script>
 		<script>
 			window.addEventListener('load', () => {
