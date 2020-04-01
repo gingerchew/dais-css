@@ -70,3 +70,6 @@ main.grid-breakout > article,
 main.grid-breakout > section {
 	grid-area: auto / 2 / auto / 3;
 }
+main.grid-breakout > .breakout-image {
+	grid-column: gutter-start / gutter-end;
+}
