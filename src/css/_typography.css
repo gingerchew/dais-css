@@ -163,10 +163,10 @@ a.announce-inline[target='_blank'] > span {
 	bottom: calc(100% + 0.5rem);
 	padding: 0.25rem;
 	opacity: 0;
-	font-size: 1rem;
+	font-size: 0.75rem;
 	background-color: var(--gray-light);
 	color: var(--blue);
-	width: 200px;
+	width: 150px;
 	height: auto;
 	clip: unset;
 	text-align: center;
