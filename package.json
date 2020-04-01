@@ -1,6 +1,6 @@
 {
 	"name": "@frankie-tech/dais-css",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A platform to build your css upon",
 	"main": "index.html",
 	"license": "MIT",
