@@ -40,7 +40,7 @@ function buildCSS() {
 }
 
 function devCSS() {
-	const d = 'src/';
+	const d = 'dist/';
 	const s = 'src/css/main.css';
 
 	return src(s)
