@@ -9,10 +9,11 @@
 		<link
 			rel="stylesheet"
 			media="print"
-			href="./dais.min.css"
+			href="./dais.css"
 			onload="this.onload=null;this.media='all'"
 			onerror="this.onerror='null';this.media='all'"
 		/>
+		<!--
 		<link
 			rel="stylesheet"
 			media="print"
@@ -20,9 +21,10 @@
 			onload="this.onload=null;this.media='all'"
 			onerror="this.onerror=null;this.media='all'"
 		/>
+		-->
 		<noscript>
 			<link rel="stylesheet" href="./dais.min.css" />
-			<link rel="stylesheet" href="../styles.css" />
+			<!-- <link rel="stylesheet" href="../styles.css" /> -->
 		</noscript>
 		<base href="" />
 	</head>
@@ -75,7 +77,7 @@
 			</nav>
 			<article id="main">
 				<header id="readMeHeader">
-					<hgroup>
+					<hgroup class="hgroup">
 						<h1 class="section-title">A simple framework to build<br />your own styles on</h1>
 						<h2 class="section-tagline">minimalistic, but... opinionated</h2>
 					</hgroup>
@@ -392,7 +394,11 @@
 							Wrap your inputs with a label
 							<input type="text" />
 						</label>
-						<input type="text" placeholder="I have a placeholder" />
+						<input type="text" placeholder="I have a placeholder, but that's not sufficient!" />
+						<label for="" class="floating">
+							<span>But I can fall, with STYLE!</span>
+							<input type="text" placeholder="I can't fly..." />
+						</label>
 						<select name="">
 							<option value="">This is a select</option>
 							<option value="">A</option>
@@ -434,15 +440,6 @@
 					</figure>
 				</div>
 				<div>
-					<figure class="figure-background">
-						<img id="qr" src="" alt="" loading="lazy" height="242" width="242" />
-						<figcaption>
-							This caption has a background<br />
-							Scan this to view on mobile
-						</figcaption>
-					</figure>
-				</div>
-				<div>
 					<figure class="figure-right figure-background">
 						<img
 							src="https://source.unsplash.com/242x242/?nature,water"
@@ -472,37 +469,5 @@
 				Made with 💞 by <a href="https://github.com/frankie-tech" target="_blank" rel="noopener">me</a> MPL 2.0
 			</section>
 		</footer>
-		<script>
-			window.addEventListener(
-				'scroll',
-				() =>
-					document.getElementById('main').getBoundingClientRect().top < 0
-						? document.getElementById('navigation').classList.add('scrolled')
-						: document.getElementById('navigation').classList.remove('scrolled'),
-				{ passive: true }
-			);
-		</script>
-		<script defer src="./js/gumshoe.min.js"></script>
-		<script>
-			window.addEventListener('load', () => {
-				const shoe = new Gumshoe('#sidebar button', { offset: 75 });
-				return shoe;
-			});
-			const scrollTo = ({ target }) =>
-				window.scroll({
-					behavior: 'smooth',
-					left: 0,
-					top: document.querySelector(target.dataset.section).offsetTop,
-				});
-		</script>
-		<script>
-			document.getElementById('sidebar').addEventListener('click', scrollTo);
-			document
-				.getElementById('qr')
-				.setAttribute(
-					'src',
-					`https://api.qrserver.com/v1/create-qr-code/?size=242x242&data=${window.location.href}`
-				);
-		</script>
 	</body>
 </html>
