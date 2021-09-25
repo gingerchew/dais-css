@@ -26,12 +26,13 @@ body.loads {
 }
 main > article,
 main > section {
-	padding: 0 1rem 7.5rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
 	position: relative;
 	width: 100%;
 }
 main > section + section {
-	padding: 0 1rem 2.5rem;
+	padding-top: 2.5rem;
 }
 main section > *,
 main article > *,
@@ -159,12 +160,10 @@ legend {
 	font-size: 1.6rem;
 	font-weight: 700;
 }
-
 label.inline,
 legend.inline {
 	font-weight: normal;
 }
-
 /**
  * Layout: Display, margin, padding, height, and width.
  */
@@ -369,7 +368,6 @@ legend.inline {
 	display: inline-block;
 	margin-left: 0.5rem;
 }
-
 fieldset {
 	border-width: 0;
 	padding: 0;

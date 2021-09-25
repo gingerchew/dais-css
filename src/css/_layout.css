@@ -39,18 +39,15 @@ main {
 	/.hgroup
 */
 .hgroup {
-	/* Used primarily in section headers (reminiscent of the yet to be implemented hgroup) */
+	padding-top: 3rem;
 	margin-bottom: 0.5rem;
+}
+.hgroup > :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+	margin-top: 0.5em;
 }
 .hgroup > :last-child {
 	margin-bottom: 0;
 }
-hgroup,
-.hgroup {
-	padding-top: 3rem;
-	margin-bottom: 1rem;
-}
-
 section > *:first-child,
 section > *:first-child {
 	padding-top: unset;

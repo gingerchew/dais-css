@@ -52,9 +52,10 @@
 	--border-radius: 3px;
 }
 
-/** EASING **/
+/** TRANSITIONS **/
 :root {
 	--e: cubic-bezier(0.23, 1, 0.32, 1);
+	--dur: 0.25s;
 }
 
 /** INPUTS **/
