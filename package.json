@@ -2,7 +2,7 @@
 	"name": "@frankie-tech/dais-css",
 	"version": "0.1.1",
 	"description": "A platform to build your css upon",
-	"main": "index.html",
+	"main": "index.js",
 	"license": "MIT",
 	"homepage": "https://github.com/frankie-tech/dais-css#readme",
 	"contributors": [
@@ -19,22 +19,12 @@
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com/"
 	},
-	"scripts": {
-		"start": "gulp",
-		"build": "gulp production --prod true"
+	"watch": {
+		"build": "src/*.css"
 	},
-	"browserslist": "defaults",
-	"devDependencies": {
-		"browser-sync": "^2.26.7",
-		"cssnano": "^4.1.10",
-		"gulp": "^4.0.2",
-		"gulp-cssimport": "^7.0.0",
-		"gulp-postcss": "^8.0.0",
-		"gulp-rename": "^2.0.0",
-		"postcss-combine-media-query": "^1.0.0",
-		"postcss-each": "^0.10.0",
-		"postcss-preset-env": "^6.7.0",
-		"postcss-responsive-type": "^1.0.0"
+	"browserslist": "> 0.5%, last 3 versions, not dead",
+	"scripts": {
+		"build": "parcel index.html"
 	},
 	"prettier": {
 		"printWidth": 120,
@@ -45,5 +35,8 @@
 		"arrowParens": "always",
 		"bracketSpacing": true,
 		"bracesSpacing": true
+	},
+	"dependencies": {
+		"parcel": "^2.8.3"
 	}
 }
