@@ -1,0 +1,10 @@
+@layer colors {
+    :root {
+        --blue-dark: lch(7.098%, 40.155%, 300.16%);
+    }
+
+    .blue-bg {
+        color: white;
+        background-color: var(--blue-dark);
+    }
+}

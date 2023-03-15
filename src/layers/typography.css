@@ -1,0 +1,54 @@
+@layer typography {
+    :root {
+        --font-size-sm: clamp(0.9rem, -0.1vw + 0.93rem, 0.84rem);
+        --font-size-base: clamp(1rem, 0.1vw + 1rem, 1.13rem);
+        --font-size-md: clamp(1.41rem, 0.17vw + 1.36rem, 1.5rem);
+        --font-size-lg: clamp(1.76rem, 0.45vw + 1.64rem, 2rem);
+        --font-size-xl: clamp(2.2rem, 0.86vw + 1.97rem, 2.66rem);
+        --font-size-xxl: clamp(2.75rem, 1.49vw + 2.36rem, 3.55rem);
+        --font-size-xxxl: clamp(3.43rem, 2.4vw + 2.81rem, 4.73rem);
+        font-size: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    :is(h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6) {
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+    }
+    :is(h1,h2,h3,.h1,.h2,.h3) {
+        font-weight: 800;
+    }
+    :is(h4,h5,h6,.h4,.h5,.h6) {
+        line-height: 1.5;
+        font-weight: 600;
+    }
+    .display-1 {
+        font-size: var(--font-size-xxxl);
+    }
+    .display-2,
+    h1, .h1 {
+        font-size: var(--font-size-xxl);
+    }
+    .display-3,
+    h2, .h2 {
+        font-size: var(--font-size-xl);
+    }
+    .display-4,
+    h3, .h3 {
+        font-size: var(--font-size-lg);
+    }
+    h4, .h4 {
+        font-size: var(--font-size-md);
+    }
+    h5, .h5, p {
+        font-size: var(--font-size-base)
+    }
+    h6, .h6 {
+        font-size: var(--font-size-sm);
+    }
+    :is(.display-1, .display-2, .display-3, .display-4) {
+        margin: 0;
+        line-height: 1.3;
+        font-weight: 400;
+    }
+}
