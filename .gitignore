@@ -3,3 +3,5 @@ pnpm-lock.yaml
 pnpm-debug.log
 processing
 *.map
+dist
+.parcel-cache
