@@ -38,5 +38,8 @@
 	},
 	"dependencies": {
 		"parcel": "^2.8.3"
+	},
+	"devDependencies": {
+		"lightningcss": "^1.19.0"
 	}
 }
